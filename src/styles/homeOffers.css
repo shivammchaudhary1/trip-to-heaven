@@ -1,0 +1,72 @@
+.homeOffers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: white;
+}
+
+.homeOffers > .offerCard{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    border-radius: 10px;
+}
+
+.homeOffers > .offerCard > .offerHead{
+    display: flex;
+    gap: 20px;
+    padding: 10px 10px;
+}
+.homeOffers > .offerCard > .offerHead > h1{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.homeOffers > .offerCard > .offerHead > .allTabs{
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    font-weight: 700;
+    padding: 0 20px 0px 0;
+    border-bottom: 1px solid gray;
+}
+.homeOffers > .offerCard > .offerHead > .allTabs > .offerTabs.active{
+    color: royalblue;
+    border-bottom: 3px solid royalblue;
+    padding: 10px 10px;
+}
+/* .homeOffers > .offerCard > .offerHead > .allTabs > .offerTabs{
+
+} */
+
+.homeOffers > .offerCard > .MaincardOfferBx{
+    display: grid;
+    margin-top: 20px;
+    gap: 20px;
+    padding: 10px 50px;
+    grid-template-columns: repeat(3,1fr);
+    /* border: 1px solid #000; */
+}
+
+.homeOffers > .offerCard > .MaincardOfferBx > .cards{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0,0.5);
+    /* border: 2px solid lime; */
+}
+.homeOffers > .offerCard > .MaincardOfferBx > .cards img{
+    width: 150px;
+}
+.homeOffers > .offerCard > .MaincardOfferBx > .cards > .offerData h1{
+    font-weight: 700;
+}
+.homeOffers > .offerCard > .MaincardOfferBx > .cards > .offerData > button{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 3px 10px;
+    color: royalblue;
+}
