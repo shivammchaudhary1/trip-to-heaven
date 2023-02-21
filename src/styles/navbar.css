@@ -1,0 +1,55 @@
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 20px;
+    background-color: white;
+    /* border: 1px solid black; */
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+header > .logo{
+    /* border: 1px solid black; */
+}
+header > .logo > img{
+    width: 120px;
+}
+header > .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+header > .icons > .iconCard > h1{
+    font-size: 12px;
+}
+header > .icons > .iconCard{
+    text-align: center;
+    padding: 0 5px;
+    /* border: 1px solid black; */
+}
+header > .icons > .iconCard.active{
+    color: royalblue;
+    border-bottom: 2px solid royalblue;
+}
+header > .login{
+    font-size: 12px;
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid black; */
+}
+header > .login > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header > .login > a > .ball{
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+}
+/* header > .login  */

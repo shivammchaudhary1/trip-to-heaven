@@ -1,10 +1,12 @@
 import "./App.css";
-import { HomePage } from "./Pages/HomePage";
+import { AllRoutes } from "./Pages/AllRoutes";
 
 function App() {
-  <>
-    <HomePage />
-  </>
+  return (
+      <>
+        <AllRoutes />
+      </>
+    )
 }
 
 export default App;
