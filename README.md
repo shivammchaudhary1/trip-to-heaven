@@ -35,3 +35,11 @@
 - fw21_1148-day_2
 - fw21_1148-day_3
 - fw21_1148-day_4
+
+# Day-1
+
+- Create task issues and update on github
+
+## NOte
+
+- Make sure you craete your branch first
