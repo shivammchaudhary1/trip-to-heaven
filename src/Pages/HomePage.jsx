@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import { Navbar } from '../Components/Navbar'
 import "../styles/homePage.css"
 import { Offers } from '../Components/Offers';
+import { HomeSliders } from '../Components/HomeSliders';
+import $ from 'jquery';
+import { Footer } from '../Components/Footer';
 
 export const HomePage = () => {
 
@@ -16,6 +19,11 @@ export const HomePage = () => {
     from.value = temp2
     to.value= temp1
   }
+
+  $(document).on('click','.iconCard',function(){
+    $('.secondHeader > .iconCard').removeClass('active')
+    $(this).addClass("active")
+  })
 
   return (
     <>
@@ -162,6 +170,8 @@ export const HomePage = () => {
             </div>
         </div>
         <Offers />
+        <HomeSliders />
+        <Footer />
     </>
   )
 }

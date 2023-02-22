@@ -4,15 +4,16 @@ import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
-import { Navbar } from "./Components/Navbar";
+import { Provider } from "react-redux";
+import { store } from "./Redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(root)
-root.render(
-  
-  <BrowserRouter>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
-  </BrowserRouter>
+root.render(  
+  <Provider store={store}>
+    <BrowserRouter>
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
+    </BrowserRouter>
+  </Provider>
 );

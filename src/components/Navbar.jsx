@@ -3,8 +3,14 @@ import React from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import "../styles/navbar.css"
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 export const Navbar = () => {
+  
+  $(document).on('click','.iconCard',function(){
+    $('.icons >.iconCard').removeClass('active')
+    $(this).addClass("active")
+  })
     
   return (
     <header>

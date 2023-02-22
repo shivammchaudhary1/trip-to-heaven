@@ -1,0 +1,72 @@
+.mainHomeItems{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #f2f2f2;
+    padding: 0 0 50px 0;;
+}
+.mainHomeItems > .homeItems{
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;;
+}
+.mainHomeItems > .homeItems > h1{
+    font-size: 40px;
+    padding: 0px 0 20px 0;
+    font-weight: 700;
+}
+
+.mainHomeItems > .homeItems > .Handpicked{
+    position: relative;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5,1fr);
+    /* border: 1px solid #000; */
+}
+
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard{
+    height: 250px;
+    position: relative;
+    /* text-align: center; */
+    /* border: 1px solid #000; */
+}
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard img{
+    position: relative;
+    width: calc(100% + 800px);
+    height: 100%;
+    /* border: 7px solid red; */
+    object-fit: cover;
+}
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    /* z-index: 120; */
+    height: 100%;
+    width: 100%;
+}
+
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard h2,
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard button{
+    z-index: 12;
+    position: absolute;
+    bottom: 20px;;
+    text-align: center;
+    color: white;
+}
+.mainHomeItems > .homeItems > .Handpicked > .HandpickedCard button{
+    bottom: 80px;
+    left: 20px;;
+    background: white;
+    padding: 0px 8px;
+    border-radius: 10px;
+    color: black;
+}

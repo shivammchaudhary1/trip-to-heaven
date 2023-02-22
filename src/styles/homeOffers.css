@@ -2,20 +2,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 80px 0;
+    gap: 70px;
     min-height: 80vh;
-    background: white;
+    background: #f2f2f2;
 }
 
 .homeOffers > .offerCard{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     border-radius: 10px;
+    background: white;
 }
 
 .homeOffers > .offerCard > .offerHead{
     display: flex;
     gap: 20px;
+    justify-content: space-around;
     padding: 10px 10px;
+}
+.homeOffers > .offerCard  > .offerBtnBx{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* border: 1px solid #000; */
+}
+.homeOffers > .offerCard  > .offerBtnBx button{
+    border: 1px solid royalblue;
+    padding: 5px 40px;
 }
 .homeOffers > .offerCard > .offerHead > h1{
     font-size: 35px;
@@ -54,7 +71,7 @@
     padding: 10px;
     border-radius: 5px;
     gap: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
     /* border: 2px solid lime; */
 }
 .homeOffers > .offerCard > .MaincardOfferBx > .cards img{
@@ -69,4 +86,65 @@
     bottom: 5px;
     padding: 3px 10px;
     color: royalblue;
+}
+/*  */
+
+
+.homeOffers > .offerDonwloadApp{
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px 30px;
+    background-color: white;
+    /* border: 1px solid black; */
+}
+.homeOffers > .offerDonwloadApp > .donwloadhead > h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+.homeOffers > .offerDonwloadApp > .donwloadhead > p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.homeOffers > .offerDonwloadApp > .donwloadBox{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.homeOffers > .offerDonwloadApp > .donwloadBox > .downloadInputbx{
+    display: flex;
+    width: 65%;
+    padding: 40px 50px;
+    /* gap: 20px; */
+    /* flex-direction: column; */
+    /* border: 1px solid black; */
+}
+
+.homeOffers > .offerDonwloadApp > .donwloadBox > .downloadInputbx input{
+    padding: 10px 20px;
+    border: 1px solid gray;
+    width: 50%;
+    outline: none;
+}
+.homeOffers > .offerDonwloadApp > .donwloadBox > .downloadInputbx button{
+    border: 1px solid royalblue;
+    padding: 10px 20px;
+}
+
+.homeOffers > .offerDonwloadApp > .donwloadBox > .donwloadButtons{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.homeOffers > .offerDonwloadApp > .donwloadBox > .donwloadButtons button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+}
+.homeOffers > .offerDonwloadApp > .donwloadBox > .downloadQr img{
+    width: 120px;
 }
