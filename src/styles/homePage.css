@@ -31,7 +31,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     /* border: 1px solid black; */
 }
 .homeTop > .homeTopCard > .secondHeader > .iconCard.active{
@@ -169,6 +169,7 @@
 }
 .homeTop > .homeTopCard > .Homeoptions > .optionsInputBx input{
     width: 20px;
+    /* outline: none; */
 }
 /*  */
 

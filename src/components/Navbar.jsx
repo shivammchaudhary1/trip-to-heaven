@@ -1,10 +1,17 @@
+// import '../node_modules/font-awesome/css/font-awesome.min.css';
 import React from 'react'
+import 'font-awesome/css/font-awesome.min.css';
 import "../styles/navbar.css"
 import { Link } from 'react-router-dom';
-// import '../node_modules/font-awesome/css/font-awesome.min.css';
+import $ from 'jquery';
 
 export const Navbar = () => {
-    // console.log("working")
+  
+  $(document).on('click','.iconCard',function(){
+    $('.icons >.iconCard').removeClass('active')
+    $(this).addClass("active")
+  })
+    
   return (
     <header>
         <div className="logo">
