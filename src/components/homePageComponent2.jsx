@@ -44,7 +44,7 @@ export const HomePageComponent2 = () => {
                 </select>
             </div>
         </div>
-        {/*  */}
+        
     </>
   )
 }
