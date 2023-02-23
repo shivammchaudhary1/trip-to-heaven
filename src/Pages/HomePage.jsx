@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom'
 import { Navbar } from '../Components/Navbar'
@@ -7,6 +7,8 @@ import { Offers } from '../Components/Offers';
 import { HomeSliders } from '../Components/HomeSliders';
 import $ from 'jquery';
 import { Footer } from '../Components/Footer';
+import axios from 'axios';
+import { cookieStorageManager } from '@chakra-ui/react';
 
 export const HomePage = () => {
 
@@ -24,6 +26,10 @@ export const HomePage = () => {
     $('.secondHeader > .iconCard').removeClass('active')
     $(this).addClass("active")
   })
+  
+  useEffect(() => {
+    getData() 
+  },[])
 
   return (
     <>
