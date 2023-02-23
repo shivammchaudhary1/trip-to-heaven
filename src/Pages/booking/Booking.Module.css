@@ -1,0 +1,16 @@
+.booking{
+    width: 100%;
+    height: 900px;
+  background-color: teal;
+}
+
+.booking>h1{
+   
+font-size: 2rem;
+font-weight: bold;
+padding-top: 30px;
+align-items: center;
+margin-left: 180px;
+   
+}
+
