@@ -25,7 +25,7 @@ export const Navbar = () => {
           <i className="fa fa-plane"></i>
           <h1>Flight</h1>
         </Link>
-        <Link to="hotel" className="iconCard">
+        <Link to="/hotel" className="iconCard">
           <i className="fa fa-hotel"></i>
           <h1>Hotel</h1>
         </Link>
