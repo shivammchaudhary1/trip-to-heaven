@@ -1,0 +1,17 @@
+.HotelLayoutParent {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+}
+
+.HotelLayoutLeft {
+  border: 1px solid black;
+  width: 25%;
+  height: auto;
+  padding-left: 5%;
+}
+.HotelLayoutRight {
+  border: 1px solid red;
+  width: 70%;
+}
