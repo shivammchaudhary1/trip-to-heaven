@@ -15,10 +15,7 @@ export const Navbar = () => {
   return (
     <header>
       <div className="logo">
-        <img
-          src="https://i0.wp.com/nextpax.com/wp-content/uploads/2022/01/makemytrip-1.png?fit=1080%2C500&ssl=1"
-          alt="not visible"
-        />
+        <img src="https://i.ibb.co/FqKTWS4/tth3.png" alt="not visible" />
       </div>
       <div className="icons">
         <Link to="/flight" className="iconCard active">
