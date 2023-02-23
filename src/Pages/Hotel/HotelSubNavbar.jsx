@@ -20,7 +20,7 @@ const HotelSubNavbar = () => {
     axios
       .get(`http://localhost:8000/hotel`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setDefaultData(res.data);
       })
       .catch((err) => {
@@ -165,7 +165,7 @@ const HotelSubNavbar = () => {
           </div>
         </div>
       </div>
-      <HotelLayout />
+      <HotelLayout DefaultData={DefaultData} />
     </div>
   );
 };
