@@ -9,17 +9,18 @@ import $ from 'jquery';
 import { Footer } from '../Components/Footer';
 import axios from 'axios';
 import { cookieStorageManager } from '@chakra-ui/react';
+import { HomePageComponent } from '../Components/homePageComponent';
+import { HomePageComponent2 } from '../Components/homePageComponent2';
 
 export const HomePage = () => {
 
-  const swapValuehandler = () => {
-    let from = document.getElementById("from");
-    let to = document.getElementById("fromTo");
-    let temp1 = from.value;
-    let temp2 = to.value;
-    // console.log(from,to)
-    from.value = temp2
-    to.value= temp1
+  const [whatToShow, setWhatToshow] = useState("flight")
+
+  const  handleFlight = () => {
+    setWhatToshow("flight")
+  }
+  const  handleHotel = () => {
+    setWhatToshow("hotel")
   }
 
   $(document).on('click','.iconCard',function(){
@@ -33,11 +34,11 @@ export const HomePage = () => {
         <div className="homeTop">
           <div className="homeTopCard">
             <div className="secondHeader">
-              <Link to="" className="iconCard active">
+              <Link to="" className="iconCard active" onClick={handleFlight}>
                 <i className="fa fa-plane"></i>
                 <h1>Flight</h1>
               </Link>
-              <Link to="" className="iconCard">
+              <Link to="" className="iconCard" onClick={handleHotel}>
                 <i className="fa fa-hotel"></i>
                 <h1>Hotel</h1>
               </Link>
@@ -72,75 +73,8 @@ export const HomePage = () => {
               </Link>
             </div>
             {/*  */}
-            <div className="homeInputBx">
-              <div>
-                <div className="homeInputs">
-                  <input name="type" type="radio" id='inputs' />
-                  <label for='inputs'>ONE WAY</label>
-                </div>
-                <div className="homeInputs">
-                  <input name="type" type="radio" id='inputs2' />
-                  <label for='inputs2'>ROUND TRIP</label>
-                </div>
-                <div className="homeInputs">
-                  <input name="type" type="radio" id='inputs3' />
-                  <label for='inputs3'>MULTI CITY</label>
-                </div>
-              </div>
-              <p>Book International and Domestic Flights</p>
-            </div>
-            {/*  */}
-            <div className="homeMainSearchInput">
-              <div className="MainSearchinputBx">
-                <span>FROM</span>
-                <input id='from' type="text" value="Delhi" />
-                <button onClick={swapValuehandler}><i className="fa fa-exchange"></i></button>
-              </div>
-              <div className="MainSearchinputBx">
-                <span>TO</span>
-                <input id='fromTo' type="text" value="Bangaluru" />
-              </div>
-              <div className="MainSearchinputBx">
-                <span>DEPARTURE</span>
-                <input type="date" />
-              </div>
-              <div className="MainSearchinputBx">
-                <span>RETURN</span>
-                <input type="date" />
-              </div>
-              <div className="MainSearchinputBx">
-                <span>TRAVELLERS & CLASS</span>
-                <input type="number" value={"1"} />
-              </div>
-            </div>
-            {/*  */}
-            <div className="Homeoptions">
-              <h3>Select A <br /> Fare Type: </h3>
-              <div className="optionsInputBx">
-                <input type="radio" name='fares' />
-                <p>Regular Fares</p>
-              </div>
-              <div className="optionsInputBx">
-                <input type="radio" name='fares' />
-                <p>Armed Forces Fares</p>
-              </div>
-              <div className="optionsInputBx">
-                <input type="radio" name='fares' />
-                <p>Student Fares</p>
-              </div>
-              <div className="optionsInputBx">
-                <input type="radio" name='fares' />
-                <p>Seniour Citizen Fares</p>
-              </div>
-              <div className="optionsInputBx">
-                <input type="radio" name='fares' />
-                <p>Doctor & Nurse Fares</p>
-              </div>
-              <div className="optionsInputBx">
-                <input disabled type="radio" name='fares' />
-                <p>Double Seat fares</p>
-              </div>
-            </div>
+              {whatToShow == "flight" ? <HomePageComponent /> : <HomePageComponent2 />}
+              
             {/*  */}
             <div className="homeSearchButtonBx">
               <button>Search</button>
