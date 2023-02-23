@@ -1,0 +1,48 @@
+.body{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://promos.makemytrip.com/images/cmn-flight-tb-mb-210223.webp");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;}
+.Box{
+margin-top: 20px;
+color: aliceblue;
+font-size: larger;
+background-color: #7e57c1;
+padding: 10px;
+border-radius: 20px;
+opacity: 0.9;
+}
+#head{
+    font-size:xx-large;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    background-color: #7e57c1;
+    border-radius: 10px;
+}
+#label{
+    font-size:18px;
+    margin-left: 60px;
+    color: aliceblue;
+}
+#input{
+    display: grid;
+    margin: auto;
+    font-size: large;
+    width: 80%;
+    border:1px solid aliceblue;
+}
+#btn{
+    background-color: rgb(7, 8, 9);
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    font-size:18px;
+
+}
+#btn:hover{
+    background-color: teal;
+    color: black;
+}
