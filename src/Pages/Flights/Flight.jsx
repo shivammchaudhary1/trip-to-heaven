@@ -1,23 +1,45 @@
-import { Image } from "@chakra-ui/react";
 import {Link} from "react-router-dom"
-import { Navbar } from "../Components/Navbar";
+import { Navbar } from "../../Components/Navbar";
+import {Footer} from "../../Components/Footer"
+import { useState } from "react";
+import 'font-awesome/css/font-awesome.min.css';
+import "../../styles/homePage.css"
+import { Box, Image } from "@chakra-ui/react";
+import FlightList from "./FlightList";
+
+const initialState = {
+  from:"",
+  to:"",
+  passenger:1,
+  departureDate:"",
+  returnDate:""
+}
+
+
 
 export default function Flights(){
+  const [PassengerData, setPassengerData]=useState(initialState)
+
+
+
+  const handleChange=(e)=>{
+    setPassengerData({...PassengerData, [e.target.name]:e.target.value})
+  }
+
+
+  const handleClick=()=>{
+    console.log(PassengerData)
+    setPassengerData(initialState)
+  }
 
     const swapValuehandler = () => {
-        let from = document.getElementById("from");
-        let to = document.getElementById("fromTo");
-        let temp1 = from.value;
-        let temp2 = to.value;
-        // console.log(from,to)
-        from.value = temp2
-        to.value= temp1
+       setPassengerData({...PassengerData, from: PassengerData.to, to: PassengerData.from})
       }
 
 
-    return <div>
+    return <div style={{backgroundColor:"rgb(242,242,242)"}}>
         <Navbar/>
-         <div className="homeTop">
+         <div className="homeTop" style={{marginBottom:"100px" }} >
           <div className="homeTopCard">
             <div className="secondHeader">
               <Link to="" className="iconCard active">
@@ -80,12 +102,35 @@ export default function Flights(){
             <div className="homeMainSearchInput">
               <div className="MainSearchinputBx">
                 <span>FROM</span>
-                <input id='from' type="text" value="Delhi" />
+
+                {/* from search input */}
+                <select name="from" id="from" style={{width:"200px"}} value={PassengerData.from} onChange={handleChange}>
+                  <option value="From">From</option>
+                  <option value="DELHI">DELHI</option>
+                  <option value="MUMBAI">MUMBAI</option>
+                  <option value="BANGLURU">BANGLURU</option>
+                  <option value="PUNE">PUNE</option>
+                </select>
+
+
+
                 <button onClick={swapValuehandler}><i className="fa fa-exchange"></i></button>
               </div>
               <div className="MainSearchinputBx">
                 <span>TO</span>
-                <input id='fromTo' type="text" value="Bangaluru" />
+
+                {/*to search input tag */}
+
+                <select name="to" id="fromto" style={{width:"200px"}} value={PassengerData.to} onChange={handleChange}>
+                  <option value="To">To</option>
+                  <option value="DELHI">DELHI</option>
+                  <option value="MUMBAI">MUMBAI</option>
+                  <option value="BANGLURU">BANGLURU</option>
+                  <option value="PUNE">PUNE</option>
+                </select>
+
+
+
               </div>
               <div className="MainSearchinputBx">
                 <span>DEPARTURE</span>
@@ -97,7 +142,12 @@ export default function Flights(){
               </div>
               <div className="MainSearchinputBx">
                 <span>TRAVELLERS & CLASS</span>
-                <input type="number" value={"1"} />
+
+                <input type="number" value={PassengerData.passenger} 
+                onChange={handleChange}
+                name="passenger"
+                />
+
               </div>
             </div>
             {/*  */}
@@ -130,7 +180,7 @@ export default function Flights(){
             </div>
             {/*  */}
             <div className="homeSearchButtonBx">
-              <button>Search</button>
+              <button onClick={handleClick}>Search</button>
             </div>
           </div>
 
@@ -158,6 +208,15 @@ export default function Flights(){
               </div>
             </div>
         </div>
-        <Image src="https://mmt.servedbyadbutler.com/getad.img/;libID=3737167" width={"80%"} margin="auto" marginTop={"80px"}/>
+        <Box display={"flex"} padding="0px 40px" gap={"30px"} width="100%" marginBottom={"100px"}>
+          <Box width={"25%"} boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" height={"auto"} padding="20px">
+              <h1>Sorting</h1>
+          </Box>
+          <Box width={"80%"} boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" height={"auto"} padding="20px">
+              <Image src="https://mmt.servedbyadbutler.com/getad.img/;libID=3737167" width={"90%"} margin="auto"/>
+              <FlightList/>
+          </Box>
+        </Box>
+       <Footer/>
     </div>
 }

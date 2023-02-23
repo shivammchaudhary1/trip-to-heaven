@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Flights from "./Flight";
+import Flights from "./Flights/Flight";
 import { HomePage } from "./HomePage";
 import Hotel from "./Hotel/Hotel";
 
