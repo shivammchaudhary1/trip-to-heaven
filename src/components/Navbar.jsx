@@ -21,7 +21,7 @@ export const Navbar = () => {
         />
       </div>
       <div className="icons">
-        <Link to="/hotel" className="iconCard active">
+        <Link to="/flight" className="iconCard active">
           <i className="fa fa-plane"></i>
           <h1>Flight</h1>
         </Link>
