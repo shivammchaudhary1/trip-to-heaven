@@ -2,226 +2,226 @@
   "cart": [],
   "flight": [
     {
-        "airline": "Vistara",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "6999",
-        "totalTime": "02h 55m",
-        "id": 1
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 1
     },
     {
-        "airline": "GoAir",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "7999",
-        "totalTime": "02h 55m",
-        "id": 2
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 2
     },
     {
-        "airline": "IndiGo",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "02:20",
-        "arrival": "04:15",
-        "price": "5999",
-        "totalTime": "02h 55m",
-        "id": 3
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 3
     },
     {
-        "airline": "SpiceJet",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "4999",
-        "totalTime": "02h 55m",
-        "id": 4
+      "airline": "SpiceJet",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "4999",
+      "totalTime": "02h 55m",
+      "id": 4
     },
     {
-        "airline": "AirIndia",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "8999",
-        "totalTime": "02h 55m",
-        "id": 5
+      "airline": "AirIndia",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "8999",
+      "totalTime": "02h 55m",
+      "id": 5
     },
     {
-        "airline": "Vistara",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "BANGLURU",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "6999",
-        "totalTime": "02h 55m",
-        "id": 6
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "BANGLURU",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 6
     },
     {
-        "airline": "GoAir",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "BANGLURU",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "7999",
-        "totalTime": "02h 55m",
-        "id": 7
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "BANGLURU",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 7
     },
     {
-        "airline": "IndiGo",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "BANGLURU",
-        "departure": "02:20",
-        "arrival": "04:15",
-        "price": "5999",
-        "totalTime": "02h 55m",
-        "id": 8
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "BANGLURU",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 8
     },
     {
-        "airline": "SpiceJet",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "BANGLURU",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "4999",
-        "totalTime": "02h 55m",
-        "id": 9
+      "airline": "SpiceJet",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "BANGLURU",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "4999",
+      "totalTime": "02h 55m",
+      "id": 9
     },
     {
-        "airline": "AirIndia",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "BANGLURU",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "8999",
-        "totalTime": "02h 55m",
-        "id": 10
+      "airline": "AirIndia",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "BANGLURU",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "8999",
+      "totalTime": "02h 55m",
+      "id": 10
     },
     {
-        "airline": "Vistara",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "PUNE",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "6999",
-        "totalTime": "02h 55m",
-        "id": 11
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "PUNE",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 11
     },
     {
-        "airline": "GoAir",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "PUNE",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "7999",
-        "totalTime": "02h 55m",
-        "id": 12
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "PUNE",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 12
     },
     {
-        "airline": "IndiGo",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "PUNE",
-        "departure": "02:20",
-        "arrival": "04:15",
-        "price": "5999",
-        "totalTime": "02h 55m",
-        "id": 13
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "PUNE",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 13
     },
     {
-        "airline": "SpiceJet",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "PUNE",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "4999",
-        "totalTime": "02h 55m",
-        "id": 14
+      "airline": "SpiceJet",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "PUNE",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "4999",
+      "totalTime": "02h 55m",
+      "id": 14
     },
     {
-        "airline": "AirIndia",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "PUNE",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "8999",
-        "totalTime": "02h 55m",
-        "id": 15
+      "airline": "AirIndia",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "PUNE",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "8999",
+      "totalTime": "02h 55m",
+      "id": 15
     },
     {
-        "airline": "Vistara",
-        "number": "6E 2054",
-        "from": "MUMBAI",
-        "to": "BANGLURU",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "6999",
-        "totalTime": "02h 55m",
-        "id": 16
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "MUMBAI",
+      "to": "BANGLURU",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 16
     },
     {
-        "airline": "GoAir",
-        "number": "6E 2054",
-        "from": "MUMBAI",
-        "to": "BANGLURU",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "7999",
-        "totalTime": "02h 55m",
-        "id": 17
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "MUMBAI",
+      "to": "BANGLURU",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 17
     },
     {
-        "airline": "IndiGo",
-        "number": "6E 2054",
-        "from": "MUMBAI",
-        "to": "BANGLURU",
-        "departure": "02:20",
-        "arrival": "04:15",
-        "price": "5999",
-        "totalTime": "02h 55m",
-        "id": 18
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "MUMBAI",
+      "to": "BANGLURU",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 18
     },
     {
-        "airline": "SpiceJet",
-        "number": "6E 2054",
-        "from": "MUMBAI",
-        "to": "BANGLURU",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": "4999",
-        "totalTime": "02h 55m",
-        "id": 19
+      "airline": "SpiceJet",
+      "number": "6E 2054",
+      "from": "MUMBAI",
+      "to": "BANGLURU",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "4999",
+      "totalTime": "02h 55m",
+      "id": 19
     },
     {
-        "airline": "AirIndia",
-        "number": "6E 2054",
-        "from": "MUMBAI",
-        "to": "BANGLURU",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": "8999",
-        "totalTime": "02h 55m",
-        "id": 20
+      "airline": "AirIndia",
+      "number": "6E 2054",
+      "from": "MUMBAI",
+      "to": "BANGLURU",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "8999",
+      "totalTime": "02h 55m",
+      "id": 20
     }
-],
+  ],
   "hotel": [
     {
       "id": "Beach-Destinations",
@@ -429,15 +429,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_honeymoon33_p_540_417.jpg",
       "about": "Your honeymoon has to be the most memorable vacation of your life! Choose from a variety of pocket-friendly destinations from solitary beaches, picturesque hills, snow-clad mountains, relaxing yet exotic resorts to adventurous excursions.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -445,15 +490,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_weekend_p_360_278.jpg",
       "about": "Recharge after a hectic week’s work with an idyllic trip over the weekend. Experience peace at a resort nestled in nature’s lap or feel your heart race with adventure sports. Go ahead, choose the perfect weekend hotspot from this list.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -461,15 +551,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_romantic11_p_540_417.jpg",
       "about": "Scroll through our list of romantic tourism destinations and plan a passionate getaway with your special someone to surreal valleys, snow-clad mountains, sun-soaked beaches or adventurous wildlife trails. Escape to a quieter location and rejuvenate in a romantic atmosphere.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -477,15 +612,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_pilgrimage_p_360_278.jpg",
       "about": "Take a break from your busy routine and seek divine blessings at revered pilgrimages for some much needed peace. Whisper a wish or murmur a prayer of gratitude, and let your next trip be a truly memorable one!",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -493,15 +673,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Foodie_Dreams_idea_l_345_517.jpg",
       "about": "Pamper your taste buds with flavours of different regions. Go on adventures to not just taste but also experience a truly authentic culinary journey. Explore the tiniest of lanes & largest of markets on your next food trail.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -509,15 +734,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_adventure2_p_540_417.jpg",
       "about": "Explore adventurous destinations with exciting deals and challenging activities. Spike up your adrenaline and boost your confidence with thrilling treks, camping, water sports, scuba diving, rafting, bungee jumping, sky diving and many more off-beat activities.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -525,15 +795,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_trek_p_360_278.jpg",
       "about": "Replace the boredom of your daily routine with an epic adventure. Be it soaring in the sky or diving in the sea, explore the best ideas for a thrilling trip. It's time to feel the adrenaline racing through your veins!",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -541,15 +856,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Places_to_Relax_Idea_l_583_874.jpg",
       "about": "Escape the daily routine and humdrum of city life with a relaxing trip to a serene destination. Rejuvenate your body and mind with therapeutic spa treatments, soothing beach walks, flavourful drinks, scrumptious meals and morning meditations.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     },
     {
@@ -557,15 +917,60 @@
       "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_international_p_360_278.jpg",
       "about": "Want to learn more about new cultures and new countries? Then this is for the globetrotter in you! Make your next trip truly memorable with these specially curated ideas and feast your senses on jaw-dropping international landscapes and mouthwatering food.",
       "places": [
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" },
-        { "id": "", "image": "", "about": "", "subtitle": "" }
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        },
+        {
+          "id": "",
+          "image": "",
+          "about": "",
+          "subtitle": ""
+        }
       ]
     }
   ],
