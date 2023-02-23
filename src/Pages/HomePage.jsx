@@ -27,10 +27,6 @@ export const HomePage = () => {
     $(this).addClass("active")
   })
   
-  useEffect(() => {
-    getData() 
-  },[])
-
   return (
     <>
         <Navbar />
