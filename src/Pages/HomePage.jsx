@@ -73,15 +73,15 @@ export const HomePage = () => {
             <div className="homeInputBx">
               <div>
                 <div className="homeInputs">
-                  <input name="type" type="text" type="radio" id='inputs' />
+                  <input name="type" type="radio" id='inputs' />
                   <label for='inputs'>ONE WAY</label>
                 </div>
                 <div className="homeInputs">
-                  <input name="type" type="text" type="radio" id='inputs2' />
+                  <input name="type" type="radio" id='inputs2' />
                   <label for='inputs2'>ROUND TRIP</label>
                 </div>
                 <div className="homeInputs">
-                  <input name="type" type="text" type="radio" id='inputs3' />
+                  <input name="type" type="radio" id='inputs3' />
                   <label for='inputs3'>MULTI CITY</label>
                 </div>
               </div>
