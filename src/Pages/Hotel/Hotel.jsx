@@ -1,14 +1,15 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+// import axios from "axios";
+import React from "react";
 import { Navbar } from "../../components/Navbar";
 
 import HotelSubNavbar from "./HotelSubNavbar";
 
 const Hotel = () => {
+  
   return (
     <div>
       {/* use Navber Here Start */}
-      <Navbar />
+      {/* <Navbar /> */}
       {/* use Navber Here End */}
       {/* <HotelSideBar /> */}
       <HotelSubNavbar />

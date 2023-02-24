@@ -14,7 +14,7 @@ export default function FlightList() {
      useEffect(()=>{
         getData().then(res=>{
             setData(res)
-            console.log(data)
+            // console.log(data)
         })
      },[data.length])
 

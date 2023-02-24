@@ -38,7 +38,7 @@ export default function Flights() {
 
   return (
     <div style={{ backgroundColor: "rgb(242,242,242)" }}>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="homeTop" style={{ marginBottom: "100px" }}>
         <div className="homeTopCard">
           <div className="secondHeader">
