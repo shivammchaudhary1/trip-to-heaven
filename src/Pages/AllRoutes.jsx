@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { Admin } from "./Admin/AdminFlight";
 import { AdminHotel } from "./Admin/AdminHotel";
 import Flights from "./Flight";
+
+import Flights from "./Flights/Flight";
+
 import { HomePage } from "./HomePage";
 import Hotel from "./Hotel/Hotel";
 
