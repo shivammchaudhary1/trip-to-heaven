@@ -407,7 +407,7 @@
       "description": "",
       "additional": "",
       "taxes": "+ ₹ 373 taxes & fees",
-      "price": "₹ 2,300",
+      "price": 2300,
       "additional2": "",
       "additional1": ""
     },
@@ -425,7 +425,7 @@
       "description": "Couple Friendly",
       "additional": "",
       "taxes": "+ ₹ 495 taxes & fees",
-      "price": "₹ 3,499",
+      "price": 3499,
       "additional2": "",
       "additional1": ""
     },
