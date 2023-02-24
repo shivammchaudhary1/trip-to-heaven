@@ -224,756 +224,756 @@
   ],
   "hotel": [
     {
-      "id": "Beach-Destinations",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_beach11_p_540_417.jpg",
-      "about": "Imagine strolling on a pristine beach and relishing incredible seafood without a worry in the world! Does that sound like your dream vacation? Plan a holiday to a beach destination and enjoy adrenalin pumping sports activities with your loved ones.",
-      "heading": "Beaches in India to Experience Leisurely Beach Life",
-      "subheading": "Must Visit Beaches in the World for Your Next Trip to create magical moments by the shore. Watch the sunset on the beach and sway to the tunes of happening parties.",
-      "places": [
-        {
-          "id": "Goa",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/goa/mmt/destination/m_destination-goa-landscape_l_400_640.jpg",
-          "subtitle": "Popular for Beaches & Nightlife",
-          "about": "Get ready for an amazing beach vacation at Goa. You can expect very hot weather with very high humidity levels. You can also enjoy the various adventure activities in Goa."
-        },
-        {
-          "id": "Maldives",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/maldives/mmt/destination/m_Maldives_l_400_640.jpg",
-          "subtitle": "A Stunning Tropical Getaway",
-          "about": "A delightful beach vacay awaits you at Maldives. You will love the beach activities and island hopping. Maldives is also an ideal destination for a relaxing break."
-        },
-        {
-          "id": "Lakshadweep",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/lakshadweep/mmt/destination/m_Lakshadweep_l_580_870.jpg",
-          "subtitle": "Tropical Band of Islands",
-          "about": "Lakshadweep is a much loved beach destination. You can expect summer heat and the temperature rising upto 32°C. Lakshadweep is also very popular among relaxation-seekers."
-        },
-        {
-          "id": "Pondicherry",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/pondicherry/mmt/destination/m_destination-pondicherry-landscape_l_400_640.jpg",
-          "subtitle": "Bewitching French City",
-          "about": "If you are a beach lover, you must head to Puducherry. You can expect the city is at its hottest during this time. Puducherry is a hot favourite among foodies too."
-        },
-        {
-          "id": "Bali",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/bali/mmt/destination/m_bali_l_393_629.jpg",
-          "subtitle": "Tropical Beach Paradise",
-          "about": "If you love beaches, then Bali is the place to go! You can expect frequent heavy rainfalls with high humidity levels. The local cuisines at Bali are worth trying out too."
-        },
-        {
-          "id": "Alibaug",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/alibaugh/mmt/destination/m_destination-alibagh-landscape_l_400_640.jpg",
-          "subtitle": "Scenic Coastal Town In Maharashtra",
-          "about": "Alibagh is extremely popular for its beautiful beaches. You can expect hot And Humid Weather. The Temperature Tends To Go Very High. You can also unwind amidst the tranquil surroundings of Alibagh."
-        },
-        {
-          "id": "Kovalam",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/kovalam/mmt/destination/m_destination-kovalam-landscape_l_400_640.jpg",
-          "subtitle": "Scenic Beach Town in Kerala",
-          "about": "A delightful beach vacay awaits you at Kovalam. You will love water sports and beach activities. Kovalam is also very popular among relaxation-seekers."
-        },
-        {
-          "id": "Gokarna",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/Ganapatipule/mmt/destination/m_destination_ganpatipule_landscape_l_400_640.jpg",
-          "subtitle": "Scenic Temple Town in Karnataka",
-          "about": "Take your beach love to Gokarna. You can expect extremely hot and humid weather. Also, don’t miss the pilgrimage sites at Gokarna."
-        },
-        {
-          "id": "Varkala",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/varkala/mmt/destination/m_destination_Varkala_landscape_l_400_640.jpg",
-          "subtitle": "A Tranquil Coastal Town in Kerala",
-          "about": "Come and fall in love with the beach vibe of Varkala. You will love indulging in water sports, exploring the tourist attractions and attending the local festivals. Varkala is also very popular among relaxation-seekers."
-        },
-        {
-          "id": "Krabi",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/krabi/mmt/destination/m_krabi-landscape_l_400_640.jpg",
-          "subtitle": "Tropical Paradise in Thailand",
-          "about": "Krabi is home to serene beaches. You will love the beaches and water sports. Krabi is also an ideal destination for a relaxing break."
-        },
-        {
-          "id": "Havelock Island",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/havelock/mmt/destination/m_destination_havelock_landscape_l_400_640.jpg",
-          "subtitle": "Picturesque Tropical Getaway in the Andamans",
-          "about": "A delightful beach vacay awaits you at Havelock. You can expect extremely hot days with temperat. Maldives is also an ideal destination for a relaxing break."
-        }
-      ]
+        "id": 1,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_beach11_p_540_417.jpg",
+        "about": "Imagine strolling on a pristine beach and relishing incredible seafood without a worry in the world! Does that sound like your dream vacation? Plan a holiday to a beach destination and enjoy adrenalin pumping sports activities with your loved ones.",
+        "heading": "Beaches in India to Experience Leisurely Beach Life",
+        "subheading": "Must Visit Beaches in the World for Your Next Trip to create magical moments by the shore. Watch the sunset on the beach and sway to the tunes of happening parties.",
+        "places": [
+            {
+                "id": "Goa",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/goa/mmt/destination/m_destination-goa-landscape_l_400_640.jpg",
+                "subtitle": "Popular for Beaches & Nightlife",
+                "about": "Get ready for an amazing beach vacation at Goa. You can expect very hot weather with very high humidity levels. You can also enjoy the various adventure activities in Goa."
+            },
+            {
+                "id": "Maldives",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/maldives/mmt/destination/m_Maldives_l_400_640.jpg",
+                "subtitle": "A Stunning Tropical Getaway",
+                "about": "A delightful beach vacay awaits you at Maldives. You will love the beach activities and island hopping. Maldives is also an ideal destination for a relaxing break."
+            },
+            {
+                "id": "Lakshadweep",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/lakshadweep/mmt/destination/m_Lakshadweep_l_580_870.jpg",
+                "subtitle": "Tropical Band of Islands",
+                "about": "Lakshadweep is a much loved beach destination. You can expect summer heat and the temperature rising upto 32°C. Lakshadweep is also very popular among relaxation-seekers."
+            },
+            {
+                "id": "Pondicherry",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/pondicherry/mmt/destination/m_destination-pondicherry-landscape_l_400_640.jpg",
+                "subtitle": "Bewitching French City",
+                "about": "If you are a beach lover, you must head to Puducherry. You can expect the city is at its hottest during this time. Puducherry is a hot favourite among foodies too."
+            },
+            {
+                "id": "Bali",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/bali/mmt/destination/m_bali_l_393_629.jpg",
+                "subtitle": "Tropical Beach Paradise",
+                "about": "If you love beaches, then Bali is the place to go! You can expect frequent heavy rainfalls with high humidity levels. The local cuisines at Bali are worth trying out too."
+            },
+            {
+                "id": "Alibaug",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/alibaugh/mmt/destination/m_destination-alibagh-landscape_l_400_640.jpg",
+                "subtitle": "Scenic Coastal Town In Maharashtra",
+                "about": "Alibagh is extremely popular for its beautiful beaches. You can expect hot And Humid Weather. The Temperature Tends To Go Very High. You can also unwind amidst the tranquil surroundings of Alibagh."
+            },
+            {
+                "id": "Kovalam",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/kovalam/mmt/destination/m_destination-kovalam-landscape_l_400_640.jpg",
+                "subtitle": "Scenic Beach Town in Kerala",
+                "about": "A delightful beach vacay awaits you at Kovalam. You will love water sports and beach activities. Kovalam is also very popular among relaxation-seekers."
+            },
+            {
+                "id": "Gokarna",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/Ganapatipule/mmt/destination/m_destination_ganpatipule_landscape_l_400_640.jpg",
+                "subtitle": "Scenic Temple Town in Karnataka",
+                "about": "Take your beach love to Gokarna. You can expect extremely hot and humid weather. Also, don’t miss the pilgrimage sites at Gokarna."
+            },
+            {
+                "id": "Varkala",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/varkala/mmt/destination/m_destination_Varkala_landscape_l_400_640.jpg",
+                "subtitle": "A Tranquil Coastal Town in Kerala",
+                "about": "Come and fall in love with the beach vibe of Varkala. You will love indulging in water sports, exploring the tourist attractions and attending the local festivals. Varkala is also very popular among relaxation-seekers."
+            },
+            {
+                "id": "Krabi",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/krabi/mmt/destination/m_krabi-landscape_l_400_640.jpg",
+                "subtitle": "Tropical Paradise in Thailand",
+                "about": "Krabi is home to serene beaches. You will love the beaches and water sports. Krabi is also an ideal destination for a relaxing break."
+            },
+            {
+                "id": "Havelock Island",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/havelock/mmt/destination/m_destination_havelock_landscape_l_400_640.jpg",
+                "subtitle": "Picturesque Tropical Getaway in the Andamans",
+                "about": "A delightful beach vacay awaits you at Havelock. You can expect extremely hot days with temperat. Maldives is also an ideal destination for a relaxing break."
+            }
+        ]
     },
     {
-      "id": "Hills & Mountains",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_hill_stations11_p_540_417.jpg",
-      "about": "Answer the call of the mountains with MakeMyTrip’s specially curated holiday ideas. Treat the nature lover in you to the serene bliss of lofty hills and explore hidden gems on an epic adventure.",
-      "heading": "Hill Stations to Visit for a rejuvenating trip in Nature's Lap",
-      "subheading": "Hill Stations - Breathe in the fresh mountain air, treat your eyes to the spectacular views and lose yourself in the charming ambience to feel refreshed from within.",
-      "places": [
-        {
-          "id": "Kasol",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/kasol/mmt/destination/m_destination-kasol-landscape_l_400_640.jpg",
-          "subtitle": "Mini Israel in Himachal Pradesh",
-          "about": "Enjoy a memorable mountain vacation at Kasol. You will love trekking, camping, festivals and parties. Kasol is also very popular among relaxation-seekers."
-        },
-        {
-          "id": "Lansdowne",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/landsdown/mmt/destination/m_destination-lansdowne-landscape_l_400_640.jpg",
-          "subtitle": "Pretty Cantonment Town in Uttarakhand",
-          "about": "Lansdowne is the perfect getaway for mountain lovers. You can expect intense cold weather with sub zero temperatures. Don’t forget to spend some time relaxing at Lansdowne."
-        },
-        {
-          "id": "Dalhousie",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/dalhousie/mmt/destination/m_destination_dalhousie_landscape_l_362_579.jpg",
-          "subtitle": "A Little Paradise in Himachal Pradesh",
-          "about": "Prepare to be wooed by the mesmerizing mountains of Leh. You will love sightseeing and the surreal vistas of snow-capped mountains. Leh is also known for its unique wildlife."
-        },
-        {
-          "id": "Shimla",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/shimla/mmt/destination/m_landscape_l_400_640.jpg",
-          "subtitle": "Hub of Natural Bounties and Winter Sports",
-          "about": "Let the mighty mountains of Shimla raise your spirits! You will love sightseeing, paragliding, hiking, camping, and trekking. Shimla is also an ideal destination for a relaxing break."
-        },
-        {
-          "id": "Wayanad",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/wayanad/mmt/destination/m_destination-wayanad-landscape_l_400_640.jpg",
-          "subtitle": "Green Paradise in North-East Kerala",
-          "about": "Enjoy a memorable mountain vacation at Wayanad. You can expect hot afternoons and pleasant evenings. You can also enjoy the various adventure activities at Wayanad."
-        },
-        {
-          "id": "Leh",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/leh/mmt/destination/m_leh-landscape_l_400_640.jpg",
-          "subtitle": "White Paradise in Ladakh",
-          "about": "Prepare to be wooed by the mesmerizing mountains of Leh. You will love sightseeing and the surreal vistas of snow-capped mountains. Leh is also known for its unique wildlife."
-        },
-        {
-          "id": "Pahalgam",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/pahalgam/mmt/destination/m_Pahalgam_l_477_714.jpg",
-          "subtitle": "The Base Camp for Amarnath Yatra",
-          "about": "For the best mountain views, head to Pahalgam. You will love soaking in lush green surroundings and exploring the various trekking trails. Pahalgam is also an ideal destination for a relaxing break."
-        },
-        {
-          "id": "Gulmarg",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/gulmarg/mmt/destination/m_destination-gulmarg-landscape_l_400_640.jpg",
-          "subtitle": "Heaven in the White Hills of Kashmir",
-          "about": "If mountains make you feel alive, then head to Gulmarg. You can expect the temperatures drop down to below freezing. Gulmarg is also very popular among relaxation-seekers"
-        },
-        {
-          "id": "Coonoor",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/coonoor/mmt/destination/m_destination-coonoor-landscape_l_400_640.jpg",
-          "subtitle": "A Serene Hill Station in Tamil Nadu",
-          "about": "If crisp air and altitude feel like home, then the mountains of Coonoor are calling! You will love trekking and sightseeing. Coonoor is also an ideal destination for a relaxing break."
-        }
-      ]
+        "id": 2,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_hill_stations11_p_540_417.jpg",
+        "about": "Answer the call of the mountains with MakeMyTrip’s specially curated holiday ideas. Treat the nature lover in you to the serene bliss of lofty hills and explore hidden gems on an epic adventure.",
+        "heading": "Hill Stations to Visit for a rejuvenating trip in Nature's Lap",
+        "subheading": "Hill Stations - Breathe in the fresh mountain air, treat your eyes to the spectacular views and lose yourself in the charming ambience to feel refreshed from within.",
+        "places": [
+            {
+                "id": "Kasol",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/kasol/mmt/destination/m_destination-kasol-landscape_l_400_640.jpg",
+                "subtitle": "Mini Israel in Himachal Pradesh",
+                "about": "Enjoy a memorable mountain vacation at Kasol. You will love trekking, camping, festivals and parties. Kasol is also very popular among relaxation-seekers."
+            },
+            {
+                "id": "Lansdowne",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/landsdown/mmt/destination/m_destination-lansdowne-landscape_l_400_640.jpg",
+                "subtitle": "Pretty Cantonment Town in Uttarakhand",
+                "about": "Lansdowne is the perfect getaway for mountain lovers. You can expect intense cold weather with sub zero temperatures. Don’t forget to spend some time relaxing at Lansdowne."
+            },
+            {
+                "id": "Dalhousie",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/dalhousie/mmt/destination/m_destination_dalhousie_landscape_l_362_579.jpg",
+                "subtitle": "A Little Paradise in Himachal Pradesh",
+                "about": "Prepare to be wooed by the mesmerizing mountains of Leh. You will love sightseeing and the surreal vistas of snow-capped mountains. Leh is also known for its unique wildlife."
+            },
+            {
+                "id": "Shimla",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/shimla/mmt/destination/m_landscape_l_400_640.jpg",
+                "subtitle": "Hub of Natural Bounties and Winter Sports",
+                "about": "Let the mighty mountains of Shimla raise your spirits! You will love sightseeing, paragliding, hiking, camping, and trekking. Shimla is also an ideal destination for a relaxing break."
+            },
+            {
+                "id": "Wayanad",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/wayanad/mmt/destination/m_destination-wayanad-landscape_l_400_640.jpg",
+                "subtitle": "Green Paradise in North-East Kerala",
+                "about": "Enjoy a memorable mountain vacation at Wayanad. You can expect hot afternoons and pleasant evenings. You can also enjoy the various adventure activities at Wayanad."
+            },
+            {
+                "id": "Leh",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/leh/mmt/destination/m_leh-landscape_l_400_640.jpg",
+                "subtitle": "White Paradise in Ladakh",
+                "about": "Prepare to be wooed by the mesmerizing mountains of Leh. You will love sightseeing and the surreal vistas of snow-capped mountains. Leh is also known for its unique wildlife."
+            },
+            {
+                "id": "Pahalgam",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/pahalgam/mmt/destination/m_Pahalgam_l_477_714.jpg",
+                "subtitle": "The Base Camp for Amarnath Yatra",
+                "about": "For the best mountain views, head to Pahalgam. You will love soaking in lush green surroundings and exploring the various trekking trails. Pahalgam is also an ideal destination for a relaxing break."
+            },
+            {
+                "id": "Gulmarg",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/gulmarg/mmt/destination/m_destination-gulmarg-landscape_l_400_640.jpg",
+                "subtitle": "Heaven in the White Hills of Kashmir",
+                "about": "If mountains make you feel alive, then head to Gulmarg. You can expect the temperatures drop down to below freezing. Gulmarg is also very popular among relaxation-seekers"
+            },
+            {
+                "id": "Coonoor",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/coonoor/mmt/destination/m_destination-coonoor-landscape_l_400_640.jpg",
+                "subtitle": "A Serene Hill Station in Tamil Nadu",
+                "about": "If crisp air and altitude feel like home, then the mountains of Coonoor are calling! You will love trekking and sightseeing. Coonoor is also an ideal destination for a relaxing break."
+            }
+        ]
     },
     {
-      "id": "Heritage Destinations",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/gwalior/mmt/destination/m_Destination_Gwalior_l_522_822.jpg",
-      "about": "Explore this list of heritage destinations and plan a holiday to visit historical monuments in UNESCO-identified heritage sites. Marvel at the stories and legacies of majestic dynasties while you walk through their historic lanes.",
-      "heading": "Heritage Sites - Revisit History on a Vacation",
-      "subheading": "Historical Places - Explore historical places & countless ideas for an epic break and make way to explore the prominent monuments, streets, architectures and UNESCO recognized sites",
-      "places": [
-        {
-          "id": "Gwalior",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/gwalior/mmt/destination/m_Destination_Gwalior_l_522_822.jpg",
-          "about": "As the cradle of Indian culture and heritage for many centuries, Gwalior is a timeless treasure of art and music. The cityscape is adorned with historical monuments and a hilltop fort that are souvenirs of the dynasties that ruled here.",
-          "subtitle": "The Land of Palaces"
-        },
-        {
-          "id": "Jodhpur",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/jodhpur/mmt/destination/m_destination-jodhpur-landscape_l_400_640.jpg",
-          "about": "Revel in the rich art and heritage of Jodhpur. You will love desert camping and visiting the forts. Jodhpur also offers many culinary delights.",
-          "subtitle": "A Hub of Royal Heritage"
-        },
-        {
-          "id": "Bhubaneshwar",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/bhubaneshwar/mmt/destination/m_Bhubaneshwar_l_553_830.jpg",
-          "about": "Literally translating to ‘the Lord of the Universe’, Bhubaneswar is an ancient city in Odisha that packs in many centuries of fascinating history. Also known as the Temple City of India, it is an educational and cultural hub as well.",
-          "subtitle": "Odisha’s Capital City"
-        },
-        {
-          "id": "Udaipur",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/udaipur/mmt/destination/m_destination-udaipur-landscape_l_400_640.jpg",
-          "about": "Soak in the ancient tales and heritage of Udaipur. You will love exploring the beautiful palaces, temples, sun-kissed gardens and boat rides across the lakes. The local cuisines at Udaipur are worth trying out too.",
-          "subtitle": "The city of lakes and palaces!"
-        },
-        {
-          "id": "Aurangabad",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/aurangabad/mmt/destination/m_aurangabad_destination_l_553_852.jpg",
-          "about": "With well-preserved remnants of historic sites, Aurangabad is an ancient town about eight hours drive from Mumbai by road. It is known for its historical monuments, culturally rich museums and proximity to the renowned UNESCO World Heritage caves at Ajanta and Ellora.",
-          "subtitle": "Explore Jaw Dropping World Heritage Sites"
-        },
-        {
-          "id": "Thimpu",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/thimpu/mmt/destination/m_thimpu-landscape_l_400_640.jpg",
-          "about": "Thimphu will fascinate you with its rich heritage. You will love the lush valleys, blossoming flowers and lively festivals. Thimphu is also a popular wildlife destination.",
-          "subtitle": "Scenic Mountain Destination in Bhutan"
-        },
-        {
-          "id": "Hanoi",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/hanoi/mmt/destination/m_destination_hanoi_landscape_l_341_546.jpg",
-          "about": "Soak in the ancient tales and heritage of Hanoi. You will love sightseeing, festivals and outdoor activities. The local cuisines at Hanoi are worth trying out too.",
-          "subtitle": "Vietnam’s Culturally-Rich Capital City"
-        },
-        {
-          "id": "Lucknow",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/lucknow/mmt/destination/m_destination_lucknow_landscape_l_400_640.jpg",
-          "about": "Lucknow doles out a rich cultural experience. You will love sightseeing, shopping, and relishing the local dishes. Lucknow also offers many culinary delights",
-          "subtitle": "Culturally Rich City in Uttar Pradesh"
-        },
-        {
-          "id": "Mysore",
-          "image": "https://hblimg.mmtcdn.com/content/hubble/img/mysore/mmt/destination/m_destination-mysore-landscape_l_400_640.jpg",
-          "about": "The ‘City of Palaces’, Mysore revels in its vibrant history, and rich arts and culture. It allures tourists with its grand palaces, majestic temples, and landscaped gardens.",
-          "subtitle": "Scenic Royal City in Karnataka"
-        }
-      ]
+        "id": 3,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/gwalior/mmt/destination/m_Destination_Gwalior_l_522_822.jpg",
+        "about": "Explore this list of heritage destinations and plan a holiday to visit historical monuments in UNESCO-identified heritage sites. Marvel at the stories and legacies of majestic dynasties while you walk through their historic lanes.",
+        "heading": "Heritage Sites - Revisit History on a Vacation",
+        "subheading": "Historical Places - Explore historical places & countless ideas for an epic break and make way to explore the prominent monuments, streets, architectures and UNESCO recognized sites",
+        "places": [
+            {
+                "id": "Gwalior",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/gwalior/mmt/destination/m_Destination_Gwalior_l_522_822.jpg",
+                "about": "As the cradle of Indian culture and heritage for many centuries, Gwalior is a timeless treasure of art and music. The cityscape is adorned with historical monuments and a hilltop fort that are souvenirs of the dynasties that ruled here.",
+                "subtitle": "The Land of Palaces"
+            },
+            {
+                "id": "Jodhpur",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/jodhpur/mmt/destination/m_destination-jodhpur-landscape_l_400_640.jpg",
+                "about": "Revel in the rich art and heritage of Jodhpur. You will love desert camping and visiting the forts. Jodhpur also offers many culinary delights.",
+                "subtitle": "A Hub of Royal Heritage"
+            },
+            {
+                "id": "Bhubaneshwar",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/bhubaneshwar/mmt/destination/m_Bhubaneshwar_l_553_830.jpg",
+                "about": "Literally translating to ‘the Lord of the Universe’, Bhubaneswar is an ancient city in Odisha that packs in many centuries of fascinating history. Also known as the Temple City of India, it is an educational and cultural hub as well.",
+                "subtitle": "Odisha’s Capital City"
+            },
+            {
+                "id": "Udaipur",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/udaipur/mmt/destination/m_destination-udaipur-landscape_l_400_640.jpg",
+                "about": "Soak in the ancient tales and heritage of Udaipur. You will love exploring the beautiful palaces, temples, sun-kissed gardens and boat rides across the lakes. The local cuisines at Udaipur are worth trying out too.",
+                "subtitle": "The city of lakes and palaces!"
+            },
+            {
+                "id": "Aurangabad",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/aurangabad/mmt/destination/m_aurangabad_destination_l_553_852.jpg",
+                "about": "With well-preserved remnants of historic sites, Aurangabad is an ancient town about eight hours drive from Mumbai by road. It is known for its historical monuments, culturally rich museums and proximity to the renowned UNESCO World Heritage caves at Ajanta and Ellora.",
+                "subtitle": "Explore Jaw Dropping World Heritage Sites"
+            },
+            {
+                "id": "Thimpu",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/thimpu/mmt/destination/m_thimpu-landscape_l_400_640.jpg",
+                "about": "Thimphu will fascinate you with its rich heritage. You will love the lush valleys, blossoming flowers and lively festivals. Thimphu is also a popular wildlife destination.",
+                "subtitle": "Scenic Mountain Destination in Bhutan"
+            },
+            {
+                "id": "Hanoi",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/hanoi/mmt/destination/m_destination_hanoi_landscape_l_341_546.jpg",
+                "about": "Soak in the ancient tales and heritage of Hanoi. You will love sightseeing, festivals and outdoor activities. The local cuisines at Hanoi are worth trying out too.",
+                "subtitle": "Vietnam’s Culturally-Rich Capital City"
+            },
+            {
+                "id": "Lucknow",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/lucknow/mmt/destination/m_destination_lucknow_landscape_l_400_640.jpg",
+                "about": "Lucknow doles out a rich cultural experience. You will love sightseeing, shopping, and relishing the local dishes. Lucknow also offers many culinary delights",
+                "subtitle": "Culturally Rich City in Uttar Pradesh"
+            },
+            {
+                "id": "Mysore",
+                "image": "https://hblimg.mmtcdn.com/content/hubble/img/mysore/mmt/destination/m_destination-mysore-landscape_l_400_640.jpg",
+                "about": "The ‘City of Palaces’, Mysore revels in its vibrant history, and rich arts and culture. It allures tourists with its grand palaces, majestic temples, and landscaped gardens.",
+                "subtitle": "Scenic Royal City in Karnataka"
+            }
+        ]
     },
     {
-      "id": "Honeymoon Hotspots",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_honeymoon33_p_540_417.jpg",
-      "about": "Your honeymoon has to be the most memorable vacation of your life! Choose from a variety of pocket-friendly destinations from solitary beaches, picturesque hills, snow-clad mountains, relaxing yet exotic resorts to adventurous excursions.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 4,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_honeymoon33_p_540_417.jpg",
+        "about": "Your honeymoon has to be the most memorable vacation of your life! Choose from a variety of pocket-friendly destinations from solitary beaches, picturesque hills, snow-clad mountains, relaxing yet exotic resorts to adventurous excursions.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Getaways For The Weekend",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_weekend_p_360_278.jpg",
-      "about": "Recharge after a hectic week’s work with an idyllic trip over the weekend. Experience peace at a resort nestled in nature’s lap or feel your heart race with adventure sports. Go ahead, choose the perfect weekend hotspot from this list.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 5,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_weekend_p_360_278.jpg",
+        "about": "Recharge after a hectic week’s work with an idyllic trip over the weekend. Experience peace at a resort nestled in nature’s lap or feel your heart race with adventure sports. Go ahead, choose the perfect weekend hotspot from this list.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Romantic Places",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_romantic11_p_540_417.jpg",
-      "about": "Scroll through our list of romantic tourism destinations and plan a passionate getaway with your special someone to surreal valleys, snow-clad mountains, sun-soaked beaches or adventurous wildlife trails. Escape to a quieter location and rejuvenate in a romantic atmosphere.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 6,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_romantic11_p_540_417.jpg",
+        "about": "Scroll through our list of romantic tourism destinations and plan a passionate getaway with your special someone to surreal valleys, snow-clad mountains, sun-soaked beaches or adventurous wildlife trails. Escape to a quieter location and rejuvenate in a romantic atmosphere.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Pilgrimage Spots",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_pilgrimage_p_360_278.jpg",
-      "about": "Take a break from your busy routine and seek divine blessings at revered pilgrimages for some much needed peace. Whisper a wish or murmur a prayer of gratitude, and let your next trip be a truly memorable one!",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 7,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_pilgrimage_p_360_278.jpg",
+        "about": "Take a break from your busy routine and seek divine blessings at revered pilgrimages for some much needed peace. Whisper a wish or murmur a prayer of gratitude, and let your next trip be a truly memorable one!",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Foodie Dreams",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Foodie_Dreams_idea_l_345_517.jpg",
-      "about": "Pamper your taste buds with flavours of different regions. Go on adventures to not just taste but also experience a truly authentic culinary journey. Explore the tiniest of lanes & largest of markets on your next food trail.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 8,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Foodie_Dreams_idea_l_345_517.jpg",
+        "about": "Pamper your taste buds with flavours of different regions. Go on adventures to not just taste but also experience a truly authentic culinary journey. Explore the tiniest of lanes & largest of markets on your next food trail.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Adventure Spots",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_adventure2_p_540_417.jpg",
-      "about": "Explore adventurous destinations with exciting deals and challenging activities. Spike up your adrenaline and boost your confidence with thrilling treks, camping, water sports, scuba diving, rafting, bungee jumping, sky diving and many more off-beat activities.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 9,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_adventure2_p_540_417.jpg",
+        "about": "Explore adventurous destinations with exciting deals and challenging activities. Spike up your adrenaline and boost your confidence with thrilling treks, camping, water sports, scuba diving, rafting, bungee jumping, sky diving and many more off-beat activities.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Trekking Hotspots",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_trek_p_360_278.jpg",
-      "about": "Replace the boredom of your daily routine with an epic adventure. Be it soaring in the sky or diving in the sea, explore the best ideas for a thrilling trip. It's time to feel the adrenaline racing through your veins!",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 10,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_trek_p_360_278.jpg",
+        "about": "Replace the boredom of your daily routine with an epic adventure. Be it soaring in the sky or diving in the sea, explore the best ideas for a thrilling trip. It's time to feel the adrenaline racing through your veins!",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "Places to Relax",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Places_to_Relax_Idea_l_583_874.jpg",
-      "about": "Escape the daily routine and humdrum of city life with a relaxing trip to a serene destination. Rejuvenate your body and mind with therapeutic spa treatments, soothing beach walks, flavourful drinks, scrumptious meals and morning meditations.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 11,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_Places_to_Relax_Idea_l_583_874.jpg",
+        "about": "Escape the daily routine and humdrum of city life with a relaxing trip to a serene destination. Rejuvenate your body and mind with therapeutic spa treatments, soothing beach walks, flavourful drinks, scrumptious meals and morning meditations.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     },
     {
-      "id": "International Destinations",
-      "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_international_p_360_278.jpg",
-      "about": "Want to learn more about new cultures and new countries? Then this is for the globetrotter in you! Make your next trip truly memorable with these specially curated ideas and feast your senses on jaw-dropping international landscapes and mouthwatering food.",
-      "places": [
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        },
-        {
-          "id": "",
-          "image": "",
-          "about": "",
-          "subtitle": ""
-        }
-      ]
+        "id": 12,
+        "image": "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_international_p_360_278.jpg",
+        "about": "Want to learn more about new cultures and new countries? Then this is for the globetrotter in you! Make your next trip truly memorable with these specially curated ideas and feast your senses on jaw-dropping international landscapes and mouthwatering food.",
+        "places": [
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            },
+            {
+                "id": "",
+                "image": "",
+                "about": "",
+                "subtitle": ""
+            }
+        ]
     }
-  ],
+],
   "giftcards": [
     {
       "id": "WeddingGiftCard",

@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom'
-import { Navbar } from '../components/Navbar'
+import { Navbar } from '../Components/Navbar'
 import "../styles/homePage.css"
-import { Offers } from '../components/Offers';
-import { HomeSliders } from '../components/HomeSliders';
+import { Offers } from '../Components/Offers';
+import { HomeSliders } from '../Components/HomeSliders';
 import $ from 'jquery';
-import { Footer } from '../components/Footer';
+import { Footer } from '../Components/Footer';
 import axios from 'axios';
 import { cookieStorageManager } from '@chakra-ui/react';
-import { HomePageComponent } from '../components/homePageComponent';
-import { HomePageComponent2 } from '../components/homePageComponent2';
+import { HomePageComponent } from '../Components/homePageComponent';
+import { HomePageComponent2 } from '../Components/homePageComponent2';
 
 export const HomePage = () => {
 
   const [whatToShow, setWhatToshow] = useState("flight")
-
   const  handleFlight = () => {
     setWhatToshow("flight")
   }
@@ -27,6 +26,7 @@ export const HomePage = () => {
     $('.secondHeader > .iconCard').removeClass('active')
     $(this).addClass("active")
   })
+
   
   return (
     <>
