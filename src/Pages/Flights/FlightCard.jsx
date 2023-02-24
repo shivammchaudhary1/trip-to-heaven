@@ -8,5 +8,6 @@ export default function FlightCard({data}) {
         <Image src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" width={"25px"} />
         <h1>{airline}</h1>
     </Box>
+    
   )
 }
