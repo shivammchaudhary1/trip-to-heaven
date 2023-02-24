@@ -6,19 +6,6 @@ import { addFlight } from '../../Redux/action'
 import styled from "styled-components"
 import "./Admin.Module.css"
 import { Link } from 'react-router-dom'
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-} from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
-import { addFlight } from "../../Redux/action";
-import styled from "styled-components";
-import "./Admin.Module.css";
 
 
 let initialState = {
@@ -55,26 +42,6 @@ export const Admin = () => {
         <Link to={"/adminflight"}>Admin Flight</Link>
         <Link to={"/adminhotel"}>Admin Hotel</Link>
         </div>
-
-    <div>
-        <Wrapper>
-        <form 
-        onSubmit={(e) => {
-            handleSubmit(e)
-        }}>
-        <FormControl >
-            <Heading id='head'>Admin Panel for Flights</Heading>
-            <Box className='flightBox'>
-            <FormLabel id='label'>Airline</FormLabel>
-            <Input id='input' type="text" name="airline" value={flight.airline} onChange={(e) => handleChange(e)}/>
-            <FormLabel  id='label'>Flight Number</FormLabel>
-            <Input id='input' type="text" name='number' value={flight.number} onChange={(e) => handleChange(e)}/>
-            <FormLabel  id='label'>From</FormLabel>
-            <Input id='input' type="text" name='from' value={flight.from} onChange={(e) => handleChange(e)}/>
-            <FormLabel  id='label'>To</FormLabel>
-            <Input id='input' type="text" name='to' value={flight.to} onChange={(e) => handleChange(e)}/>
-
-    <div className="body">
       <div>
         <Wrapper>
           <form
