@@ -18,13 +18,14 @@ export const Login = () => {
         setCheck({...check,[e.target.name]:val})
     }
     const handleVerifyNumber = () => {
-        if(check.number.length == 10){
+        if(number.length == 10){
             setCheck({...check, verify : true})
+            document.querySelector("#loginMessages").innerHTML = `Otp Send To ${number} !`
         }else{
-            document.querySelector("loginMessages").innerText = 'Mobile Number is Invalid !'
+            document.querySelector("#loginMessages").innerHTML = 'Mobile Number is Invalid !'
         }
     }
-    console.log(check)
+    // console.log(check)
 
   return (
     <>

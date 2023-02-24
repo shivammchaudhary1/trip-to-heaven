@@ -5,6 +5,7 @@
     justify-content: center;
 }
 .mainLogin > .loginBx{
+    position: relative;
     width: 450px;
     height: 450px ;
     border-radius: 10px;
@@ -60,4 +61,10 @@
 }
 .mainLogin > .loginBx > .loginTerms > p{
     font-size: 12px;
+}
+.mainLogin > .loginBx > #loginMessages{
+    position: absolute;
+    bottom: 20px;
+    color: red;
+    font-size: 15px;
 }
