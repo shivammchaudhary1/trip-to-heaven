@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom"
-<<<<<<< HEAD:src/Pages/Flights/Flight.jsx
-import { Navbar } from "../../Components/Navbar";
-import {Footer} from "../../Components/Footer"
+import { Navbar } from "../../components/Navbar";
+import {Footer} from "../../components/Footer"
 import { useState } from "react";
 import 'font-awesome/css/font-awesome.min.css';
 import "../../styles/homePage.css"
@@ -17,9 +16,6 @@ const initialState = {
 }
 
 
-=======
-import { Navbar } from "../components/Navbar";
->>>>>>> 2946831a7a1ef3a76bc8e0714937c6c03263e260:src/Pages/Flight.jsx
 
 export default function Flights(){
   const [PassengerData, setPassengerData]=useState(initialState)
