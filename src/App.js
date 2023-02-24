@@ -5,7 +5,8 @@ import { Booking } from "./Pages/booking/Booking";
 function App() {
   return (
       <>
-        <AllRoutes />
+        {/* <AllRoutes /> */}
+        <Booking/>
 
      
       </>

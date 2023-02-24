@@ -1,5 +1,45 @@
 {
-  "cart": [],
+  "cart": {
+
+   "flight": [{
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 1
+  },
+  {
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 2
+  },
+  {
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 3
+  }],
+
+
+  "hotels":[]
+
+  }
+  ,
   "flight": [
     {
         "airline": "Vistara",
