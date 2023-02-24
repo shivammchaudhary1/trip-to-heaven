@@ -1,18 +1,34 @@
-.body{
+.flightBody{
     font-family: 'Times New Roman', Times, serif;
-    background-image: url("https://promos.makemytrip.com/images/cmn-flight-tb-mb-210223.webp");
-    background-position: top;
+    background-image: url("https://www.savethestudent.org/uploads/flights.jpg");
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;}
-.Box{
-margin-top: 20px;
-color: aliceblue;
-font-size: larger;
-background-color: #7e57c1;
-padding: 10px;
-border-radius: 20px;
-opacity: 0.9;
+    background-size: cover;
 }
+.hotelBody{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/_unbranded-template/media/hw-homepage-hero-01-61534350ecb1c-optimized.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#link{
+    width: 40%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: larger;
+}
+.flightBox{
+margin-top: 5% ;
+color: aliceblue;
+
+}
+.hotelBox{
+    color: white;
+    margin-top: 10%;
+    
+    }
 #head{
     font-size:xx-large;
     font-style: italic;
@@ -21,9 +37,12 @@ opacity: 0.9;
     color: white;
     background-color: #7e57c1;
     border-radius: 10px;
+    opacity: 0.8;
+    margin-top: 40px;
 }
 #label{
     font-size:18px;
+    font-weight: bolder;
     margin-left: 60px;
     color: aliceblue;
 }
@@ -32,17 +51,20 @@ opacity: 0.9;
     margin: auto;
     font-size: large;
     width: 80%;
-    border:1px solid aliceblue;
+    color: aliceblue;
+    border:2px solid aliceblue;
+    font-weight: bolder;
+    opacity: 0.5;
 }
 #btn{
     background-color: rgb(7, 8, 9);
     color: white;
     width: 100%;
-    margin-top: 20px;
+    margin: 10% 0%;
     font-size:18px;
 
 }
 #btn:hover{
-    background-color: teal;
-    color: black;
+    opacity: 0.5;
+    color:white;
 }

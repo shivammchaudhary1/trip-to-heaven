@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { addFlight } from '../../Redux/action'
 import styled from "styled-components"
 import "./Admin.Module.css"
+import { Link } from 'react-router-dom'
 
 let initialState = {
         airline: "",
@@ -34,7 +35,13 @@ export const Admin = () => {
         
     }
   return (
-    <div className='body'>
+    <div className='flightBody'>
+        <div id='link'>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/adminflight"}>Admin Flight</Link>
+        <Link to={"/adminhotel"}>Admin Hotel</Link>
+        </div>
+
     <div>
         <Wrapper>
         <form 
@@ -43,7 +50,7 @@ export const Admin = () => {
         }}>
         <FormControl >
             <Heading id='head'>Admin Panel for Flights</Heading>
-            <Box className='Box'>
+            <Box className='flightBox'>
             <FormLabel id='label'>Airline</FormLabel>
             <Input id='input' type="text" name="airline" value={flight.airline} onChange={(e) => handleChange(e)}/>
             <FormLabel  id='label'>Flight Number</FormLabel>
@@ -73,5 +80,4 @@ export const Admin = () => {
 const Wrapper = styled.div`
     padding:10px;
     width:40%;
-    margin:auto;
 `;
