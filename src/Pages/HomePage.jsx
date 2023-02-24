@@ -15,7 +15,6 @@ import { HomePageComponent2 } from '../components/homePageComponent2';
 export const HomePage = () => {
 
   const [whatToShow, setWhatToshow] = useState("flight")
-
   const  handleFlight = () => {
     setWhatToshow("flight")
   }
@@ -27,6 +26,7 @@ export const HomePage = () => {
     $('.secondHeader > .iconCard').removeClass('active')
     $(this).addClass("active")
   })
+
   
   return (
     <>
@@ -34,11 +34,11 @@ export const HomePage = () => {
         <div className="homeTop">
           <div className="homeTopCard">
             <div className="secondHeader">
-              <Link to="" className="iconCard active" onClick={handleFlight}>
+              <Link to="/flight" className="iconCard active" onClick={handleFlight}>
                 <i className="fa fa-plane"></i>
                 <h1>Flight</h1>
               </Link>
-              <Link to="" className="iconCard" onClick={handleHotel}>
+              <Link to="/hotel" className="iconCard" onClick={handleHotel}>
                 <i className="fa fa-hotel"></i>
                 <h1>Hotel</h1>
               </Link>
