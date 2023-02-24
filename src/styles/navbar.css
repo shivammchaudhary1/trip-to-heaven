@@ -15,7 +15,7 @@ header{
 header > .logo{
     /* border: 1px solid black; */
 }
-header > .logo > img{
+header > .logo > a > img{
     width: 100px;
 }
 header > .icons{
