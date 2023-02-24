@@ -62,7 +62,7 @@ export const Navbar = () => {
       </div>
 
       <div className="login">
-        <Link>
+        <Link to="/login">
           <div className="ball"></div>
           Login or <br /> Create Account
         </Link>
