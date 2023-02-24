@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom'
-import { Navbar } from '../Components/Navbar'
+import { Navbar } from '../components/Navbar'
 import "../styles/homePage.css"
-import { Offers } from '../Components/Offers';
-import { HomeSliders } from '../Components/HomeSliders';
+import { Offers } from '../components/Offers';
+import { HomeSliders } from '../components/HomeSliders';
 import $ from 'jquery';
-import { Footer } from '../Components/Footer';
+import { Footer } from '../components/Footer';
 import axios from 'axios';
 import { cookieStorageManager } from '@chakra-ui/react';
-import { HomePageComponent } from '../Components/homePageComponent';
-import { HomePageComponent2 } from '../Components/homePageComponent2';
+import { HomePageComponent } from '../components/homePageComponent';
+import { HomePageComponent2 } from '../components/homePageComponent2';
 
 export const HomePage = () => {
 
