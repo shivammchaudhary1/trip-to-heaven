@@ -30,11 +30,11 @@ export const HomePage = () => {
   
   return (
     <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="homeTop">
           <div className="homeTopCard">
             <div className="secondHeader">
-              <Link to="/flight" className="iconCard active" onClick={handleFlight}>
+              <Link to="/flight" className="iconCard" onClick={handleFlight}>
                 <i className="fa fa-plane"></i>
                 <h1>Flight</h1>
               </Link>

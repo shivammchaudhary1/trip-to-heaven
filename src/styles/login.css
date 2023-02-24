@@ -1,5 +1,5 @@
 .mainLogin{
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +7,7 @@
 .mainLogin > .loginBx{
     position: relative;
     width: 450px;
-    height: 450px ;
+    min-height: 70vh;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     padding: 20px 30px;
@@ -62,9 +62,19 @@
 .mainLogin > .loginBx > .loginTerms > p{
     font-size: 12px;
 }
-.mainLogin > .loginBx > #loginMessages{
+.mainLogin > .loginBx > #loginMesageError{
     position: absolute;
     bottom: 20px;
     color: red;
     font-size: 15px;
+}
+.mainLogin > .loginBx > #loginMesageSuccess{
+    position: absolute;
+    bottom: 20px;
+    color: green;
+    font-size: 15px;
+}
+
+.mainLogin > .loginBx > .loginTerms > a {
+    color: royalblue;
 }

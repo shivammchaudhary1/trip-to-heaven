@@ -5,12 +5,33 @@ import "../styles/navbar.css";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import Hotel from "../Pages/Hotel/Hotel";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { logout_user } from "../Redux/Authantication/auth.action";
 
 export const Navbar = () => {
+  const dispatch = useDispatch()
+  const {isAuth, activeUser, isLoading} = useSelector((store) => {
+    // console.log(store)
+    return {
+      isAuth: store.LoginReducer.isAuth,
+      activeUser: store.LoginReducer.activeUser,
+      isLoading: store.LoginReducer.isLoading
+    }
+  },shallowEqual) 
+
   $(document).on("click", ".iconCard", function () {
     $(".icons >.iconCard").removeClass("active");
     $(this).addClass("active");
   });
+
+
+  $(document).on('click','#activePopup',function(){
+    $(this).toggleClass("active");
+  })
+
+  const handleLogout = () => {
+    dispatch(logout_user)
+  }
 
   return (
     <header>
@@ -18,7 +39,7 @@ export const Navbar = () => {
         <img src="https://i.ibb.co/FqKTWS4/tth3.png" alt="not visible" />
       </div>
       <div className="icons">
-        <Link to="/flight" className="iconCard active">
+        <Link to="/flight" className="iconCard">
           <i className="fa fa-plane"></i>
           <h1>Flight</h1>
         </Link>
@@ -62,17 +83,30 @@ export const Navbar = () => {
       </div>
 
       <div className="login">
-        <Link to="/login">
-          <div className="ball"></div>
-          Login or <br /> Create Account
-        </Link>
+        {!isAuth ? 
+            <Link to="/login">
+            <div className="ball"></div>
+            Login or <br /> Create Account
+          </Link>
+        :
+          <Link id="activePopup">
+            <div className="ball">
+              <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="" />
+            </div>
+            {activeUser.user_name}
+            <div className="navbarPopup">
+              <Link to="/profile">Profile</Link>
+              <Link onClick={handleLogout}>Logout</Link>
+            </div>
+          </Link>
+        }
         <select>
-          <option selected>Select Country</option>
-          <option>India</option>
-          <option>Bangaladesh</option>
-          <option>U.K</option>
-          <option>Brazil</option>
-          <option>Cheen</option>
+          <option value="">Select Country</option>
+          <option value="india">India</option>
+          <option value="bangladesh">Bangaladesh</option>
+          <option value="U.K">U.K</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Cheen">Cheen</option>
         </select>
         <select>
           <option disabled>Lenguage</option>

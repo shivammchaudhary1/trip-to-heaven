@@ -9,7 +9,6 @@ export const Offers = () => {
     const dispatch = useDispatch()
     const location = useLocation()
     const {isLoading,isError,offers} = useSelector((store) => {
-        // console.log(store)
         return {
             isLoading: store.OfferReducer.isLoading,
             isError: store.OfferReducer.isError,
