@@ -37,6 +37,9 @@ export default function Flights(){
       }
 
 
+
+      
+
     return <div style={{backgroundColor:"rgb(242,242,242)"}}>
         <Navbar/>
          <div className="homeTop" style={{marginBottom:"100px" }} >
