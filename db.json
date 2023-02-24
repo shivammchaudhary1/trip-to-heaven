@@ -220,6 +220,17 @@
       "price": "8999",
       "totalTime": "02h 55m",
       "id": 20
+    },
+    {
+      "airline": "Indigo New",
+      "number": "6E 4785",
+      "from": "Lucknow",
+      "to": "Goa",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": 1458,
+      "totalTime": "02h 55m",
+      "id": 21
     }
   ],
   "giftcards": [
@@ -1606,7 +1617,7 @@
       "place": "Mahipalpur",
       "taxes": 150,
       "price": 99,
-      "pc__html":  5
+      "pc__html": 5
     },
     {
       "image": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201809111819083735-ed3e623e7d2b11ed9c5a0a58a9feac02.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
@@ -2026,7 +2037,7 @@
       "place": "Chandni Chowk",
       "taxes": 72,
       "price": 74,
-      "pc__html" : 5
+      "pc__html": 5
     },
     {
       "image": "https://r1imghtlak.mmtcdn.com/3d09e8f27ff411eaa1080242ac110002.jpg?&output-quality=75&downsize=583:388&crop=583:388;0,26&output-format=webp",
@@ -2176,7 +2187,7 @@
       "place": "Saket",
       "taxes": 89,
       "price": 59,
-      "pc__html" : 5
+      "pc__html": 5
     },
     {
       "image": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202210291915478845-2c5cb59458fe11ed88510a58a9feac02.jpg?&output-quality=75&downsize=583:388&output-format=webp",
@@ -3665,7 +3676,7 @@
       "pernight": "Per Night for 2 Rooms",
       "additional": "BEDS IN A HOSTEL",
       "additional1": "100% Money Back Guarantee on Clean rooms with TV, AC & Free Wi-Fi",
-      "price":953    
+      "price": 953
     },
     {
       "image": "https://r1imghtlak.mmtcdn.com/29abb2c072f111ed870d0a58a9feac02.jpg?&output-quality=75&downsize=583:388&output-format=webp",
@@ -4295,7 +4306,7 @@
       "pernight": "Per Night for 2 Rooms",
       "additional": "BEDS IN A HOSTEL",
       "additional1": "100% Money Back Guarantee on Clean rooms with TV, AC & Free Wi-Fi",
-      "price":760    
+      "price": 760
     },
     {
       "image": "https://r1imghtlak.mmtcdn.com/1b5be8e829e411e9b03b0242ac110003.jpg?&output-quality=75&downsize=583:388&crop=583:388;0,24&output-format=webp",
