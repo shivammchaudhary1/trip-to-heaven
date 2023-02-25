@@ -20,3 +20,10 @@
   margin-bottom: 20px;
 }
 
+.pagination-div {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 10px;
+}
