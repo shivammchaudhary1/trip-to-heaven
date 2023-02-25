@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom'
-import { Navbar } from '../Components/Navbar'
+import { Navbar } from '../components/Navbar'
 import "../styles/homePage.css"
-import { Offers } from '../Components/Offers';
-import { HomeSliders } from '../Components/HomeSliders';
+import { Offers } from '../components/Offers';
+import { HomeSliders } from '../components/HomeSliders';
 import $ from 'jquery';
-import { Footer } from '../Components/Footer';
+import { Footer } from '../components/Footer';
 import axios from 'axios';
 import { cookieStorageManager } from '@chakra-ui/react';
-import { HomePageComponent } from '../Components/homePageComponent';
-import { HomePageComponent2 } from '../Components/homePageComponent2';
+import { HomePageComponent } from '../components/homePageComponent';
+import { HomePageComponent2 } from '../components/homePageComponent2';
 
 export const HomePage = () => {
 
   const [whatToShow, setWhatToshow] = useState("flight")
-
   const  handleFlight = () => {
     setWhatToshow("flight")
   }
@@ -27,18 +26,19 @@ export const HomePage = () => {
     $('.secondHeader > .iconCard').removeClass('active')
     $(this).addClass("active")
   })
+
   
   return (
     <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="homeTop">
           <div className="homeTopCard">
             <div className="secondHeader">
-              <Link to="" className="iconCard active" onClick={handleFlight}>
+              <Link to="/flight" className="iconCard" onClick={handleFlight}>
                 <i className="fa fa-plane"></i>
                 <h1>Flight</h1>
               </Link>
-              <Link to="" className="iconCard" onClick={handleHotel}>
+              <Link to="/hotel" className="iconCard" onClick={handleHotel}>
                 <i className="fa fa-hotel"></i>
                 <h1>Hotel</h1>
               </Link>

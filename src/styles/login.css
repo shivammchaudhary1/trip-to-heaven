@@ -1,0 +1,80 @@
+.mainLogin{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainLogin > .loginBx{
+    position: relative;
+    width: 450px;
+    min-height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid black; */
+}
+.mainLogin > .loginBx > .loginHead{
+    padding: 10px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.mainLogin > .loginBx > .loginHead > h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+.mainLogin > .loginBx > .loginInputB{
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    /* border: 1px solid black; */
+}
+.mainLogin > .loginBx > .loginInputB > span{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.mainLogin > .loginBx > .loginInputB > span input{
+    width: 80%;
+    padding: 5px 10px;
+    border: 1px solid gray;
+}
+.mainLogin > .loginBx > .loginInputB > span button{
+    /* border: 1px solid b; */
+    background-color: royalblue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;;
+}
+.mainLogin > .loginBx > .loginTerms{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.mainLogin > .loginBx > .loginTerms > h2{
+    font-weight: 700;
+    color: gray;
+}
+.mainLogin > .loginBx > .loginTerms > p{
+    font-size: 12px;
+}
+.mainLogin > .loginBx > #loginMesageError{
+    position: absolute;
+    bottom: 20px;
+    color: red;
+    font-size: 15px;
+}
+.mainLogin > .loginBx > #loginMesageSuccess{
+    position: absolute;
+    bottom: 20px;
+    color: green;
+    font-size: 15px;
+}
+
+.mainLogin > .loginBx > .loginTerms > a {
+    color: royalblue;
+}

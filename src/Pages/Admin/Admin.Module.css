@@ -1,0 +1,70 @@
+.flightBody{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://www.savethestudent.org/uploads/flights.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hotelBody{
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/_unbranded-template/media/hw-homepage-hero-01-61534350ecb1c-optimized.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#link{
+    width: 40%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: larger;
+}
+.flightBox{
+margin-top: 5% ;
+color: aliceblue;
+
+}
+.hotelBox{
+    color: white;
+    margin-top: 10%;
+    
+    }
+#head{
+    font-size:xx-large;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    background-color: #7e57c1;
+    border-radius: 10px;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+#label{
+    font-size:18px;
+    font-weight: bolder;
+    margin-left: 60px;
+    color: aliceblue;
+}
+#input{
+    display: grid;
+    margin: auto;
+    font-size: large;
+    width: 80%;
+    color: aliceblue;
+    border:2px solid aliceblue;
+    font-weight: bolder;
+    opacity: 0.5;
+}
+#btn{
+    background-color: rgb(7, 8, 9);
+    color: white;
+    width: 100%;
+    margin: 10% 0%;
+    font-size:18px;
+
+}
+#btn:hover{
+    opacity: 0.5;
+    color:white;
+}
