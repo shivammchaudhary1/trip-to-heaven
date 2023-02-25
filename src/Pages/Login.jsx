@@ -16,9 +16,9 @@ const state = {
 }
 
 export const Login = () => {
+    const [check, setCheck] = useState(state);
     const navigate = useNavigate();
     const dispatch = useDispatch()
-    const [check, setCheck] = useState(state);
     const {isAuth,activeUser, user} = useSelector((store)=> {
         return {
             isAuth : store.LoginReducer.isAuth,
@@ -39,7 +39,7 @@ export const Login = () => {
             break;
         }
     }
-
+    // console.log(user)
     // 
 
     function onCapture(){
@@ -105,12 +105,12 @@ export const Login = () => {
         let val = e.target.value;
         setCheck({...check,[e.target.name]:val})
     }
-    console.log(isAuth)
+    // console.log(isAuth)
 
     useEffect(() => {
         dispatch(fetch_users)
         if(isAuth){
-            navigate("/")
+            window.location = "/"
         }
     },[isAuth])
 
@@ -127,7 +127,7 @@ export const Login = () => {
                         <label htmlFor="">Enter Your Number</label>
                     <span>
                         <input type="number" readOnly={verify} name="number" value={number} onChange={(e) => handleChangeMobile(e)} />
-                        <button disabled={verify}  onClick={handleVerifyNumber}>Verify</button>
+                        <button disabled={verify}  onClick={handleVerifyNumber}>Next</button>
                     </span>
                 </div>
                 {verify ?

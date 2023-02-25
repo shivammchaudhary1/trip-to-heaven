@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import '../styles/login.css';
 import firebase_app from '../01_firebase/config_firebase';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber  } from "firebase/auth";
-import { useDispatch } from 'react-redux';
-import { userRigister } from '../Redux/Authantication/auth.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetch_users, userRigister } from '../Redux/Authantication/auth.action';
 
 
 const auth = getAuth(firebase_app);
@@ -23,8 +23,24 @@ export const Register = () => {
     const [check, setCheck] = useState(state);
     const navigate = useNavigate();
     const dispatch = useDispatch()
+    let exist = false;
     const {number, otp, verify,otpVerify,user_name,password} = check;
+
+    const {user} = useSelector((store)=> {
+        return {
+            user: store.LoginReducer.user
+        }
+    })
+
+    //  check if the user is exist of not 
+    for(let i = 0; i<= user.length-1; i++){
+        if(user[i].number == number){
+            exist = true;
+            break;
+        }
+    }
     
+    //  capture 
     const handleRegisterUser = () => {
         let newObj = {
             number,
@@ -37,10 +53,10 @@ export const Register = () => {
         }
         dispatch(userRigister(newObj))
         setCheck(state)
-        navigate("/login")
+        window.location= "/login"
     }
 
-    // 
+    // oonCapture
     function onCapture(){
         window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
           'size': 'invisible',
@@ -52,24 +68,30 @@ export const Register = () => {
         }, auth);
       }
     
+    //   Verify button
       function handleVerifyNumber(){
         onCapture()
         const phoneNumber = `+91${number}`;
         const appVerifier = window.recaptchaVerifier;
             if(number.length === 10){
+                if(exist){
+                    document.querySelector("#loginMesageError").innerHTML = 'User Alredy exist';  
+                    document.querySelector("#loginMesageSuccess").innerHTML = ``  
+                }else{
+                    signInWithPhoneNumber(auth, phoneNumber, appVerifier).then((confirmationResult) => {
+                        // SMS sent. Prompt user to type the code from the message, then sign the
+                        // user in with confirmationResult.confirm(code).
+                        window.confirmationResult = confirmationResult;
+                        setCheck({...check, verify : true})
+                        document.querySelector("#loginMesageSuccess").innerHTML = `Otp Send To ${number} !`
+                        document.querySelector("#loginMesageError").innerHTML = '';
+                        // ...
+                    }).catch((error) => {
+                        // Error; SMS not sent
+                        // ...
+                    });
+                }
                 //   
-                signInWithPhoneNumber(auth, phoneNumber, appVerifier).then((confirmationResult) => {
-                // SMS sent. Prompt user to type the code from the message, then sign the
-                // user in with confirmationResult.confirm(code).
-                window.confirmationResult = confirmationResult;
-                setCheck({...check, verify : true})
-                document.querySelector("#loginMesageSuccess").innerHTML = `Otp Send To ${number} !`
-                document.querySelector("#loginMesageError").innerHTML = '';
-                // ...
-            }).catch((error) => {
-                // Error; SMS not sent
-                // ...
-              });
             }else{
                 document.querySelector("#loginMesageSuccess").innerHTML = ``
                 document.querySelector("#loginMesageError").innerHTML = 'Mobile Number is Invalid !'
@@ -80,10 +102,12 @@ export const Register = () => {
       function verifyCode() {
         window.confirmationResult.confirm(otp).then((result) => {
           // User signed in successfully.
-          const user = result.user;
-          setCheck({...check, otpVerify: true})
-          document.querySelector("#loginMesageSuccess").innerHTML = `Verifyed Successful`
-          document.querySelector("#loginMesageError").innerHTML = ""
+            const user = result.user;
+            setCheck({...check, otpVerify: true})
+            document.querySelector("#loginMesageSuccess").innerHTML = `Verifyed Successful`
+            document.querySelector("#loginMesageError").innerHTML = ""
+            document.querySelector("#loginNumber").style.display = "none";
+            document.querySelector("#loginOtp").style.display = "none";
           // ...
         }).catch((error) => {
           // User couldn't sign in (bad verification code?)
@@ -100,6 +124,11 @@ export const Register = () => {
     }
 
 
+    useEffect(() => {
+        dispatch(fetch_users)
+    },[])
+
+
   return (
     <>
         {/* <Navbar /> */}
@@ -109,19 +138,19 @@ export const Register = () => {
                 <div className="loginHead">
                     <h1>Register</h1>
                 </div>
-                <div className="loginInputB">
-                        <label htmlFor="">Enter Your Number</label>
+                <div className="loginInputB" id='loginNumber'>
+                    <label htmlFor="">Enter Your Number</label>
                     <span>
                         <input type="number" readOnly={verify} name="number" value={number} onChange={(e) => handleChangeMobile(e)} />
-                        <button disabled={verify}  onClick={handleVerifyNumber}>Verify</button>
+                        <button disabled={verify}  onClick={handleVerifyNumber}>Next</button>
                     </span>
                 </div>
                 {verify ?
-                    <div className="loginInputB">
+                    <div className="loginInputB" id='loginOtp'>
                         <label htmlFor="">Enter OTP</label>
                         <span>
                             <input type="number" name="otp" value={otp} onChange={(e) => handleChangeMobile(e)} />
-                            <button onClick={verifyCode}>Continue</button>
+                            <button onClick={verifyCode}>Next</button>
                         </span>
                     </div>
                  : ''}
@@ -141,7 +170,7 @@ export const Register = () => {
                         </span>
                     </div>
                     <div className="loginInputB">
-                        <button onClick={handleRegisterUser}>Submit</button>
+                        <button onClick={handleRegisterUser}>Continue</button>
                     </div>
                 </>
                 :''}
