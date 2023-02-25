@@ -26,9 +26,11 @@ export const Register = () => {
     let exist = false;
     const {number, otp, verify,otpVerify,user_name,password} = check;
 
-    const {user} = useSelector((store)=> {
+    // store value and getting user to check if the number is exist or not
+    const {user,isLoading} = useSelector((store)=> {
         return {
-            user: store.LoginReducer.user
+            user: store.LoginReducer.user,
+            isLoading: store.LoginReducer.isLoading
         }
     })
 
@@ -70,6 +72,7 @@ export const Register = () => {
     
     //   Verify button
       function handleVerifyNumber(){
+        document.querySelector("#nextButton").innerText = "Please wait..."
         onCapture()
         const phoneNumber = `+91${number}`;
         const appVerifier = window.recaptchaVerifier;
@@ -85,9 +88,11 @@ export const Register = () => {
                         setCheck({...check, verify : true})
                         document.querySelector("#loginMesageSuccess").innerHTML = `Otp Send To ${number} !`
                         document.querySelector("#loginMesageError").innerHTML = '';
+                        document.querySelector("#nextButton").style.display = 'none'
                         // ...
                     }).catch((error) => {
                         // Error; SMS not sent
+                        // document.querySelector("#nextButton").innerText = 'Server Error'
                         // ...
                     });
                 }
@@ -98,7 +103,7 @@ export const Register = () => {
             }
         }
     
-      // 
+      // if the code is verifyed
       function verifyCode() {
         window.confirmationResult.confirm(otp).then((result) => {
           // User signed in successfully.
@@ -117,7 +122,7 @@ export const Register = () => {
         });
       }
 
-    // 
+    // setting the typed value to the input state
     const handleChangeMobile = (e) => {
         let val = e.target.value;
         setCheck({...check,[e.target.name]:val})
@@ -142,7 +147,7 @@ export const Register = () => {
                     <label htmlFor="">Enter Your Number</label>
                     <span>
                         <input type="number" readOnly={verify} name="number" value={number} onChange={(e) => handleChangeMobile(e)} />
-                        <button disabled={verify}  onClick={handleVerifyNumber}>Next</button>
+                        <button disabled={verify}  onClick={handleVerifyNumber} id="nextButton">Next</button>
                     </span>
                 </div>
                 {verify ?
@@ -174,6 +179,8 @@ export const Register = () => {
                     </div>
                 </>
                 :''}
+
+                {isLoading ? <h1>Please wait...</h1> : ""}
                 
                 <div className="loginTerms">
                     <h2>Or USE ARE BUSSINESS ACCOUNT WITH</h2>
