@@ -17,7 +17,7 @@ const state = {
 
 export const Login = () => {
     const [check, setCheck] = useState(state);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch()
     const {isAuth,activeUser, user} = useSelector((store)=> {
         return {
@@ -54,6 +54,7 @@ export const Login = () => {
       }
     
       function handleVerifyNumber(){
+        document.querySelector("#nextText").innerText = "Please wait..."
         onCapture()
         const phoneNumber = `+91${number}`;
         const appVerifier = window.recaptchaVerifier;
@@ -62,17 +63,20 @@ export const Login = () => {
                     signInWithPhoneNumber(auth, phoneNumber, appVerifier).then((confirmationResult) => {
                     // SMS sent. Prompt user to type the code from the message, then sign the
                     // user in with confirmationResult.confirm(code).
-                    window.confirmationResult = confirmationResult;
-                    setCheck({...check, verify : true})
-                    document.querySelector("#loginMesageSuccess").innerHTML = `Otp Send To ${number} !`
-                    document.querySelector("#loginMesageError").innerHTML = '';
+                        window.confirmationResult = confirmationResult;
+                        setCheck({...check, verify : true})
+                        document.querySelector("#loginMesageSuccess").innerHTML = `Otp Send To ${number} !`
+                        document.querySelector("#loginMesageError").innerHTML = '';
+                        document.querySelector("#nextText").style.display = 'none'
                     // ...
                     }).catch((error) => {
                         // Error; SMS not sent
+                        // document.querySelector("#nextText").innerText = "Server Error"
                         // ...
                     });
                 }else{
-                    alert("Mobile number does not match")
+                    document.querySelector("#loginMesageSuccess").innerHTML = ``
+                    document.querySelector("#loginMesageError").innerHTML = 'User does not exist Please Create Your Account !';
                 }
                 //   
             }else{
@@ -127,7 +131,7 @@ export const Login = () => {
                         <label htmlFor="">Enter Your Number</label>
                     <span>
                         <input type="number" readOnly={verify} name="number" value={number} onChange={(e) => handleChangeMobile(e)} />
-                        <button disabled={verify}  onClick={handleVerifyNumber}>Next</button>
+                        <button disabled={verify}  onClick={handleVerifyNumber} id="nextText">Next</button>
                     </span>
                 </div>
                 {verify ?

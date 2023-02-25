@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "number": "7838557666",
-      "user_name": "Katill_boyy",
+      "number": "8586864566",
+      "user_name": "Arun Kumar",
       "password": "123456",
       "email": "",
       "dob": "",
@@ -11,8 +11,8 @@
       "id": 1
     },
     {
-      "number": "9873033924",
-      "user_name": "Arun",
+      "number": "9289771917",
+      "user_name": "Neha",
       "password": "123456",
       "email": "",
       "dob": "",
@@ -22,23 +22,13 @@
     },
     {
       "number": "9205107244",
-      "user_name": "Anil Kumar",
+      "user_name": "Arun Kumar",
       "password": "123456",
       "email": "",
       "dob": "",
       "gender": "",
       "marital_status": null,
       "id": 3
-    },
-    {
-      "number": "9289771917",
-      "user_name": "Neha ",
-      "password": "123456",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "marital_status": null,
-      "id": 4
     }
   ],
   "cart": [],
