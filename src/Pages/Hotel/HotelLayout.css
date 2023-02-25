@@ -6,38 +6,17 @@
 }
 
 .HotelLayoutLeft {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 25%;
   height: auto;
   padding-left: 5%;
 }
 .HotelLayoutRight {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 70%;
 }
 
 .HotelCard {
-  border: 1px solid black;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 50px;
-  display: flex;
-}
-.HotelCard > h3 {
-  font-size: medium;
-  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.HotelCard > h4 {
-  font-size: medium;
-  font-weight: 500;
-}
-
-.HotelCard img {
-  width: 100%;
-}
-
-.ImgDiv {
-  border: 1px solid black;
-  width: 50%;
-}
