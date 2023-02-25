@@ -19,6 +19,26 @@
       "gender": "",
       "marital_status": null,
       "id": 2
+    },
+    {
+      "number": "9205107244",
+      "user_name": "Anil Kumar",
+      "password": "123456",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "marital_status": null,
+      "id": 3
+    },
+    {
+      "number": "9289771917",
+      "user_name": "Neha ",
+      "password": "123456",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "marital_status": null,
+      "id": 4
     }
   ],
   "cart": [],
