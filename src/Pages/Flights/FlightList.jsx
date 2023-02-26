@@ -2,21 +2,23 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import FlightCard from './FlightCard'
 
-const getData = async () => {
-    let res = await axios.get(`http://localhost:8000/flight?_limit=5`)
+const getData = async (page, priceValue) => {
+    let res = await axios.get(`http://localhost:8000/flight?_page=${page}&_limit=5?&price_gte=${priceValue - 2000
+        }&price_lte=${priceValue}`)
     return res.data
 }
 
 
-export default function FlightList() {
+export default function FlightList({ page, priceValue }) {
     const [data, setData] = React.useState([])
 
+
     useEffect(() => {
-        getData().then(res => {
+        getData(page, priceValue).then(res => {
             setData(res)
             // console.log(data)
         })
-    }, [data.length])
+    }, [page, priceValue])
 
 
     return (

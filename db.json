@@ -94,26 +94,15 @@
       "id": 1
     },
     {
-      "airline": "SpiceJet",
+      "airline": "Vistara",
       "number": "6E 2054",
       "from": "DELHI",
-      "to": "MUMBAI",
-      "departure": "06:20",
-      "arrival": "09:15",
-      "price": "4999",
+      "to": "BANGLURU",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
       "totalTime": "02h 55m",
-      "id": 4
-    },
-    {
-      "airline": "IndiGo",
-      "number": "6E 2054",
-      "from": "DELHI",
-      "to": "MUMBAI",
-      "departure": "02:20",
-      "arrival": "04:15",
-      "price": "5999",
-      "totalTime": "02h 55m",
-      "id": 3
+      "id": 6
     },
     {
       "airline": "GoAir",
@@ -347,6 +336,17 @@
       "price": "8999",
       "totalTime": "02h 55m",
       "id": 20
+    },
+    {
+      "airline": "Indigo",
+      "number": "ING-26",
+      "from": "Kanpur",
+      "to": "Pune",
+      "departure": "06:35",
+      "arrival": "07:25",
+      "price": 5800,
+      "totalTime": "05:10",
+      "id": 21
     }
   ],
   "giftcards": [
