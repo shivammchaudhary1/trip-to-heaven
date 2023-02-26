@@ -19,6 +19,7 @@ import {
   CardBody,
   CardFooter,
   Flex,
+  Img,
 } from "@chakra-ui/react";
 import { HotelFooter } from "./HotelFooter";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
@@ -27,18 +28,28 @@ import {
   hotelRequestAction,
   hotelSuccessAction,
 } from "../../Redux/HotelRedux/actionHotel";
+import HotelDetails from "./HotelDetails";
 
 const HotelSubNavbar = () => {
   // Default Data
 
+  const [person, setPerson] = useState("");
   const [searchHotel, setSearchHotel] = useState("");
+  const [sorting, setSorting] = useState("");
   const [priceValue, setPriceValue] = useState("");
   const [starValue, setStarValue] = useState("");
   const [propertyValue, setPropertyValue] = useState("");
   const [houseRulesValue, setHouseRulesValue] = useState("");
   const [page, setPage] = useState(1);
+  // http://localhost:8000/hotel?q=${query}&_page=${page}&_limit=8
 
   //redux importing
+
+  const handlePerson = (e) => {
+    setPerson(e.target.value);
+    // console.log(person);
+  };
+  console.log(sorting);
 
   const { hotel, isLoading, isError } = useSelector((store) => {
     // console.log(store.reducerHotel);
@@ -51,11 +62,11 @@ const HotelSubNavbar = () => {
   // console.log(isError);
 
   const dispatch = useDispatch();
-
+  // _page=7&_limit=20
   const getHotelData = () => {
     dispatch(hotelRequestAction());
     axios
-      .get(`http://localhost:8000/hotel?_limit=8`)
+      .get(`http://localhost:8000/hotel?_page=${page}_limit=10`)
       .then((res) => {
         // console.log(res.data);
         dispatch(hotelSuccessAction(res.data));
@@ -68,7 +79,7 @@ const HotelSubNavbar = () => {
 
   useEffect(() => {
     getHotelData();
-  }, []);
+  }, [page]);
 
   // Button Functions
 
@@ -78,8 +89,60 @@ const HotelSubNavbar = () => {
   };
 
   const HandleSearchButton = () => {
-    console.log("Hello");
+    dispatch(hotelRequestAction());
+    axios
+      .get(
+        `http://localhost:8000/hotel?q=${searchHotel}&_page=${page}&_limit=10`
+      )
+      .then((res) => {
+        dispatch(hotelSuccessAction(res.data));
+      })
+      .catch((err) => {
+        dispatch(hotelFailureAction());
+      });
   };
+
+  // sorting
+
+  const HandleSorting = (sorting) => {
+    dispatch(hotelRequestAction());
+    axios
+      .get(
+        `http://localhost:8000/hotel?_page=${page}&_limit=10&_sort=price&_order=${sorting}`
+      )
+      .then((res) => {
+        dispatch(hotelSuccessAction(res.data));
+      })
+      .catch((err) => {
+        dispatch(hotelFailureAction());
+      });
+  };
+  useEffect(() => {
+    HandleSorting(sorting);
+  }, [sorting]);
+
+  // get via range
+
+  // posts?
+
+  const HandlePriceRange = (priceValue) => {
+    dispatch(hotelRequestAction());
+    axios
+      .get(
+        `http://localhost:8000/hotel?_page=${page}&_limit=10&price_gte=${
+          priceValue - 1000
+        }&price_lte=${priceValue}`
+      )
+      .then((res) => {
+        dispatch(hotelSuccessAction(res.data));
+      })
+      .catch((err) => {
+        dispatch(hotelFailureAction());
+      });
+  };
+  useEffect(() => {
+    HandlePriceRange(priceValue);
+  }, [priceValue]);
 
   return (
     <div>
@@ -165,6 +228,8 @@ const HotelSubNavbar = () => {
                   fontWeight: "700",
                   padding: "0 20px",
                 }}
+                value={person}
+                onChange={handlePerson}
               />
             </div>
           </div>
@@ -230,19 +295,30 @@ const HotelSubNavbar = () => {
             </Box>
             <Box>
               <Heading as="h5" size="sm" m="3">
+                Price
+              </Heading>
+              <RadioGroup onChange={setSorting} value={sorting}>
+                <Stack direction="column">
+                  <Radio value="asc">Low to High</Radio>
+                  <Radio value="desc">High to Low</Radio>
+                </Stack>
+              </RadioGroup>
+            </Box>
+            <Box>
+              <Heading as="h5" size="sm" m="3">
                 Price Per Night
               </Heading>
               <RadioGroup onChange={setPriceValue} value={priceValue}>
                 <Stack direction="column">
-                  <Radio value="1">₹ 0 - ₹ 2000</Radio>
-                  <Radio value="2">₹ 2000 - ₹ 3000</Radio>
-                  <Radio value="3">₹ 3000 - ₹ 4000</Radio>
-                  <Radio value="4">₹ 4000 - ₹ 5000</Radio>
-                  <Radio value="5">₹ 5000 - ₹ 6000</Radio>
-                  <Radio value="6">₹ 6000 - ₹ 7000</Radio>
-                  <Radio value="7">₹ 7000 - ₹ 8000</Radio>
-                  <Radio value="8">₹ 8000 - ₹ 9000</Radio>
-                  <Radio value="9">₹ 9000 - ₹ 10,000+</Radio>
+                  <Radio value="2000">₹ 0 - ₹ 2000</Radio>
+                  <Radio value="3000">₹ 2000 - ₹ 3000</Radio>
+                  <Radio value="4000">₹ 3000 - ₹ 4000</Radio>
+                  <Radio value="5000">₹ 4000 - ₹ 5000</Radio>
+                  <Radio value="6000">₹ 5000 - ₹ 6000</Radio>
+                  <Radio value="7000">₹ 6000 - ₹ 7000</Radio>
+                  <Radio value="8000">₹ 7000 - ₹ 8000</Radio>
+                  <Radio value="9000">₹ 8000 - ₹ 9000</Radio>
+                  <Radio value="1000">₹ 9000 - ₹ 10,000+</Radio>
                 </Stack>
               </RadioGroup>
             </Box>
@@ -327,57 +403,90 @@ const HotelSubNavbar = () => {
             </Flex>
             {/* Pagination Part UI End */}
           </div>
-          {hotel.map((el) => {
-            return (
-              <div className="HotelCard">
-                <Card
-                  direction={{ base: "column", sm: "row" }}
-                  overflow="hidden"
-                  variant="outline"
-                  p="2"
-                >
-                  <Image
-                    objectFit="cover"
-                    maxW={{ base: "100%", sm: "200px" }}
-                    src={el.image}
-                    alt="Image Not Loading"
-                  />
+          {isLoading && (
+            <Image src="https://i.ibb.co/2jqK3wx/loader.gif" alt="...Loading" />
+          )}
+          {hotel.length == 0 && (
+            <Heading>
+              We apologize for any inconvenience, but unfortunately, we do not
+              currently have any hotels available at the {searchHotel} location.
+            </Heading>
+          )}
+          {hotel.length > 0 &&
+            hotel.map((el) => {
+              return (
+                <div className="HotelCard">
+                  <Card
+                    direction={{ base: "column", sm: "row" }}
+                    overflow="hidden"
+                    variant="outline"
+                    p="2"
+                  >
+                    <Image
+                      objectFit="cover"
+                      maxW={{ base: "100%", sm: "200px" }}
+                      src={el.image}
+                      alt="Image Not Loading"
+                    />
 
-                  <Stack w="70%">
-                    <CardBody>
-                      <Box bg="blue.100" borderRadius="2" p="1px" w="100%">
-                        Rating : {el.rating}
-                      </Box>
-                      <Heading size="md">{el.name}</Heading>
-                      <Text py="2">{el.place}</Text>
-                      <Heading size="sm" bg="gray.100" p="1" borderRadius="5px">
-                        {el.description}
-                      </Heading>
-                      <Box>
-                        <Text mt="2" color="green">
-                          {el.additional}
-                        </Text>
-                      </Box>
-                    </CardBody>
-                  </Stack>
-                  <Stack bg="blue.100" borderRadius="5" w="25%">
-                    <CardBody m="auto">
-                      <Heading size="lg">₹ {el.price}</Heading>
-                      <Text size="sm">+ ₹ {el.taxes} Taxes & Fees</Text>
-                    </CardBody>
-                    <CardFooter>
-                      <Button variant="solid" colorScheme="blue">
-                        Book Now
-                      </Button>
-                    </CardFooter>
-                  </Stack>
-                </Card>
-              </div>
-            );
-          })}
+                    <Stack w="70%">
+                      <CardBody>
+                        <Box bg="blue.100" borderRadius="2" p="1px" w="100%">
+                          Rating : {el.rating}
+                        </Box>
+                        <Heading size="md">{el.name}</Heading>
+                        <Text py="2">{el.place}</Text>
+                        <Heading
+                          size="sm"
+                          bg="gray.100"
+                          p="1"
+                          borderRadius="5px"
+                        >
+                          {el.description}
+                        </Heading>
+                        <Box>
+                          <Text mt="2" color="green">
+                            {el.additional}
+                          </Text>
+                        </Box>
+                      </CardBody>
+                    </Stack>
+                    <Stack bg="blue.100" borderRadius="5" w="25%">
+                      <CardBody m="auto">
+                        <Heading size="lg">₹ {el.price}</Heading>
+                        <Text size="sm">+ ₹ {el.taxes} Taxes & Fees</Text>
+                      </CardBody>
+                      <CardFooter>
+                        <RouteLink to={`/hotel/${el.id}`}>
+                          {/* <HotelDetails
+                            image={el.image}
+                            img1={el.img1}
+                            img2={el.img2}
+                            img3={el.img3}
+                            img4={el.img4}
+                            rating="4.5"
+                            ratingText="Very Good"
+                            name={el.name}
+                            place={el.place}
+                            description={el.description}
+                            additional={el.additional}
+                            taxes={el.taxes}
+                            price={el.price}
+                            id={el.id}
+                          /> */}
+                          <Button variant="solid" colorScheme="blue">
+                            Book Now
+                          </Button>
+                        </RouteLink>
+                      </CardFooter>
+                    </Stack>
+                  </Card>
+                </div>
+              );
+            })}
         </div>
       </div>
-
+      {/* <HotelDetails person={person} /> */}
       <HotelFooter />
     </div>
   );
