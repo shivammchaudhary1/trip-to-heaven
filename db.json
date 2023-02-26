@@ -22,7 +22,9 @@
     },
     {
       "number": "9205107244",
-      "user_name": "Arun Kumar",
+
+      "user_name": "Anil Kumar",
+
       "password": "123456",
       "email": "",
       "dob": "",
@@ -89,11 +91,12 @@
       "to": "MUMBAI",
       "departure": "04:20",
       "arrival": "07:15",
-      "price": "6999",
+      "price": 6999,
       "totalTime": "02h 55m",
       "id": 1
     },
     {
+
       "airline": "SpiceJet",
       "number": "6E 2054",
       "from": "DELHI",
@@ -122,11 +125,12 @@
       "to": "MUMBAI",
       "departure": "06:20",
       "arrival": "09:15",
-      "price": "7999",
+      "price": 7999,
       "totalTime": "02h 55m",
       "id": 2
     }
   ],
+
   "flight": [
     {
       "airline": "Vistara",

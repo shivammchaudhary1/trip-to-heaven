@@ -1,0 +1,81 @@
+.mainAdminLandingpage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainAdminLandingpage > .adminSideBr {
+  position: sticky;
+  width: 10%;
+  left: 0;
+  top: 0px;
+  gap: 20px;
+  height: 100vh;
+  display: flex;
+  background: rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  padding: 30px 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #222d31;
+  /* border: 1px solid blue; */
+}
+
+.mainAdminLandingpage > .mainBox {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.mainAdminLandingpage > .mainBox > .mainBoxHead {
+  padding: 20px;
+  font-size: 30px;
+}
+
+.mainAdminLandingpage > .mainBox > .DataBoxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px 30px;
+}
+
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx {
+  position: relative;
+  /* padding: 20px; */
+  /* border: 1px solid black; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 10px;
+  color: white;
+}
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx > h1 {
+  padding: 10px;
+}
+
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx:nth-child(1) {
+  background: royalblue;
+}
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx:nth-child(2) {
+  background: darkorange;
+}
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx:nth-child(3) {
+  background: #3c996e;
+}
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx:nth-child(4) {
+  background: #de4a39;
+}
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx:nth-child(5) {
+  background: #f909bc;
+}
+
+.mainAdminLandingpage > .mainBox > .DataBoxes > .dataBx a {
+  /* position: absolute; */
+  bottom: 0;
+  /* background: white; */
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  color: white;
+}

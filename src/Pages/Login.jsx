@@ -185,6 +185,7 @@ export const Login = () => {
             {/* <h2>Or USE ARE BUSSINESS ACCOUNT WITH</h2>
                     <p>By proceeding, you agree to MakeMyTrip'sT&Csand Privacy</p> */}
             <Link to="/register">Don't have an Account</Link>
+            <Link to="/admin">Admin Login</Link>
           </div>
           <h3 id="loginMesageError"></h3>
           <h3 id="loginMesageSuccess"></h3>
