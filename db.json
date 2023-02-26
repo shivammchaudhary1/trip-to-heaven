@@ -22,7 +22,6 @@
     },
     {
       "number": "9205107244",
-      "user_name": "Anil Kumar",
       "user_name": "Arun Kumar",
       "password": "123456",
       "email": "",
@@ -30,7 +29,6 @@
       "gender": "",
       "marital_status": null,
       "id": 3
-
     },
     {
       "number": "9289771917",
@@ -43,7 +41,7 @@
       "id": 4
     }
   ],
-  "hotelcart":[
+  "hotelcart": [
     {
       "image": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-76b20e2613c311e88dbe0a9df65c8753.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
       "img1": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-76b20e2613c311e88dbe0a9df65c8753.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
@@ -83,31 +81,52 @@
       "id": 2
     }
   ],
-
   "flightcart": [
-      {
-        "airline": "Vistara",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "04:20",
-        "arrival": "07:15",
-        "price": 6999,
-        "totalTime": "02h 55m",
-        "id": 1
-      },
-      {
-        "airline": "GoAir",
-        "number": "6E 2054",
-        "from": "DELHI",
-        "to": "MUMBAI",
-        "departure": "06:20",
-        "arrival": "09:15",
-        "price": 7999,
-        "totalTime": "02h 55m",
-        "id": 2
-      }],
-  
+    {
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 1
+    },
+    {
+      "airline": "SpiceJet",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "4999",
+      "totalTime": "02h 55m",
+      "id": 4
+    },
+    {
+      "airline": "IndiGo",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "02:20",
+      "arrival": "04:15",
+      "price": "5999",
+      "totalTime": "02h 55m",
+      "id": 3
+    },
+    {
+      "airline": "GoAir",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "06:20",
+      "arrival": "09:15",
+      "price": "7999",
+      "totalTime": "02h 55m",
+      "id": 2
+    }
+  ],
   "flight": [
     {
       "airline": "Vistara",

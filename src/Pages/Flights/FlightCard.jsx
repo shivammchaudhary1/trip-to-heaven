@@ -1,12 +1,45 @@
 import { Box, Image, Flex, Button } from "@chakra-ui/react"
 import axios from "axios"
+import { useToast } from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 
 export default function FlightCard({ data }) {
   const { id, airline, from, to, departure, arrival, price, totalTime } = data
+  const toast = useToast()
+
+  // function BookingMsg() {
+  //   
+  //   return (
+  //     <Button
+  //       onClick={() =>
+  //         toast({
+  //           title: 'Account created.',
+  //           description: "We've created your account for you.",
+  //           status: 'success',
+  //           duration: 9000,
+  //           isClosable: true,
+  //         })
+  //       }
+  //     >
+  //       Show Toast
+  //     </Button>
+  //   )
+  // }
 
 
   const handleClick = () => {
-    axios.post(`http://localhost:8000/cart`, data)
+    axios.post(`http://localhost:8000/flightcart`, data)
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err))
+
+    console.log("hello")
+    toast({
+      title: 'Flight Add to Cart',
+      description: "Please Proceed to Payment",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
   }
 
 
@@ -38,7 +71,9 @@ export default function FlightCard({ data }) {
         <h3>Price</h3>
         <b>{price}</b>
       </Flex>
-      <Button colorScheme='blue' onClick={handleClick}>Button</Button>
+      <Link to={"/cart"}>
+        <Button colorScheme='blue' onClick={handleClick}>Book Now</Button>
+      </Link>
     </Box>
 
   )
