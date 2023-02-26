@@ -1,70 +1,169 @@
-.flightBody{
-    font-family: 'Times New Roman', Times, serif;
-    background-image: url("https://www.savethestudent.org/uploads/flights.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* .flightBody {
+  font-family: "Times New Roman", Times, serif;
+  background-image: url("https://www.savethestudent.org/uploads/flights.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.hotelBody{
-    font-family: 'Times New Roman', Times, serif;
-    background-image: url("https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/_unbranded-template/media/hw-homepage-hero-01-61534350ecb1c-optimized.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hotelBody {
+  font-family: "Times New Roman", Times, serif;
+  background-image: url("https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/_unbranded-template/media/hw-homepage-hero-01-61534350ecb1c-optimized.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#link{
-    width: 40%;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    font-size: larger;
+#link {
+  width: 40%;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: larger;
 }
-.flightBox{
-margin-top: 5% ;
-color: aliceblue;
+.flightBox {
+  margin-top: 5%;
+  color: aliceblue;
+}
+.hotelBox {
+  color: white;
+  margin-top: 10%;
+}
+#head {
+  font-size: xx-large;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: white;
+  background-color: #7e57c1;
+  border-radius: 10px;
+  opacity: 0.8;
+  margin-top: 40px;
+}
+#label {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 60px;
+  color: aliceblue;
+}
+#input {
+  display: grid;
+  margin: auto;
+  font-size: large;
+  width: 80%;
+  color: aliceblue;
+  border: 2px solid aliceblue;
+  font-weight: bolder;
+  opacity: 0.5;
+}
+#btn {
+  background-color: rgb(7, 8, 9);
+  color: white;
+  width: 100%;
+  margin: 10% 0%;
+  font-size: 18px;
+}
+#btn:hover {
+  opacity: 0.5;
+  color: white;
+} */
 
+.adminFlightMai {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.hotelBox{
-    color: white;
-    margin-top: 10%;
-    
-    }
-#head{
-    font-size:xx-large;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    color: white;
-    background-color: #7e57c1;
-    border-radius: 10px;
-    opacity: 0.8;
-    margin-top: 40px;
-}
-#label{
-    font-size:18px;
-    font-weight: bolder;
-    margin-left: 60px;
-    color: aliceblue;
-}
-#input{
-    display: grid;
-    margin: auto;
-    font-size: large;
-    width: 80%;
-    color: aliceblue;
-    border:2px solid aliceblue;
-    font-weight: bolder;
-    opacity: 0.5;
-}
-#btn{
-    background-color: rgb(7, 8, 9);
-    color: white;
-    width: 100%;
-    margin: 10% 0%;
-    font-size:18px;
 
+.adminFlightMai > .adminFlightBox {
+  width: 55%;
+  height: 50%;
+  padding: 20px 40px;
+  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 10px;
+  backdrop-filter: blue(5px);
+  border: 1px solid white;
 }
-#btn:hover{
-    opacity: 0.5;
-    color:white;
+
+.adminFlightMai > .adminSideBr {
+  position: fixed;
+  left: 0;
+  /* top: 0; */
+  gap: 20px;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  padding: 30px 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-right: 1px solid #fff;
+}
+
+.adminFlightMai > .adminFlightBox > .adminHead {
+  padding: 20px;
+  color: white;
+  /* border: 1px solid black; */
+}
+.adminFlightMai > .adminFlightBox > .adminHead > h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.adminFlightMai > .adminFlightBox > .adminFlightInputs form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.adminFlightMai
+  > .adminFlightBox
+  > .adminFlightInputs
+  form
+  > .adminFlightInputBx {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  /* border: 1px solid black; */
+}
+
+.adminFlightMai
+  > .adminFlightBox
+  > .adminFlightInputs
+  form
+  > .adminFlightInputBx
+  > input {
+  width: 70%;
+  padding: 7px 20px;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+}
+.adminFlightMai
+  > .adminFlightBox
+  > .adminFlightInputs
+  form
+  > .adminFlightInputBx
+  > label {
+  width: 30%;
+  font-weight: 700;
+  /* border: 1px solid black; */
+}
+.adminFlightMai
+  > .adminFlightBox
+  > .adminFlightInputs
+  form
+  > .adminFlightInputBx
+  > button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7px 20px;
 }
