@@ -51,7 +51,7 @@ function HotelDetails({ person }) {
 
   const SingleData = () => {
     axios
-      .get(`http://localhost:8000/hotel/${id}`)
+      .get(`https://makemytrip-api-data.onrender.com/hotel/${id}`)
       .then((res) => {
         // console.log(res.data);
         setSingleHotel(res.data);

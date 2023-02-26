@@ -37,7 +37,7 @@ export const addFlight = (payload) => (dispatch) => {
   dispatch(flightRequest());
 
   axios
-    .post("http://localhost:8000/flight", payload)
+    .post("https://makemytrip-api-data.onrender.com/flight", payload)
     .then(() => {
       dispatch(postFlightSuccess());
     })
@@ -50,7 +50,7 @@ export const addFlight = (payload) => (dispatch) => {
 export const fetchFlightProducts = (limit) => (dispatch) => {
   dispatch(flightRequest());
   axios
-    .get(`http://localhost:8000/flight?_limit=${limit}`)
+    .get(`https://makemytrip-api-data.onrender.com/flight?_limit=${limit}`)
     .then((res) => {
       dispatch(fetch_flights_product(res.data));
     })
@@ -61,12 +61,15 @@ export const fetchFlightProducts = (limit) => (dispatch) => {
 
 export const DeleteFlightProducts = (deleteId) => async (dispatch) => {
   try {
-    const res = await fetch(`http://localhost:8000/flight/${deleteId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://makemytrip-api-data.onrender.com/flight/${deleteId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     let data = await res.json();
     dispatch(handleDeleteProduct(deleteId));
   } catch (e) {

@@ -41,7 +41,7 @@ const HotelSubNavbar = () => {
   const [propertyValue, setPropertyValue] = useState("");
   const [houseRulesValue, setHouseRulesValue] = useState("");
   const [page, setPage] = useState(1);
-  // http://localhost:8000/hotel?q=${query}&_page=${page}&_limit=8
+  // https://makemytrip-api-data.onrender.com/hotel?q=${query}&_page=${page}&_limit=8
 
   //redux importing
 
@@ -66,7 +66,9 @@ const HotelSubNavbar = () => {
   const getHotelData = () => {
     dispatch(hotelRequestAction());
     axios
-      .get(`http://localhost:8000/hotel?_page=${page}_limit=10`)
+      .get(
+        `https://makemytrip-api-data.onrender.com/hotel?_page=${page}_limit=10`
+      )
       .then((res) => {
         // console.log(res.data);
         dispatch(hotelSuccessAction(res.data));
@@ -92,7 +94,7 @@ const HotelSubNavbar = () => {
     dispatch(hotelRequestAction());
     axios
       .get(
-        `http://localhost:8000/hotel?q=${searchHotel}&_page=${page}&_limit=10`
+        `https://makemytrip-api-data.onrender.com/hotel?q=${searchHotel}&_page=${page}&_limit=10`
       )
       .then((res) => {
         dispatch(hotelSuccessAction(res.data));
@@ -108,7 +110,7 @@ const HotelSubNavbar = () => {
     dispatch(hotelRequestAction());
     axios
       .get(
-        `http://localhost:8000/hotel?_page=${page}&_limit=10&_sort=price&_order=${sorting}`
+        `https://makemytrip-api-data.onrender.com/hotel?_page=${page}&_limit=10&_sort=price&_order=${sorting}`
       )
       .then((res) => {
         dispatch(hotelSuccessAction(res.data));
@@ -129,7 +131,7 @@ const HotelSubNavbar = () => {
     dispatch(hotelRequestAction());
     axios
       .get(
-        `http://localhost:8000/hotel?_page=${page}&_limit=10&price_gte=${
+        `https://makemytrip-api-data.onrender.com/hotel?_page=${page}&_limit=10&price_gte=${
           priceValue - 1000
         }&price_lte=${priceValue}`
       )

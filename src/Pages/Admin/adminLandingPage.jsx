@@ -16,7 +16,7 @@ export const AdminLandingPage = () => {
   const getHotel = () => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/flight")
+      .get("https://makemytrip-api-data.onrender.com/flight")
       .then((res) => {
         setFlight(res.data.length);
       })
@@ -25,7 +25,7 @@ export const AdminLandingPage = () => {
       });
     //
     axios
-      .get("http://localhost:8000/hotel")
+      .get("https://makemytrip-api-data.onrender.com/hotel")
       .then((res) => {
         setHotel(res.data.length);
       })
@@ -34,7 +34,7 @@ export const AdminLandingPage = () => {
       });
     //
     axios
-      .get("http://localhost:8000/users")
+      .get("https://makemytrip-api-data.onrender.com/users")
       .then((res) => {
         setUsers(res.data.length);
       })
@@ -43,7 +43,7 @@ export const AdminLandingPage = () => {
       });
     //
     axios
-      .get("http://localhost:8000/giftcards")
+      .get("https://makemytrip-api-data.onrender.com/giftcards")
       .then((res) => {
         setGiftCard(res.data.length);
         setLoading(false);
