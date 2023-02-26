@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Admin } from "./Admin/AdminFlight";
 import { AdminHotel } from "./Admin/AdminHotel";
+import { Cart } from "./booking/Cart";
 
 import Flights from "./Flights/Flight";
 
@@ -25,6 +26,7 @@ export const AllRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/adminflight" element={<Admin />} />
         <Route path="/adminhotel" element={<AdminHotel />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

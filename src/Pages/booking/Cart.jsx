@@ -9,13 +9,6 @@ import {
   GiAirplaneArrival,
 } from "react-icons/gi";
 
-import { ImArrowLeft, ImArrowRight, ImArrowDown } from "react-icons/im";
-import {
-  GiAirplane,
-  GiAirplaneDeparture,
-  GiAirplaneArrival,
-} from "react-icons/gi";
-
 export const Cart = () => {
   const [flightcart, setFlightcart] = useState([]);
   const [hotelcart, sethotelcart] = useState([]);
@@ -45,14 +38,14 @@ export const Cart = () => {
 
   return (
     <div className="container">
-      useEffect(()=>
+      {/* useEffect(()=>
       {axios.get("  http://localhost:8000/cart").then((res) => {
         console.log(flightcart);
         setFlightcart(res.data.flight);
         console.log(hotelcart);
         sethotelcart(res.data.hotels);
       })}
-      ,[]); return (
+      ,[]); return ( */}
       <div className="cart">
         {flightcart.length > 0 &&
           flightcart.map((el) => {

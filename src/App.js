@@ -4,18 +4,16 @@ import { AdminHotel } from "./Pages/Admin/AdminHotel";
 import { AllRoutes } from "./Pages/AllRoutes";
 import { Booking } from "./Pages/booking/Booking";
 
-
 function App() {
   return (
-      <>
-        {/* <AllRoutes /> */}
-       {/* <Admin /> */}
-       {/* <AdminHotel /> */}
+    <>
+      <AllRoutes />
+      {/* <Admin /> */}
+      {/* <AdminHotel /> */}
 
-     <Booking/>
-    
-      </>
-    )
+      {/* <Booking/> */}
+    </>
+  );
 }
 
 export default App;
