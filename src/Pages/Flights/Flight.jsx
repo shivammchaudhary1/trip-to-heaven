@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { Heading, RadioGroup, Stack, Radio } from "@chakra-ui/react";
 import { Footer } from "../../components/Footer";
 import { useState } from "react";
 import "font-awesome/css/font-awesome.min.css";
@@ -17,6 +17,7 @@ const initialState = {
 
 export default function Flights() {
   const [PassengerData, setPassengerData] = useState(initialState);
+  const [priceValue, setPriceValue] = useState("");
 
   const handleChange = (e) => {
     setPassengerData({ ...PassengerData, [e.target.name]: e.target.value });
@@ -246,8 +247,25 @@ export default function Flights() {
           boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;"
           height={"auto"}
           padding="20px"
+          textAlign={"center"}
         >
-          <h1 >Sorting</h1>
+          <h1 style={{ fontSize: "20px", fontWeight: "bold" }}>Sorting & Filtering</h1>
+
+          <Box>
+            <Heading as="h5" size="sm" m="3">
+              Price Per Night
+            </Heading>
+            <RadioGroup onChange={setPriceValue} value={priceValue}>
+              <Stack direction="column">
+                <Radio value="1">₹ 0 - ₹ 2000</Radio>
+                <Radio value="2">₹ 2000 - ₹ 3000</Radio>
+                <Radio value="3">₹ 3000 - ₹ 4000</Radio>
+                <Radio value="4">₹ 4000 - ₹ 5000</Radio>
+                <Radio value="5">₹ 5000 - ₹ 6000</Radio>
+                <Radio value="6">₹ 6000 - ₹ 7000</Radio>
+              </Stack>
+            </RadioGroup>
+          </Box>
         </Box>
         <Box
           width={"80%"}
