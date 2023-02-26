@@ -1,10 +1,13 @@
-import { Box, Image, Flex, Center, Button } from "@chakra-ui/react"
+import { Box, Image, Flex, Button } from "@chakra-ui/react"
+import axios from "axios"
 
 export default function FlightCard({ data }) {
   const { id, airline, from, to, departure, arrival, price, totalTime } = data
 
 
-
+  const handleClick = () => {
+    axios.post(`http://localhost:8000/cart`, data)
+  }
 
 
   return (
@@ -35,7 +38,7 @@ export default function FlightCard({ data }) {
         <h3>Price</h3>
         <b>{price}</b>
       </Flex>
-      <Button colorScheme='blue'>Button</Button>
+      <Button colorScheme='blue' onClick={handleClick}>Button</Button>
     </Box>
 
   )
