@@ -17,7 +17,7 @@ const initialState = {
 
 export default function Flights() {
   const [PassengerData, setPassengerData] = useState(initialState);
-  const [priceValue, setPriceValue] = useState("");
+  const [priceValue, setPriceValue] = useState(8);
   const [classes, setClasses] = useState("")
   const [page, setPage] = useState(1)
   const [Packaging, setpackaging] = useState("")
@@ -260,9 +260,10 @@ export default function Flights() {
             </Heading>
             <RadioGroup onChange={setPriceValue} value={priceValue}>
               <Stack direction="column">
-                <Radio value="4">₹ 4000 - ₹ 5000</Radio>
-                <Radio value="5">₹ 5000 - ₹ 6000</Radio>
-                <Radio value="6">₹ 6000 - ₹ 7000</Radio>
+                <Radio value="5">₹ 4000 - ₹ 5000</Radio>
+                <Radio value="6">₹ 5000 - ₹ 6000</Radio>
+                <Radio value="7">₹ 6000 - ₹ 7000</Radio>
+                <Radio value="8">₹ 7000 - ₹ 8000</Radio>
               </Stack>
             </RadioGroup>
           </Box>
@@ -322,6 +323,7 @@ export default function Flights() {
               <Button
                 colorScheme="blue"
                 variant="outline"
+                isDisabled={page === 4}
                 onClick={() => setPage(page + 1)}
               >
                 Next
@@ -329,7 +331,7 @@ export default function Flights() {
             </Flex>
             {/* Pagination Part UI End */}
           </div>
-          <FlightList />
+          <FlightList page={page} priceValue={priceValue} />
         </Box>
       </Box>
       <Footer />
