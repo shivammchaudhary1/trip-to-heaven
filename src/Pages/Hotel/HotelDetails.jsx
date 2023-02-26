@@ -35,11 +35,19 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
 import { HotelFooter } from "./HotelFooter";
+import { useSelector } from "react-redux";
 
 function HotelDetails({ person }) {
   const [singleHotel, setSingleHotel] = useState([]);
   const { id } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { isAuth } = useSelector((store) => {
+    console.log(store);
+    return {
+      isAuth: store.LoginReducer.isAuth,
+    };
+  });
 
   const SingleData = () => {
     axios
@@ -221,25 +229,47 @@ function HotelDetails({ person }) {
               </Box>
             </Stack>
 
-            <Button
-              variant="solid"
-              colorScheme="blue"
-              onClick={onOpen}
-              rounded={"none"}
-              w={"full"}
-              mt={8}
-              size={"lg"}
-              py={"7"}
-              color={useColorModeValue("white", "gray.900")}
-              borderRadius="5"
-              textTransform={"uppercase"}
-              _hover={{
-                transform: "translateY(2px)",
-                boxShadow: "lg",
-              }}
-            >
-              Proceed to Payment
-            </Button>
+            {isAuth ? (
+              <Button
+                variant="solid"
+                colorScheme="blue"
+                onClick={onOpen}
+                rounded={"none"}
+                w={"full"}
+                mt={8}
+                size={"lg"}
+                py={"7"}
+                // color={useColorModeValue("white", "gray.900")}
+                borderRadius="5"
+                textTransform={"uppercase"}
+                _hover={{
+                  transform: "translateY(2px)",
+                  boxShadow: "lg",
+                }}
+              >
+                Proceed to Payment
+              </Button>
+            ) : (
+              <Button
+                variant="solid"
+                colorScheme="blue"
+                // onClick={onOpen}
+                rounded={"none"}
+                w={"full"}
+                mt={8}
+                size={"lg"}
+                py={"7"}
+                // color={useColorModeValue("white", "gray.900")}
+                borderRadius="5"
+                textTransform={"uppercase"}
+                _hover={{
+                  transform: "translateY(2px)",
+                  boxShadow: "lg",
+                }}
+              >
+                Proceed to Payment
+              </Button>
+            )}
 
             <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />

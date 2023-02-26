@@ -8,7 +8,9 @@
 .HotelLayoutLeft {
   /* border: 1px solid black; */
   width: 25%;
-  height: auto;
+  height: 100%;
+  position: sticky;
+  top: 0px;
   padding-left: 5%;
 }
 .HotelLayoutRight {

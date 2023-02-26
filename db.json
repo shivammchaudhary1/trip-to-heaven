@@ -22,9 +22,7 @@
     },
     {
       "number": "9205107244",
-
       "user_name": "Anil Kumar",
-
       "password": "123456",
       "email": "",
       "dob": "",
@@ -41,6 +39,16 @@
       "gender": "",
       "marital_status": null,
       "id": 4
+    },
+    {
+      "number": "9169235786",
+      "user_name": "Shivam Chaudhary",
+      "password": "1234",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "marital_status": null,
+      "id": 5
     }
   ],
   "hotelcart": [
@@ -85,40 +93,6 @@
   ],
   "flightcart": [
     {
-      "airline": "Vistara",
-      "number": "6E 2054",
-      "from": "DELHI",
-      "to": "MUMBAI",
-      "departure": "04:20",
-      "arrival": "07:15",
-      "price": 6999,
-      "totalTime": "02h 55m",
-      "id": 1
-    },
-    {
-
-      "airline": "SpiceJet",
-      "number": "6E 2054",
-      "from": "DELHI",
-      "to": "MUMBAI",
-      "departure": "06:20",
-      "arrival": "09:15",
-      "price": "4999",
-      "totalTime": "02h 55m",
-      "id": 4
-    },
-    {
-      "airline": "IndiGo",
-      "number": "6E 2054",
-      "from": "DELHI",
-      "to": "MUMBAI",
-      "departure": "02:20",
-      "arrival": "04:15",
-      "price": "5999",
-      "totalTime": "02h 55m",
-      "id": 3
-    },
-    {
       "airline": "GoAir",
       "number": "6E 2054",
       "from": "DELHI",
@@ -128,9 +102,19 @@
       "price": 7999,
       "totalTime": "02h 55m",
       "id": 2
+    },
+    {
+      "airline": "Vistara",
+      "number": "6E 2054",
+      "from": "DELHI",
+      "to": "MUMBAI",
+      "departure": "04:20",
+      "arrival": "07:15",
+      "price": "6999",
+      "totalTime": "02h 55m",
+      "id": 1
     }
   ],
-
   "flight": [
     {
       "airline": "Vistara",
