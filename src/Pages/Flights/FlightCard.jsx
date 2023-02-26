@@ -3,6 +3,10 @@ import { Box, Image, Flex, Center, Button } from "@chakra-ui/react"
 export default function FlightCard({ data }) {
   const { id, airline, from, to, departure, arrival, price, totalTime } = data
 
+
+
+
+
   return (
     <Box display={"flex"}
       gap="20px" key={id} height="100px"
