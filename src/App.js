@@ -4,14 +4,16 @@ import { AdminHotel } from "./Pages/Admin/AdminHotel";
 import { AllRoutes } from "./Pages/AllRoutes";
 import { Booking } from "./Pages/booking/Booking";
 
+
 function App() {
   return (
       <>
-        <AllRoutes />
+        {/* <AllRoutes /> */}
        {/* <Admin /> */}
        {/* <AdminHotel /> */}
 
-     
+     <Booking/>
+    
       </>
     )
 }

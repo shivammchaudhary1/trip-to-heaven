@@ -19,9 +19,93 @@
       "gender": "",
       "marital_status": null,
       "id": 2
+    },
+    {
+      "number": "9205107244",
+      "user_name": "Anil Kumar",
+      "password": "123456",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "marital_status": null,
+      "id": 3
+    },
+    {
+      "number": "9289771917",
+      "user_name": "Neha ",
+      "password": "123456",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "marital_status": null,
+      "id": 4
     }
   ],
-  "cart": [],
+  "hotelcart":[
+    {
+      "image": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-76b20e2613c311e88dbe0a9df65c8753.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
+      "img1": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-76b20e2613c311e88dbe0a9df65c8753.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
+      "img2": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-61fa810213c311e8867a0a9df65c8753.jpg?&output-quality=75&downsize=583:388&crop=583:388;86,0&output-format=jpg",
+      "img3": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-4618b92c13c311e8afa70a9df65c8753.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
+      "img4": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201802241526105449-915d473613c311e8bb7702755708f0b3.jpg?&output-quality=75&downsize=583:388&output-format=jpg",
+      "rating": 3.8,
+      "ratingtext": "Very Good",
+      "ratingcomment": "Based on  Ratings and  reviews",
+      "name": "Octave Studio Hotel",
+      "place": "Koramangala",
+      "description": "Couple Friendly",
+      "additional": "Free Cancellation",
+      "taxes": 291,
+      "price": 2999,
+      "additional2": "",
+      "additional1": "",
+      "id": 1
+    },
+    {
+      "image": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202203251031111024-2185f03afe8211ecab0a0a58a9feac02.jpg?&output-quality=75&downsize=583:388&crop=583:388;4,0&output-format=jpg",
+      "img1": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202203251031111024-2185f03afe8211ecab0a0a58a9feac02.jpg?&output-quality=75&downsize=583:388&crop=583:388;4,0&output-format=jpg",
+      "img2": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202203251031111024-0989f55cc23d11ec88930a58a9feac02.jpg?&output-quality=75&downsize=583:388&crop=583:388;24,0&output-format=jpg",
+      "img3": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202203251031111024-1ebdede8c23d11ec89ed0a58a9feac02.jpg?&output-quality=75&downsize=583:388&crop=583:388;103,0&output-format=jpg",
+      "img4": "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202203251031111024-3050fcbcc23d11ecad7f0a58a9feac02.jpg?&output-quality=75&downsize=583:388&crop=583:388;42,0&output-format=jpg",
+      "rating": 4.3,
+      "ratingtext": "Excellent",
+      "ratingcomment": "Based on  Ratings and  reviews",
+      "name": "Hilton Bengaluru Embassy Manyata Business Park",
+      "place": "Outer Ring Road",
+      "description": "",
+      "additional": "Free Cancellation till 4 hrs before check in",
+      "taxes": 250,
+      "price": 15558,
+      "additional2": "",
+      "additional1": "",
+      "id": 2
+    }
+  ],
+
+  "flightcart": [
+      {
+        "airline": "Vistara",
+        "number": "6E 2054",
+        "from": "DELHI",
+        "to": "MUMBAI",
+        "departure": "04:20",
+        "arrival": "07:15",
+        "price": 6999,
+        "totalTime": "02h 55m",
+        "id": 1
+      },
+      {
+        "airline": "GoAir",
+        "number": "6E 2054",
+        "from": "DELHI",
+        "to": "MUMBAI",
+        "departure": "06:20",
+        "arrival": "09:15",
+        "price": 7999,
+        "totalTime": "02h 55m",
+        "id": 2
+      }],
+  
   "flight": [
     {
       "airline": "Vistara",

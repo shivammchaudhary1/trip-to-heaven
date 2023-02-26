@@ -1,5 +1,8 @@
 import React from 'react'
 import './Booking.Module.css'
+import { BookingDetails } from './bookingDetails'
+import { Cart } from './Cart'
+
 
 export const Booking = () => {
   return (
@@ -8,6 +11,15 @@ export const Booking = () => {
         <h1>
             Complete your Booking Process ...
         </h1>
+
+<div>
+<Cart/>
+<BookingDetails/>
+</div>
+
+
+
+
 
     </div>
   )
