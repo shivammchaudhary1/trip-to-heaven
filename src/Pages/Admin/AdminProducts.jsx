@@ -56,6 +56,7 @@ export const AdminProducts = () => {
           <Link to={"/admin/adminhotel"}>Add Hotel</Link>
           <Link to={"/admin/products"}>All Flights</Link>
           <Link to={"/admin/hotels"}>All Hotels</Link>
+          <Link to={"/"}>Log out</Link>
         </div>
         <div className="adminProductbox">
           <div className="filterProdcut">
