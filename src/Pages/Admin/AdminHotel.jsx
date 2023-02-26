@@ -84,6 +84,8 @@ export const AdminHotel = () => {
           <Link to={"/admin/adminhotel"}>Add Hotel</Link>
           <Link to={"/admin/products"}>All Products</Link>
           <Link to={"/admin/hotels"}>All Hotels</Link>
+          <Link to={"/"}>Log out</Link>
+
         </div>
         <div className="adminFlightBox">
           <div className="adminHead">
