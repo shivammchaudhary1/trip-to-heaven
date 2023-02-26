@@ -15,7 +15,7 @@ header{
 header > .logo{
     /* border: 1px solid black; */
 }
-header > .logo > img{
+header > .logo > a > img{
     width: 100px;
 }
 header > .icons{
@@ -39,7 +39,7 @@ header > .icons > .iconCard.active{
     color: black;
     background-color: white;
     border-bottom: 2px solid black;
-
+    border-radius: 5px;
 }
 header > .login{
     font-size: 12px;
@@ -77,14 +77,18 @@ header > .login > a > .navbarPopup{
     visibility: hidden;
     opacity: 0;
     /* height: 50px; */
-    padding: 10px;
     width: 100px;
     display: flex;
     flex-direction: column;
     background-color: white;
-    gap: 10px;
+    /* gap: 10px; */
     border: 1px solid black;
 }
 header > .login > a > .navbarPopup > a{
     font-size: 15px;
+    padding: 10px;
+    color: black;
+}
+header > .login > a > .navbarPopup > a:hover{
+    background: rgba(0,0,0,0.1)
 }

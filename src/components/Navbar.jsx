@@ -36,7 +36,9 @@ export const Navbar = () => {
   return (
     <header>
       <div className="logo">
-        <img src="https://i.ibb.co/FqKTWS4/tth3.png" alt="not visible" />
+        <Link to="/">
+          <img src="https://i.ibb.co/FqKTWS4/tth3.png" alt="not visible" />
+        </Link>
       </div>
       <div className="icons">
         <Link to="/flight" className="iconCard">
