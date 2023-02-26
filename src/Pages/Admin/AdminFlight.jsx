@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Box, Button, FormControl, FormLabel, Heading, Input } from '@chakra-ui/react'
 import { useDispatch } from 'react-redux'
-import { addFlight } from '../../Redux/action'
+import { addFlight } from '../../Redux/AdminFlights/action'
 import styled from "styled-components"
 import "./Admin.Module.css"
 import { Link } from 'react-router-dom'
