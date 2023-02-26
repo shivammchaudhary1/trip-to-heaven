@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { useState } from "react";
 import "font-awesome/css/font-awesome.min.css";
@@ -248,7 +247,7 @@ export default function Flights() {
           height={"auto"}
           padding="20px"
         >
-          <h1>Sorting</h1>
+          <h1 >Sorting</h1>
         </Box>
         <Box
           width={"80%"}
@@ -260,6 +259,7 @@ export default function Flights() {
             src="https://mmt.servedbyadbutler.com/getad.img/;libID=3737167"
             width={"90%"}
             margin="auto"
+            marginBottom={"20px"}
           />
           <FlightList />
         </Box>

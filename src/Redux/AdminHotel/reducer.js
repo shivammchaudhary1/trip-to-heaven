@@ -1,4 +1,4 @@
-import { FLIGHT_FAILURE, FLIGHT_REQUEST, GET_FLIGHT_SUCCESS, POST_FLIGHT_SUCCESS } from "./actionType"
+import { HOTEL_FAILURE, HOTEL_REQUEST, GET_HOTEL_SUCCESS, POST_HOTEL_SUCCESS } from "./actionType"
 
 const initialState = {
     data: [],
@@ -6,19 +6,19 @@ const initialState = {
     isError: false,
 }
 
-export const Reducer = (state= initialState, {type, payload}) =>{
+export const HotelReducer = (state= initialState, {type, payload}) =>{
 
     switch (type){
-        case FLIGHT_REQUEST:
+        case HOTEL_REQUEST:
         return {...state, isLoading: true}
     
-        case FLIGHT_FAILURE:
+        case HOTEL_FAILURE:
         return {...state, isError: true}
     
-        case GET_FLIGHT_SUCCESS:
+        case GET_HOTEL_SUCCESS:
         return {...state, isLoading: false, flight:payload}
     
-        case POST_FLIGHT_SUCCESS:
+        case POST_HOTEL_SUCCESS:
         return {...state, isLoading: false, flight: payload}
     
           default:

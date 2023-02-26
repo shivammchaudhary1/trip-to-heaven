@@ -4,7 +4,8 @@ import styled from "styled-components"
 import "./Admin.Module.css"
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { addHotel } from '../../Redux/AdminHotel/action';
+import { useDispatch } from 'react-redux';
 
 let initialState = {
   image: "",
@@ -12,10 +13,11 @@ let initialState = {
   place: "",
   price: "",
   description: "",
+  additional: "",
 };   
 export const AdminHotel = () => {
   const [hotel, setHotel] = useState(initialState);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -26,7 +28,7 @@ export const AdminHotel = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(hotel);
-    // dispatch(addHotel(hotel));
+    dispatch(addHotel(hotel));
     setHotel(initialState);
   };
 
@@ -56,6 +58,8 @@ export const AdminHotel = () => {
             <Input id='input' type="number" name='price' value={hotel.price} onChange={(e) => handleChange(e)}/>
             <FormLabel  id='label'>Description</FormLabel>
             <Input id='input' type="text" name='description' value={hotel.description} onChange={(e) => handleChange(e)}/>
+            <FormLabel  id='label'>Additional</FormLabel>
+            <Input id='input' type="text" name='additional' value={hotel.additional} onChange={(e) => handleChange(e)}/>
             <Button id='btn'  variant='outline' type='submit'>Add Hotel Info</Button>
             </Box>  
         </FormControl>
