@@ -242,17 +242,6 @@
       "price": "8999",
       "totalTime": "02h 55m",
       "id": 20
-    },
-    {
-      "airline": "Indigo New",
-      "number": "6E 4785",
-      "from": "Lucknow",
-      "to": "Goa",
-      "departure": "04:20",
-      "arrival": "07:15",
-      "price": 1458,
-      "totalTime": "02h 55m",
-      "id": 21
     }
   ],
   "giftcards": [
