@@ -78,7 +78,7 @@ export const Cart = () => {
 
 
   useEffect(() => {
-    axios.get("  http://localhost:8000/flightcart").then((res) => {
+    axios.get("https://makemytrip-api-data.onrender.com/flightcart").then((res) => {
 
       setFlightcart(res.data);
       console.log(flightcart);
@@ -107,7 +107,7 @@ export const Cart = () => {
 
     setTrigger(!trigger)
 
-    axios.delete(`http://localhost:8000/flightcart/${id}`).then((res) => {
+    axios.delete(`https://makemytrip-api-data.onrender.com/flightcart/${id}`).then((res) => {
       console.log(res);
     }).catch((er) => {
       console.log(er);

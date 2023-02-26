@@ -39,7 +39,7 @@ export const addHotel = (payload) => (dispatch) => {
   dispatch(hotelRequest());
 
   axios
-    .post("http://localhost:8000/hotel", payload)
+    .post("https://makemytrip-api-data.onrender.com/hotel", payload)
     .then(() => {
       dispatch(postHotelSuccess());
     })
@@ -51,7 +51,7 @@ export const addHotel = (payload) => (dispatch) => {
 //
 export const fetchingHotels = (limit) => (dispatch) => {
   axios
-    .get(`http://localhost:8000/hotel?_limit=${limit}`)
+    .get(`https://makemytrip-api-data.onrender.com/hotel?_limit=${limit}`)
     .then((res) => {
       //   console.log(res.data);
       dispatch(fetch_hotel(res.data));
@@ -65,12 +65,15 @@ export const fetchingHotels = (limit) => (dispatch) => {
 
 export const DeleteHotel = (deleteId) => async (dispatch) => {
   try {
-    const res = await fetch(`http://localhost:8000/hotel/${deleteId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://makemytrip-api-data.onrender.com/hotel/${deleteId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     let data = await res.json();
     dispatch(handleDeleteHotel(deleteId));
   } catch (e) {
