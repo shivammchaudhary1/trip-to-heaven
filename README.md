@@ -81,3 +81,25 @@ This project has been deployed using Vercel at the following URL:
 ## Acknowledgements
 
 We would like to thank MakeMyTrip for providing the inspiration for this project. We would also like to thank our IA Vivek Goswami, which helped us and guide us.
+
+## Glimpses
+
+### Landing Page
+![Landing Page](https://user-images.githubusercontent.com/95885406/221484006-d55264fe-6525-47a5-a834-4dd5c8c5531a.png)
+
+### Login Via Firebase
+![Login Via Firebase](https://user-images.githubusercontent.com/95885406/221484174-dee52c1f-903a-4b26-8ce9-61d1b395a69e.png)
+
+### Flight Secton
+![Flight Page](https://user-images.githubusercontent.com/95885406/221484249-58f368c9-65bf-453f-baf6-e6e0581fbdcc.png)
+
+### Hotel Section
+![Hotel Page](https://user-images.githubusercontent.com/95885406/221484311-96e482e6-170f-422b-9b1b-884b644e310e.png)
+
+### Cart Section
+![Cart Page2](https://user-images.githubusercontent.com/95885406/221484381-f247049b-e633-4422-934e-47ef9eaacfc2.png)
+![Cart Page](https://user-images.githubusercontent.com/95885406/221484419-532d3820-c38a-44c0-9c93-0313bcbc5742.png)
+
+### Admin Panel
+![Admin Panel](https://user-images.githubusercontent.com/95885406/221484502-e98a0fa4-6238-4a90-9db3-d7b26a6ff605.png)
+![Admin2](https://user-images.githubusercontent.com/95885406/221484547-f5da9795-e0c9-4eec-8623-d0ecdaffea5a.png)
