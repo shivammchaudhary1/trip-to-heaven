@@ -74,8 +74,14 @@ export const Cart = () => {
   const [payment, setPayment] = useState(0);
 
   const [trigger, setTrigger] = useState(false);
+ 
 
 
+  axios.get("https://makemytrip-api-data.onrender.com/flightcart").then((res) => {
+
+      setFlightcart(res.data);
+      console.log(flightcart);
+    })
 
   useEffect(() => {
     axios.get("https://makemytrip-api-data.onrender.com/flightcart").then((res) => {
@@ -86,10 +92,13 @@ export const Cart = () => {
   }, [trigger]);
 
 
+  
+
   useEffect(() => {
     paymentloop();
   })
 
+  
 
 
   const paymentloop = () => {
@@ -105,10 +114,11 @@ export const Cart = () => {
 
   const handledelete = (id) => {
 
-    setTrigger(!trigger)
+    
 
     axios.delete(`https://makemytrip-api-data.onrender.com/flightcart/${id}`).then((res) => {
       console.log(res);
+      setTrigger(!trigger)
     }).catch((er) => {
       console.log(er);
     })
@@ -223,6 +233,8 @@ export const Cart = () => {
         </h3>
 
         <hr />
+        <br />
+        <br />
 
 
         <PaymentMsg />
