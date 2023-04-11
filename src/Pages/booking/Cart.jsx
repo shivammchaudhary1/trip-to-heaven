@@ -237,7 +237,7 @@ export const Cart = () => {
         <br />
 
 
-        <PaymentMsg />
+        <PaymentMsg  />
 
 
 
