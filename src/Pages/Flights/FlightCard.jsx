@@ -28,7 +28,8 @@ export default function FlightCard({ data }) {
 
 
   const handleClick = () => {
-    axios.post(`http://localhost:8000/flightcart`, data)
+    // axios.post(`http://localhost:8000/flightcart`, data)
+    axios.post(`https://makemytrip-api-data.onrender.com/flightcart`, data)
     //   .then((res) => console.log(res))
     //   .catch((err) => console.log(err))
 

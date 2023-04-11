@@ -1,9 +1,10 @@
 header{
     position: sticky;
+    width: 100%;
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 5px 20px;
     /* background-color: white; */
     background: rgba(0,0,0,0.5);
@@ -11,9 +12,14 @@ header{
     /* border: 1px solid black; */
     z-index: 999;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex-wrap: wrap;
 }
 header > .logo{
     /* border: 1px solid black; */
+    margin-top: 10px;
+  
+  
+  
 }
 header > .logo > a > img{
     width: 100px;
@@ -48,10 +54,10 @@ header > .login{
     color: white;
     /* border: 1px solid black; */
 }
-header > .login select > option{
+ select > option{
     color: black;
 }
-header > .login select {
+ select {
     background: transparent;
     background: none;
 }
@@ -91,4 +97,97 @@ header > .login > a > .navbarPopup > a{
 }
 header > .login > a > .navbarPopup > a:hover{
     background: rgba(0,0,0,0.1)
+}
+
+
+
+select{
+    display: none;
+}
+
+
+.Menu>.iconCard{
+    color: white;
+    padding-bottom: 5px;
+    
+}
+
+.Menu>.login{
+    color:white ;
+}
+
+
+span{
+    padding-left: 15px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+#check{
+    display: none;
+}
+
+
+ .Menu{
+    display: none;
+    padding-right: 50px;
+    position: relative;
+   
+    
+    
+} 
+
+
+
+
+@media (max-width:650px) {
+
+header{
+    margin-bottom: 50px;
+
+}
+
+    #loginpro{
+        display: none;
+    }
+    
+    .icons>.iconCard{
+        display: none;
+    }
+
+ 
+
+
+.Menu{
+    display: block;
+    
+}
+.dropmenu{
+    display: none;
+} 
+/* label{
+    display: block;
+}  */
+
+#check:checked ~.dropmenu{
+   display: block;
+    flex-direction: column;
+    width: 190%;
+    align-items: center;
+   
+    justify-content: center;
+    padding-top: 30px;
+
+   
+
+
+}
+
+
+ul>li{
+    list-style: none;
+    width: 100%;
+}
+
 }

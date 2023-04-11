@@ -53,11 +53,7 @@ export const Navbar = () => {
           <i className="fa fa-home"></i>
           <h1>Home Style</h1>
         </Link>
-        {/* <Link to="" className="iconCard">
-              <i className="fa fa-balloon"></i>
-              <i className="fa fa-car"></i>
-              <h1>Holiday Packages</h1>
-            </Link> */}
+     
         <Link to="" className="iconCard">
           <i className="fa fa-train"></i>
           <h1>Train</h1>
@@ -78,17 +74,14 @@ export const Navbar = () => {
           <i className="fa fa-plane"></i>
           <h1>Charter Plane</h1>
         </Link>
-        {/* <Link to="" className="iconCard">
-              <i className="fa-light fa-mountain-city"></i>
-              <h1>Activity</h1>
-            </Link> */}
+      
       </div>
 
-      <div className="login">
+      <div className="login" id="loginpro">
         {!isAuth ? 
             <Link to="/login">
             <div className="ball"></div>
-            Login or <br /> Create Account
+            Login 
           </Link>
         :
           <Link id="activePopup">
@@ -102,22 +95,115 @@ export const Navbar = () => {
             </div>
           </Link>
         }
-        <select>
-          <option value="">Select Country</option>
-          <option value="india">India</option>
-          <option value="bangladesh">Bangaladesh</option>
-          <option value="U.K">U.K</option>
-          <option value="Brazil">Brazil</option>
-          <option value="Cheen">Cheen</option>
-        </select>
-        <select>
-          <option disabled>Lenguage</option>
-          <option>Bangaladesh</option>
-          <option>U.K</option>
-          <option>Brazil</option>
-          <option>Cheen</option>
-        </select>
+      
       </div>
+
+
+
+
+{/* menu button for smallscreens */}
+
+
+<div className="Menu">
+
+  <input type="checkbox" id="check" />
+  <label htmlFor="check">
+
+  <i className="fa fa-bars">
+</i>
+  </label>
+
+
+
+<ul className="dropmenu">
+
+<li>
+<Link to="/flight" className="iconCard">
+          <i className="fa fa-plane">
+            <span>Flight</span>
+          </i>
+          
+        </Link>
+</li>
+
+
+<li>
+<Link to="/hotel" className="iconCard">
+          <i className="fa fa-hotel">
+            <span>
+            Hotel
+            </span>
+          </i>
+          
+        </Link>
+</li>
+
+
+
+        
+      
+  
+
+        <li>
+        <Link to="" className="iconCard">
+          <i className="fa fa-home">
+          <span>Home Style</span>
+          </i>
+         
+        </Link>
+        </li>
+      
+
+     
+
+        <li>
+        <Link to="" className="iconCard">
+          <i className="fa fa-train">
+          <span>Train</span>
+          </i>
+          
+        </Link>
+        </li>
+     
+    
+
+       
+
+        <li>
+        <Link to="" className="iconCard">
+          <i className="fa fa-bus">
+          <span>Bus</span>
+          </i>
+          
+        </Link>
+
+        </li>
+     
+     
+
+        <li>
+        <Link to="" className="iconCard">
+          <i className="fa fa-car"><span>Car</span></i>
+          
+        </Link>
+        </li>
+
+       
+
+       
+</ul>
+
+
+ 
+      
+
+
+</div>
+
+
+
+
+
     </header>
   );
 };
