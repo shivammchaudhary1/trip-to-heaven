@@ -68,7 +68,7 @@ To run this project locally, follow the steps below:
 
 This project has been deployed using Vercel at the following URL:
 
-<a href="https://hesitant-river-6235-nine.vercel.app/">https://hesitant-river-6235-nine.vercel.app/</a>
+<a href="https://hesitant-river-6235-ashy.vercel.app/">https://hesitant-river-6235-ashy.vercel.app/</a>
 
 ## Contributors
 
