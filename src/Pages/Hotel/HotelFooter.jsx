@@ -4,7 +4,7 @@ import "./HotelStyles/HotelFooter.css";
 export const HotelFooter = () => {
   return (
     <footer>
-      <div className="footerTerms">
+      <div className="footerTerms" id="footercol">
         <div className="footerCard">
           <h1>Why MakeMyTrip?</h1>
           <p>

@@ -86,3 +86,91 @@ footer > .footerLastBx > .footerCopyrightbx > h2{
     font-size: 15px;
     /* font-weight: 700; */
 }
+
+
+
+@media all and (min-width:401px) and (max-width:780px) {
+    .footerData{
+        border: 1px solid transparent;
+        padding: 10px 5px;
+    }
+
+    .footerData>h1{
+        width: 190%;
+        
+        text-align: left;
+    
+    }
+
+    footer > .footerLastBx{
+        display: grid;
+       
+    }
+
+    
+    .footerData>p{
+        width: 150%;
+        margin-left: -70px;
+        text-align: left;
+    }
+
+
+    .footerTerms>.footerCard{
+        border: 1px solid transparent;
+        width: 150%;
+        margin-left: -70px;
+        
+    }
+
+
+    #fotdetails{
+        border: 1px solid transparent;
+        display: block;
+    }
+
+}
+
+
+@media all and (min-width:100px) and (max-width:400px)  {
+
+  
+
+    .footerData{
+        border: 1px solid transparent;
+        padding: 10px 5px;
+    }
+
+    .footerData>h1{
+        width: 190%;
+        
+        text-align: left;
+    
+    }
+
+    footer > .footerLastBx{
+        display: grid;
+       
+    }
+
+    
+    .footerData>p{
+        width: 300%;
+        margin-left: -90px;
+        text-align: left;
+    }
+
+
+    .footerTerms>.footerCard{
+        border: 1px solid transparent;
+        width: 300%;
+        margin-left: -90px;
+        
+    }
+
+
+    #fotdetails{
+        border: 1px solid transparent;
+        display: block;
+    }
+}
+

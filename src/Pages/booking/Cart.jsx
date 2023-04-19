@@ -74,6 +74,10 @@ export const Cart = () => {
   const [payment, setPayment] = useState(0);
 
   const [trigger, setTrigger] = useState(false);
+  const [name , setname]=useState("");
+  const[card,setcard]=useState("");
+  const [number,setnumber]=useState("");
+
  
 
 
@@ -202,8 +206,28 @@ export const Cart = () => {
 
       {payment > 0 && <div className='paymentsum'>
         <h1>
-          Fare summary
+          Please add details for Payment
         </h1>
+
+<input type="text" placeholder='Enter Full name'  
+className='inpdetails' onChange={(e)=>{
+setname(e.target.value)
+}}
+/>
+<input type="number" placeholder='Enter mobile number'
+className='inpdetails' onChange={(e)=>{
+  setnumber(e.target.value)
+  }}
+/>
+<input type="text" placeholder='Enter Address' 
+className='inpdetails'
+/>
+<input type="number"  placeholder='Enter card number' 
+className='inpdetails' onChange={(e)=>{
+  setcard(e.target.value)
+  }}
+/>
+
 
         <h3>
           Ticket price :-  <span>
@@ -237,7 +261,12 @@ export const Cart = () => {
         <br />
 
 
-        <PaymentMsg  />
+{
+ (name.length>0 && card.length>0) &&   <PaymentMsg  />
+}
+
+
+       
 
 
 

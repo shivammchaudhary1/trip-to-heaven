@@ -70,3 +70,10 @@
     border-radius: 10px;
     color: black;
 }
+
+
+@media (max-width:750px){
+    .mainHomeItems > .homeItems > .Handpicked{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

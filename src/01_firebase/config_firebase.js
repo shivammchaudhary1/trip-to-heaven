@@ -5,15 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC9ITc-qx8vQU5wwmMJyuWNPK2fuhLRjgA",
-  authDomain: "makemytrip-authantication.firebaseapp.com",
-  databaseURL: "https://makemytrip-authantication-default-rtdb.firebaseio.com",
-  projectId: "makemytrip-authantication",
-  storageBucket: "makemytrip-authantication.appspot.com",
-  messagingSenderId: "17638617178",
-  appId: "1:17638617178:web:a745ac4ac49388320c6863"
+  apiKey: "AIzaSyB6VjNv4gemWADjCOzPaad50vWrxSCog1E",
+  authDomain: "apple-2cdb1.firebaseapp.com",
+  projectId: "apple-2cdb1",
+  storageBucket: "apple-2cdb1.appspot.com",
+  messagingSenderId: "628455239413",
+  appId: "1:628455239413:web:f15e654555ac8c150d5fbc",
+  measurementId: "G-MKY2TV0PZ9"
 };
-
 // Initialize Firebase
 const firebase_app = initializeApp(firebaseConfig);
 

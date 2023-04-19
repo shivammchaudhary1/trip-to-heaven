@@ -43,7 +43,7 @@ export const handlelogout_user = () => {
 export const userRigister = (userData) => async (dispatch) => {
   dispatch(register_request());
   let res = await axios
-    .post(`https://makemytrip-api-data.onrender.com/users`, userData)
+    .post(`https://confused-fawn-long-underwear.cyclic.app/users`, userData)
     .then((res) => {
       dispatch(register_success(res.data));
       // console.log(res.data)
@@ -58,7 +58,7 @@ export const userRigister = (userData) => async (dispatch) => {
 export const fetch_users = (dispatch) => {
   dispatch(register_request());
   axios
-    .get(`https://makemytrip-api-data.onrender.com/users`)
+    .get(`https://confused-fawn-long-underwear.cyclic.app/users`)
     .then((res) => {
       dispatch(get_users(res.data));
     })

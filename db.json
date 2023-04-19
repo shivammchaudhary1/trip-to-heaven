@@ -1,54 +1,15 @@
 {
   "users": [
+  
     {
-      "number": "8586864566",
-      "user_name": "Arun Kumar",
+      "number": "8106869838",
+      "user_name": "harsha",
       "password": "123456",
       "email": "",
       "dob": "",
       "gender": "",
       "marital_status": null,
       "id": 1
-    },
-    {
-      "number": "9289771917",
-      "user_name": "Neha",
-      "password": "123456",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "marital_status": null,
-      "id": 2
-    },
-    {
-      "number": "9205107244",
-      "user_name": "Anil Kumar",
-      "password": "123456",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "marital_status": null,
-      "id": 3
-    },
-    {
-      "number": "9289771917",
-      "user_name": "Neha ",
-      "password": "123456",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "marital_status": null,
-      "id": 4
-    },
-    {
-      "number": "9169235786",
-      "user_name": "Shivam Chaudhary",
-      "password": "1234",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "marital_status": null,
-      "id": 5
     }
   ],
   "hotelcart": [

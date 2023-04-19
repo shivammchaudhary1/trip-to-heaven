@@ -27,8 +27,8 @@ display: flex;
 
 background-color:gray;
 padding-left: 30px;
-padding-top: 20px;
-padding-bottom: 20px;
+padding-top: 40px;
+padding-bottom: 40px;
 border-radius: 15px;
 
 }
@@ -57,7 +57,7 @@ text-align: left;
 
 .flight>div:nth-child(2)>button{
 color: white;
-background-color:#1C73F6;
+background-color:#123D6F;
 margin-top: 20px;
 margin-left: 40px;
 padding: 10px 9px;
@@ -113,7 +113,7 @@ border-radius: 10px;
 
 .paymentsum{
   width: 25%;
-  height: 400px;
+  height: 80%;
   border: 1px solid transparent;
   background-color: white;
   margin-top: 60px;
@@ -121,9 +121,12 @@ border-radius: 10px;
   text-align: left;
   padding-left: 40px;
   border-radius: 20px;
+  
  
   
 }
+
+
 
 .paymentsum>a>button{
   color: white;
@@ -145,10 +148,19 @@ margin-bottom: 50px;
   margin-bottom: 5px;
 }
 
+
+
 .paymentsum>h3:nth-child(4)>span{
 margin-left: 100px;
 }
 
+.inpdetails{
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+}
 
 
 .paymentsum>h1{

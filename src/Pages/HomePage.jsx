@@ -122,7 +122,7 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
-      <Offers />
+      <Offers  />
       <HomeSliders />
       <Footer />
     </>
