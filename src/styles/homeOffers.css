@@ -148,3 +148,13 @@
 .homeOffers > .offerDonwloadApp > .donwloadBox > .downloadQr img{
     width: 120px;
 }
+
+
+
+
+
+@media (max-width:750px){
+    .homeOffers{
+display: none;
+    }
+}

@@ -76,7 +76,7 @@ export const Footer = () => {
             </p>
         </div>
 
-        <div className="footerTerms">
+        <div className="footerTerms" id='fotdetails'>
             <div className="footerCard">
                 <h1>Why MakeMyTrip?</h1>
                 <p>

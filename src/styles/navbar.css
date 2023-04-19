@@ -141,7 +141,7 @@ span{
 
 
 
-@media (max-width:650px) {
+@media (max-width:750px) {
 
 header{
     margin-bottom: 50px;
@@ -190,4 +190,10 @@ ul>li{
     width: 100%;
 }
 
+}
+
+@media (max-width:400px) {
+header{
+    width: 100%;
+}
 }

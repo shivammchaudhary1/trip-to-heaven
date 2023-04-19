@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/homePage.css";
 
 export const HomePageComponent = () => {
 
@@ -16,7 +17,7 @@ export const HomePageComponent = () => {
 
   return (
     <>
-        <div className="homeInputBx">
+        <div className="homeInputBx" id='flightinputBx'>
             <div>
             <div className="homeInputs">
                 <input name="type" type="radio" id='inputs' />
@@ -34,7 +35,7 @@ export const HomePageComponent = () => {
             <p>Book International and Domestic Flights</p>
         </div>
         {/*  */}
-        <div className="homeMainSearchInput">
+        <div className="homeMainSearchInput" id='homeMainSearchInputc1'>
             <div className="MainSearchinputBx">
             <span>FROM</span>
             <input id='from' type="text" value="Delhi" />
@@ -58,7 +59,7 @@ export const HomePageComponent = () => {
             </div>
         </div>
         {/*  */}
-        <div className="Homeoptions">
+        <div className="Homeoptions" id='Homeoptions'>
             <h3>Select A <br /> Fare Type: </h3>
             <div className="optionsInputBx">
             <input type="radio" name='fares' />

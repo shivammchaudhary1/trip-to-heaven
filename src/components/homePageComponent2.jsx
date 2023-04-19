@@ -1,9 +1,10 @@
 import React from 'react'
+import "../styles/homePage.css";
 
 export const HomePageComponent2 = () => {
   return (
     <>
-        <div className="homeInputBx">
+        <div className="homeInputBx" id='hotelinputBx'>
             <div>
             <div className="homeInputs">
                 <input checked="checked" name="type" type="radio" id='inputs' />
@@ -17,7 +18,7 @@ export const HomePageComponent2 = () => {
             <p>Book International and Domestic Flights</p>
         </div>
         {/*  */}
-        <div className="homeMainSearchInput">
+        <div className="homeMainSearchInput" >
             <div className="MainSearchinputBx">
             <span>CITY, PROPERTY NAME OR LOCATION</span>
             <input id='from' type="text" value="Goa" />

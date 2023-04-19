@@ -7,6 +7,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid transparent;
+ 
 }
 .homeTop > .homeTopCard {
   position: relative;
@@ -211,4 +213,58 @@
 }
 .homeTop > .homeExplore > .exploreCard > img {
   width: 30px;
+}
+
+
+@media (max-width:750px){
+  .homeTop > .homeTopCard > .secondHeader{
+width: 90%;
+height: auto;
+border: 1px solid transparent;
+justify-content: space-evenly;
+display: grid;
+grid-template-columns: repeat(2,70px);
+margin-top: 80px;
+margin-bottom: 20px;
+  }
+
+  .homeTop > .homeTopCard > .secondHeader > .iconCard {
+    font-size: 1rem;
+    padding: 6px 2px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .homeTop > .homeExplore {
+    display: none;
+  }
+
+  #flightinputBx{
+    display: none;
+  }
+#hotelinputBx{
+  display: none;
+}
+
+#Homeoptions{
+  display: none;
+}
+
+#homeMainSearchInputc1{
+  display: none;
+}
+
+
+.homeTop > .homeTopCard > .homeSearchButtonBx  {
+  margin-bottom: 60px;
+  
+}
+
+
+.homeTop {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
 }
