@@ -4,6 +4,7 @@ import morgan from "morgan";
 import envs from "../environment/envs.js";
 import { connectDB } from "../db/db.js";
 import chalk from "chalk";
+import appRoutes from "../../routes/app.routes.js";
 
 export const startServer = async (): Promise<void> => {
   const app = express();
@@ -21,6 +22,9 @@ export const startServer = async (): Promise<void> => {
       time: new Date().toISOString(),
     });
   });
+
+  //routes
+  appRoutes(app);
 
   app.listen(envs.port, async () => {
     try {

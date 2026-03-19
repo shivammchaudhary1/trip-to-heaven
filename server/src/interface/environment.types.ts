@@ -7,4 +7,5 @@ export interface IEnvironmentConfig {
   clientUrl: string;
   cookieSecret: string;
   cookieExpiresIn: string;
+  saltRounds: number;
 }
