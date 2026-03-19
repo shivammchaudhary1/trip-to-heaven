@@ -20,7 +20,10 @@ const registerUser = async (req: Request, res: Response) => {
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
-    const token = generateToken({ userId: newUser._id.toString() });
+    const token = generateToken({
+      userId: newUser._id.toString(),
+      role: newUser.role,
+    });
 
     return res
       .status(201)
@@ -55,7 +58,10 @@ const loginUser = async (req: Request, res: Response) => {
         .json({ message: "Invalid password, try again", success: false });
     }
 
-    const token = generateToken({ userId: user._id.toString() });
+    const token = generateToken({
+      userId: user._id.toString(),
+      role: user.role,
+    });
 
     return res
       .status(200)

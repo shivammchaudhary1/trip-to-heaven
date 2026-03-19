@@ -31,6 +31,7 @@ export const authMiddleware = (
     }
 
     req.userId = String(decoded.userId);
+    req.role = String(decoded.role);
     next();
   } catch (error) {
     console.error("Auth middleware error:", error);
@@ -40,4 +41,17 @@ export const authMiddleware = (
       success: false,
     });
   }
+};
+
+export const roleMiddleware = (allowedRoles: string[]) => {
+  return (req: Request, res: Response, next: NextFunction) => {
+    if (!req.role || !allowedRoles.includes(req.role)) {
+      return res.status(403).json({
+        code: "FORBIDDEN",
+        message: "Forbidden: You do not have access to this resource",
+        success: false,
+      });
+    }
+    next();
+  };
 };
