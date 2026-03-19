@@ -9,6 +9,12 @@ export interface IUser {
   gender?: string;
   isActive?: boolean;
   profilePicture?: string;
+  bio?: string;
+  lastLogin?: Date;
+  preferences?: {
+    newsletter?: boolean;
+    notifications?: boolean;
+  };
 }
 
 export interface IUserExt extends IUser {
