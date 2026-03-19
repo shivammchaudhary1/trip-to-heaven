@@ -16,13 +16,31 @@ const userSchema = new mongoose.Schema<IUserExt>(
       type: String,
       required: true,
     },
+    mobileNumber: {
+      type: Number,
+    },
     role: {
       type: String,
+      enum: ["admin", "user"],
       default: "user",
+    },
+    dateOfBirth: {
+      type: Date,
+    },
+    isMarried: {
+      type: Boolean,
+      default: false,
+    },
+    gender: {
+      type: String,
+      enum: ["male", "female", "other"],
     },
     isActive: {
       type: Boolean,
       default: true,
+    },
+    profilePicture: {
+      type: String,
     },
   },
   {

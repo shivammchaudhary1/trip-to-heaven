@@ -1,3 +1,5 @@
+import type { ServiceAccount } from "firebase-admin";
+
 export interface IEnvironmentConfig {
   port: number;
   mongoUri: string;
@@ -8,4 +10,6 @@ export interface IEnvironmentConfig {
   cookieSecret: string;
   cookieExpiresIn: string;
   saltRounds: number;
+  firebaseProjectId: string;
+  firebaseServiceAccount: ServiceAccount;
 }

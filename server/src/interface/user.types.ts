@@ -2,8 +2,13 @@ export interface IUser {
   name: string;
   email: string;
   password: string;
+  mobileNumber?: number;
   role?: string;
+  dateOfBirth?: Date;
+  isMarried?: boolean;
+  gender?: string;
   isActive?: boolean;
+  profilePicture?: string;
 }
 
 export interface IUserExt extends IUser {
