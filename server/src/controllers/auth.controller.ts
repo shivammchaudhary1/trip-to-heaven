@@ -17,7 +17,12 @@ const registerUser = async (req: Request, res: Response) => {
     }
 
     const hashedPassword = await hasPassword({ password });
-    const newUser = new User({ name, email, password: hashedPassword });
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+      role: ["user"],
+    });
     await newUser.save();
 
     const token = generateToken({
@@ -39,7 +44,8 @@ const loginUser = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    // Use .select("+password") to include the password field (it has select: false in model)
+    const user = await User.findOne({ email }).select("+password");
 
     if (!user) {
       return res
@@ -57,6 +63,10 @@ const loginUser = async (req: Request, res: Response) => {
         .status(400)
         .json({ message: "Invalid password, try again", success: false });
     }
+
+    // Update last login
+    user.lastLogin = new Date();
+    await user.save();
 
     const token = generateToken({
       userId: user._id.toString(),

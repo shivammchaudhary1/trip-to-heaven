@@ -34,12 +34,18 @@ const userSchema = new mongoose.Schema<IUserExt>(
       index: true,
     },
     role: {
-      type: String,
+      type: [String],
       enum: {
         values: ["superadmin", "admin", "owner", "user"],
-        message: "Role must be either admin, superadmin, owner, or user",
+        message: "Role must be one of: superadmin, admin, owner, or user",
       },
-      default: "user",
+      default: ["user"],
+      validate: {
+        validator: function (roles: string[]) {
+          return Array.isArray(roles) && roles.length > 0;
+        },
+        message: "User must have at least one role",
+      },
     },
     dateOfBirth: {
       type: Date,
@@ -60,7 +66,7 @@ const userSchema = new mongoose.Schema<IUserExt>(
         values: ["male", "female", "other"],
         message: "Gender must be male, female, or other",
       },
-      default: "other",
+      default: "male",
     },
     isActive: {
       type: Boolean,

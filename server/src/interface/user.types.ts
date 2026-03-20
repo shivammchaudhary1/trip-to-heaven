@@ -3,7 +3,7 @@ export interface IUser {
   email: string;
   password: string;
   mobileNumber?: number;
-  role?: string;
+  role?: string[];
   dateOfBirth?: Date;
   isMarried?: boolean;
   gender?: string;
@@ -26,7 +26,7 @@ export interface IUserResponse {
   _id: string;
   name: string;
   email: string;
-  role: string;
+  role: string[];
   createdAt: Date;
   updatedAt: Date;
 }

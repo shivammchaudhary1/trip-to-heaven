@@ -22,7 +22,6 @@ const addProperty = async (req: Request, res: Response) => {
     // Validate owner/userId
     if (!userId) {
       return res.status(401).json({
-        code: "UNAUTHORIZED",
         message:
           "Owner ID is required. Please provide owner in request body or authenticate with token.",
         success: false,
@@ -42,7 +41,6 @@ const addProperty = async (req: Request, res: Response) => {
     for (const [field, label] of Object.entries(requiredFields)) {
       if (!req.body[field]) {
         return res.status(400).json({
-          code: "MISSING_FIELD",
           message: `${label} is required`,
           success: false,
         });
@@ -57,7 +55,6 @@ const addProperty = async (req: Request, res: Response) => {
       !location.address
     ) {
       return res.status(400).json({
-        code: "INVALID_LOCATION",
         message: "Location must include country, state, city, and address",
         success: false,
       });
@@ -66,7 +63,6 @@ const addProperty = async (req: Request, res: Response) => {
     // Validate pricing required fields
     if (!pricing.basePrice) {
       return res.status(400).json({
-        code: "INVALID_PRICING",
         message: "Base price is required",
         success: false,
       });
@@ -75,7 +71,6 @@ const addProperty = async (req: Request, res: Response) => {
     // Validate rooms required fields
     if (!rooms.totalRooms || rooms.availableRooms === undefined) {
       return res.status(400).json({
-        code: "INVALID_ROOMS",
         message: "Total rooms and available rooms are required",
         success: false,
       });
@@ -84,7 +79,6 @@ const addProperty = async (req: Request, res: Response) => {
     // Validate contact required fields
     if (!contact.phone) {
       return res.status(400).json({
-        code: "INVALID_CONTACT",
         message: "Phone number is required",
         success: false,
       });
@@ -106,7 +100,6 @@ const addProperty = async (req: Request, res: Response) => {
 
     if (existingProperty) {
       return res.status(409).json({
-        code: "PROPERTY_EXISTS",
         message: "Property with this name already exists",
         success: false,
       });
@@ -184,14 +177,12 @@ const addProperty = async (req: Request, res: Response) => {
         .map((err: any) => err.message)
         .join(", ");
       return res.status(400).json({
-        code: "VALIDATION_ERROR",
         message: messages,
         success: false,
       });
     }
 
     return res.status(500).json({
-      code: "SERVER_ERROR",
       message: "Internal server error",
       success: false,
     });
@@ -204,9 +195,8 @@ const removeProperty = async (req: Request, res: Response) => {
     const userId = req.userId;
 
     // Validate propertyId format
-    if (!propertyId || propertyId.length !== 24) {
+    if (!propertyId) {
       return res.status(400).json({
-        code: "INVALID_ID",
         message: "Invalid property ID",
         success: false,
       });
@@ -217,7 +207,6 @@ const removeProperty = async (req: Request, res: Response) => {
 
     if (!property) {
       return res.status(404).json({
-        code: "PROPERTY_NOT_FOUND",
         message: "Property not found",
         success: false,
       });
@@ -225,24 +214,23 @@ const removeProperty = async (req: Request, res: Response) => {
 
     if (property.owner.toString() !== userId) {
       return res.status(403).json({
-        code: "FORBIDDEN",
         message: "You do not have permission to delete this property",
         success: false,
       });
     }
 
     // Delete property
-    await Hotel.findByIdAndDelete(propertyId);
+    // await Hotel.findByIdAndDelete(propertyId);
+    property.isActive = false;
+    await property.save();
 
     return res.status(200).json({
-      code: "PROPERTY_DELETED",
       message: "Property deleted successfully",
       success: true,
     });
   } catch (error) {
     console.error("Remove property error:", error);
     return res.status(500).json({
-      code: "SERVER_ERROR",
       message: "Internal server error",
       success: false,
     });
@@ -258,7 +246,6 @@ const updateProperty = async (req: Request, res: Response) => {
     // Validate propertyId format
     if (!propertyId || propertyId.length !== 24) {
       return res.status(400).json({
-        code: "INVALID_ID",
         message: "Invalid property ID",
         success: false,
       });
@@ -269,7 +256,6 @@ const updateProperty = async (req: Request, res: Response) => {
 
     if (!property) {
       return res.status(404).json({
-        code: "PROPERTY_NOT_FOUND",
         message: "Property not found",
         success: false,
       });
@@ -277,7 +263,6 @@ const updateProperty = async (req: Request, res: Response) => {
 
     if (property.owner.toString() !== userId) {
       return res.status(403).json({
-        code: "FORBIDDEN",
         message: "You do not have permission to update this property",
         success: false,
       });
@@ -300,7 +285,6 @@ const updateProperty = async (req: Request, res: Response) => {
     );
 
     return res.status(200).json({
-      code: "PROPERTY_UPDATED",
       message: "Property updated successfully",
       success: true,
       data: updatedProperty,
@@ -308,7 +292,6 @@ const updateProperty = async (req: Request, res: Response) => {
   } catch (error) {
     console.error("Update property error:", error);
     return res.status(500).json({
-      code: "SERVER_ERROR",
       message: "Internal server error",
       success: false,
     });
@@ -359,7 +342,6 @@ const getAllProperties = async (req: Request, res: Response) => {
     const totalCount = await Hotel.countDocuments(filter);
 
     return res.status(200).json({
-      code: "PROPERTIES_FETCHED",
       message: "Properties fetched successfully",
       success: true,
       data: properties,
@@ -373,7 +355,6 @@ const getAllProperties = async (req: Request, res: Response) => {
   } catch (error) {
     console.error("Get all properties error:", error);
     return res.status(500).json({
-      code: "SERVER_ERROR",
       message: "Internal server error",
       success: false,
     });
@@ -387,7 +368,6 @@ const getPropertyById = async (req: Request, res: Response) => {
     // Validate propertyId format
     if (!propertyId || propertyId.length !== 24) {
       return res.status(400).json({
-        code: "INVALID_ID",
         message: "Invalid property ID",
         success: false,
       });
@@ -401,7 +381,6 @@ const getPropertyById = async (req: Request, res: Response) => {
 
     if (!property) {
       return res.status(404).json({
-        code: "PROPERTY_NOT_FOUND",
         message: "Property not found",
         success: false,
       });
@@ -409,14 +388,12 @@ const getPropertyById = async (req: Request, res: Response) => {
 
     if (!property.isActive) {
       return res.status(404).json({
-        code: "PROPERTY_INACTIVE",
         message: "Property is no longer available",
         success: false,
       });
     }
 
     return res.status(200).json({
-      code: "PROPERTY_FETCHED",
       message: "Property fetched successfully",
       success: true,
       data: property,
@@ -424,7 +401,6 @@ const getPropertyById = async (req: Request, res: Response) => {
   } catch (error) {
     console.error("Get property by ID error:", error);
     return res.status(500).json({
-      code: "SERVER_ERROR",
       message: "Internal server error",
       success: false,
     });

@@ -13,8 +13,8 @@ const propertyRouter = express.Router();
 propertyRouter.get("/getAll", getAllProperties);
 propertyRouter.get("/:propertyId", getPropertyById);
 // Protected routes (requires authentication)
-propertyRouter.post("/add", addProperty);
-propertyRouter.post("/remove/:propertyId", removeProperty);
+propertyRouter.post("/add", addProperty); // Admin & super admin only
+propertyRouter.post("/remove/:propertyId", removeProperty); // Admin & super admin only
 propertyRouter.put("/update/:propertyId", updateProperty);
 
 export default propertyRouter;
