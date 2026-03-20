@@ -2,15 +2,19 @@ import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../config/lib/jwt.js";
 import "../interface/lib.types.js";
 
-export const authMiddleware = (
+/**
+ * Middleware to extract user role from JWT token
+ * Must be used before roleMiddleware
+ */
+export const extractUserRole = (
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
   try {
-    const authHeader = req.headers.authorization;
+    const token = req.headers.authorization?.split(" ")[1];
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if (!token) {
       return res.status(401).json({
         code: "NO_TOKEN",
         message: "Unauthorized: No token provided",
@@ -18,11 +22,9 @@ export const authMiddleware = (
       });
     }
 
-    const token = authHeader.split(" ")[1];
+    const decodedToken = verifyToken(token);
 
-    const decoded = verifyToken(token);
-
-    if (!decoded) {
+    if (!decodedToken) {
       return res.status(401).json({
         code: "TOKEN_EXPIRED",
         message: "Token expired, please login again",
@@ -30,15 +32,17 @@ export const authMiddleware = (
       });
     }
 
-    req.userId = String(decoded.userId);
+    req.userId = String(decodedToken?.userId);
     // Ensure role is always an array
-    req.userRole = Array.isArray(decoded.role) ? decoded.role : [String(decoded.role)];
+    req.userRole = Array.isArray(decodedToken?.role)
+      ? decodedToken.role
+      : [String(decodedToken?.role || "user")];
     next();
   } catch (error) {
-    console.error("Auth middleware error:", error);
+    console.error("Role extraction error:", error);
     return res.status(401).json({
-      code: "TOKEN_EXPIRED",
-      message: "Token expired, please login again",
+      code: "TOKEN_INVALID",
+      message: "Invalid token",
       success: false,
     });
   }
@@ -47,7 +51,11 @@ export const authMiddleware = (
 /**
  * Generic role-based middleware factory
  * Usage: roleMiddleware("admin", "superadmin") or roleMiddleware("owner")
- * Now supports multiple roles per user
+ * Must be used after extractUserRole middleware
+ * Supports multiple roles per user
+ *
+ * Example:
+ * app.delete("/user/:id", extractUserRole, roleMiddleware("admin", "superadmin"), deleteUser);
  */
 export const roleMiddleware = (...allowedRoles: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -63,7 +71,9 @@ export const roleMiddleware = (...allowedRoles: string[]) => {
       }
 
       // Check if user has any of the allowed roles
-      const hasRequiredRole = userRoles.some((role) => allowedRoles.includes(role));
+      const hasRequiredRole = userRoles.some((role) =>
+        allowedRoles.includes(role),
+      );
 
       if (!hasRequiredRole) {
         return res.status(403).json({

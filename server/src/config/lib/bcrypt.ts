@@ -21,6 +21,7 @@ export const comparePassword = async ({
   password,
   hashedPassword,
 }: IBryptCompareRequest): Promise<boolean> => {
+  console.log("Comparing passwords:", password, hashedPassword);
   try {
     return await bcrypt.compare(password, hashedPassword);
   } catch (error) {

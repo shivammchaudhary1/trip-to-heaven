@@ -7,6 +7,14 @@ const envFilePath =
 
 dotenv.config({ path: envFilePath });
 
+const firebaseServiceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT
+  ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+  : null;
+
+if (!firebaseServiceAccountJson) {
+  throw new Error("FIREBASE_SERVICE_ACCOUNT environment variable is not set");
+}
+
 const envs: IEnvironmentConfig = {
   port: Number.parseInt(process.env.PORT ?? "8080", 10),
   mongoUri:
@@ -18,6 +26,8 @@ const envs: IEnvironmentConfig = {
   cookieSecret: process.env.COOKIE_SECRET || "your_cookie_secret",
   cookieExpiresIn: process.env.COOKIE_EXPIRES_IN || "3d",
   saltRounds: Number.parseInt(process.env.SALT_ROUNDS ?? "1", 1),
+  firebaseProjectId: process.env.FIREBASE_PROJECT_ID || "trip-to-heaven-766c8",
+  firebaseServiceAccount: firebaseServiceAccountJson,
 };
 
 export default envs;
