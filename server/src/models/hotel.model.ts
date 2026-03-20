@@ -33,7 +33,10 @@ const hotelSchema = new mongoose.Schema<IHotel>(
             required: true,
             match: [/^https?:\/\/.+/, "Please enter a valid image URL"],
           },
-          caption: String,
+          caption: {
+            type: String,
+            trim: true,
+          },
           isPrimary: { type: Boolean, default: false },
           uploadedAt: { type: Date, default: Date.now },
         },
@@ -91,7 +94,7 @@ const hotelSchema = new mongoose.Schema<IHotel>(
       },
       currency: {
         type: String,
-        default: "USD",
+        default: "INR",
         enum: ["USD", "INR", "EUR", "GBP"],
       },
       discountPercentage: {
@@ -100,8 +103,12 @@ const hotelSchema = new mongoose.Schema<IHotel>(
         max: 100,
         default: 0,
       },
-      discountPrice: Number,
-      taxes: { type: Number, default: 0 },
+      discountPrice: {
+        type: Number,
+      },
+      taxes: {
+        type: Number,
+      },
       totalPrice: {
         type: Number,
       },
@@ -142,7 +149,7 @@ const hotelSchema = new mongoose.Schema<IHotel>(
       availableRooms: { type: Number, required: true, min: 0 },
       roomTypes: [
         {
-          type: String,
+          category: String,
           capacity: Number,
           price: Number,
           count: Number,
