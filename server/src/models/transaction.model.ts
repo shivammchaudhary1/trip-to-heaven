@@ -16,19 +16,21 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
       required: [true, "User is required"],
       index: true,
     },
-    booking: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "HotelBooking",
-      sparse: true,
-      index: true,
-    },
     bookingType: {
       type: String,
       enum: {
         values: ["hotel", "flight"],
-        message: "Booking type must be either hotel or flight",
+        message: "Booking type must be either HotelBooking or FlightBooking",
       },
-      default: "hotel",
+      required: [true, "Booking type is required"],
+    },
+    hotelBookingId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "HotelBooking",
+    },
+    flightBookingId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "FlightBooking",
     },
     amount: {
       type: Number,
@@ -50,15 +52,6 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
           "Payment method must be one of: credit_card, debit_card, upi, net_banking, or wallet",
       },
     },
-    paymentGateway: {
-      type: String,
-      enum: {
-        values: ["stripe", "razorpay", "paypal", "manual"],
-        message:
-          "Payment gateway must be one of: stripe, razorpay, paypal, or manual",
-      },
-      default: "manual",
-    },
     transactionStatus: {
       type: String,
       required: [true, "Transaction status is required"],
@@ -69,40 +62,6 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
       },
       default: "pending",
       index: true,
-    },
-    description: {
-      type: String,
-      required: [true, "Description is required"],
-      trim: true,
-      maxlength: [500, "Description cannot exceed 500 characters"],
-    },
-    reference: {
-      type: String,
-      trim: true,
-      sparse: true,
-    },
-    gatewayTransactionId: {
-      type: String,
-      trim: true,
-      sparse: true,
-      index: true,
-    },
-    gatewayReference: {
-      type: String,
-      trim: true,
-      sparse: true,
-    },
-    metadata: {
-      type: mongoose.Schema.Types.Mixed,
-      default: {},
-    },
-    successResponse: {
-      type: mongoose.Schema.Types.Mixed,
-    },
-    failureReason: {
-      type: String,
-      trim: true,
-      maxlength: [500, "Failure reason cannot exceed 500 characters"],
     },
     refundStatus: {
       type: String,

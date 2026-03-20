@@ -22,20 +22,6 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
       minlength: [2, "Guest name must be at least 2 characters"],
       maxlength: [50, "Guest name cannot exceed 50 characters"],
     },
-    guestEmail: {
-      type: String,
-      required: [true, "Guest email is required"],
-      lowercase: true,
-      match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        "Please enter a valid email",
-      ],
-    },
-    guestPhone: {
-      type: String,
-      required: [true, "Guest phone is required"],
-      match: [/^[+1-9]\d{1,14}$/, "Please enter a valid phone number"],
-    },
     numberOfGuests: {
       type: Number,
       required: [true, "Number of guests is required"],
@@ -82,11 +68,6 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
         required: [true, "Room price is required"],
         min: [0, "Price cannot be negative"],
       },
-      subtotal: {
-        type: Number,
-        required: [true, "Subtotal is required"],
-        min: [0, "Subtotal cannot be negative"],
-      },
       taxes: {
         type: Number,
         required: [true, "Taxes is required"],
@@ -111,6 +92,11 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
         required: [true, "Currency is required"],
         enum: ["USD", "INR", "EUR", "GBP"],
         default: "INR",
+      },
+      subtotal: {
+        type: Number,
+        required: [true, "Subtotal is required"],
+        min: [0, "Subtotal cannot be negative"],
       },
     },
     bookingStatus: {
@@ -142,40 +128,10 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
       default: "pending",
       index: true,
     },
-    paymentMethod: {
-      type: String,
-      enum: {
-        values: ["credit_card", "debit_card", "upi", "net_banking", "wallet"],
-        message:
-          "Payment method must be one of: credit_card, debit_card, upi, net_banking, or wallet",
-      },
-    },
     transactionId: {
       type: String,
       trim: true,
       sparse: true,
-      index: true,
-    },
-    cancellationReason: {
-      type: String,
-      trim: true,
-      maxlength: [500, "Cancellation reason cannot exceed 500 characters"],
-    },
-    cancellationRequestedAt: {
-      type: Date,
-    },
-    cancellationApprovedAt: {
-      type: Date,
-    },
-    refundAmount: {
-      type: Number,
-      min: [0, "Refund amount cannot be negative"],
-    },
-    confirmationCode: {
-      type: String,
-      required: [true, "Confirmation code is required"],
-      unique: true,
-      trim: true,
       index: true,
     },
     notes: {
