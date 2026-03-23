@@ -1,11 +1,7 @@
-import tthLogo from "./tth.png";
-import tthLogoPng from "./tth3.png";
-import flightLocation from "./Flights_Locations.jpg";
-import loader from "./loader.gif";
+import tthLogo from "./images/tth.png";
+import tthLogoPng from "./images/tth3.png";
 
 export const assets = {
-  tthLogo,
-  tthLogoPng,
-  flightLocation,
-  loader,
+  secondaryLogo: tthLogo,
+  Logo: tthLogoPng,
 };
