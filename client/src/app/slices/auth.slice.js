@@ -82,15 +82,40 @@ const authSlice = createSlice({
       localStorage.removeItem("user");
     },
   },
+
+  //   {
+  //     "message": "User registered successfully",
+  //     "success": true,
+  //     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWMxOTYwMDUwYjk0N2E5NDM4ZTMyMGQiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzc0Mjk0NTI4LCJleHAiOjE3NzY4ODY1Mjh9.i_qismXr78AtMeymkbjTDcHykrU2Jq19QRzXC_U0UMw",
+  //     "user": {
+  //         "name": "sss ssss",
+  //         "email": "s@gmail.com",
+  //         "password": "$2b$10$VIyFRE9Mdl7iZ2sjkAIEguUZbCnSRvZK4JvxuyC4qQwHsK/AKj8Ga",
+  //         "role": [
+  //             "user"
+  //         ],
+  //         "isMarried": false,
+  //         "gender": "male",
+  //         "isActive": true,
+  //         "preferences": {
+  //             "newsletter": true,
+  //             "notifications": true
+  //         },
+  //         "_id": "69c1960050b947a9438e320d",
+  //         "createdAt": "2026-03-23T19:35:28.245Z",
+  //         "updatedAt": "2026-03-23T19:35:28.245Z"
+  //     }
+  // }
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
+        console.log("check", action.payload);
         state.isAuthenticated = true;
-        state.user = action.payload.user || action.payload;
+        state.user = action.payload.user;
         state.token = action.payload.token;
-        state.role = action.payload.role;
+        state.role = action.payload.user.role;
         localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("role", action.payload.role);
+        localStorage.setItem("role", action.payload.user.role);
         localStorage.setItem(
           "user",
           JSON.stringify(action.payload.user || action.payload),
@@ -98,11 +123,11 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isAuthenticated = true;
-        state.user = action.payload.user || action.payload;
+        state.user = action.payload.user;
         state.token = action.payload.token;
-        state.role = action.payload.role;
+        state.role = action.payload.user.role;
         localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("role", action.payload.role);
+        localStorage.setItem("role", action.payload.user.role);
         localStorage.setItem(
           "user",
           JSON.stringify(action.payload.user || action.payload),

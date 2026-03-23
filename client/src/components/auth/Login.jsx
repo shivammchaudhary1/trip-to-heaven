@@ -16,51 +16,56 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { notify } from "../../app/slices/notify.slice";
+import { loginUser } from "../../app/slices/auth.slice";
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const dispatchToRedux = useDispatch();
   const theme = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
 
-  const validate = () => {
-    const newErrors = {};
-
-    if (!email) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
-    if (!password) {
-      newErrors.password = "Password is required";
-    } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-
-    if (!validate()) return;
 
     const formData = { email, password };
     console.log("Login Form Data:", formData);
 
     setIsLoading(true);
-    dispatch(
-      notify({ type: "info", message: "Form submitted - check console" }),
-    );
 
-    setTimeout(() => {
+    try {
+      // loginUser returns a promise, so we need to await it
+      const result = await dispatchToRedux(loginUser(formData));
+
+      // Check if login was successful
+      if (result.payload) {
+        dispatchToRedux(
+          notify({ type: "success", message: "Login successful!" }),
+        );
+        // Reset form
+        setEmail("");
+        setPassword("");
+        // Redirect can be done here or in a useEffect watching isAuthenticated
+      } else if (result.error) {
+        dispatchToRedux(
+          notify({
+            type: "failure",
+            message: result.error.message || "Login failed",
+          }),
+        );
+      }
+    } catch (error) {
+      dispatchToRedux(
+        notify({
+          type: "failure",
+          message: error?.message || "Login failed - check console",
+        }),
+      );
+      console.error("Login error:", error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleClickShowPassword = () => {
@@ -130,8 +135,6 @@ const Login = () => {
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                error={Boolean(errors.email)}
-                helperText={errors.email}
                 variant="outlined"
                 sx={{
                   "& .MuiOutlinedInput-root": {
@@ -148,8 +151,6 @@ const Login = () => {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                error={Boolean(errors.password)}
-                helperText={errors.password}
                 variant="outlined"
                 InputProps={{
                   endAdornment: (

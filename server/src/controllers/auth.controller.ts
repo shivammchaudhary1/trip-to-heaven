@@ -30,9 +30,12 @@ const registerUser = async (req: Request, res: Response) => {
       role: newUser.role,
     });
 
-    return res
-      .status(201)
-      .json({ message: "User registered successfully", success: true, token });
+    return res.status(201).json({
+      message: "User registered successfully",
+      success: true,
+      token,
+      user: newUser,
+    });
   } catch (error) {
     return res
       .status(500)
@@ -75,7 +78,7 @@ const loginUser = async (req: Request, res: Response) => {
 
     return res
       .status(200)
-      .json({ message: "Login successful", success: true, token });
+      .json({ message: "Login successful", success: true, token, user });
   } catch (error) {
     return res
       .status(500)

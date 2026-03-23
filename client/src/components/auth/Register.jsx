@@ -8,16 +8,16 @@ import {
   Button,
   Typography,
   Link,
-  FormHelperText,
   CircularProgress,
   Grid,
   useTheme,
   Stack,
 } from "@mui/material";
 import { notify } from "../../app/slices/notify.slice";
+import { registerUser } from "../../app/slices/auth.slice";
 
 const Register = () => {
-  const dispatch = useDispatch();
+  const dispatchToRedux = useDispatch();
   const theme = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -25,57 +25,69 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState({});
 
-  const validate = () => {
-    const newErrors = {};
-
-    if (!firstName) {
-      newErrors.firstName = "First name is required";
-    }
-
-    if (!lastName) {
-      newErrors.lastName = "Last name is required";
-    }
-
-    if (!email) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
-    if (!password) {
-      newErrors.password = "Password is required";
-    } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    }
-
-    if (!confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password";
-    } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = "Passwords must match";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) return;
+    // Validation
+    if (password !== confirmPassword) {
+      dispatchToRedux(
+        notify({ type: "failure", message: "Passwords do not match" }),
+      );
+      return;
+    }
 
-    const formData = { firstName, lastName, email, password };
+    if (!firstName || !lastName || !email || !password) {
+      dispatchToRedux(
+        notify({ type: "failure", message: "All fields are required" }),
+      );
+      return;
+    }
+
+    const formData = {
+      name: `${firstName} ${lastName}`,
+      email,
+      password,
+    };
+
     console.log("Register Form Data:", formData);
-
     setIsLoading(true);
-    dispatch(
-      notify({ type: "info", message: "Form submitted - check console" }),
-    );
 
-    setTimeout(() => {
+    try {
+      // registerUser returns a promise, so we need to await it
+      const result = await dispatchToRedux(registerUser(formData));
+
+      // Check if registration was successful
+      if (result.payload) {
+        dispatchToRedux(
+          notify({ type: "success", message: "Registration successful!" }),
+        );
+        // Reset form
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+        // Redirect can be done here or in a useEffect watching isAuthenticated
+      } else if (result.error) {
+        dispatchToRedux(
+          notify({
+            type: "failure",
+            message: result.error.message || "Registration failed",
+          }),
+        );
+      }
+    } catch (error) {
+      dispatchToRedux(
+        notify({
+          type: "failure",
+          message: error?.message || "Registration failed",
+        }),
+      );
+      console.error("Registration error:", error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -138,8 +150,6 @@ const Register = () => {
                     placeholder="John"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    error={Boolean(errors.firstName)}
-                    helperText={errors.firstName}
                     variant="outlined"
                     sx={{
                       "& .MuiOutlinedInput-root": {
@@ -155,8 +165,6 @@ const Register = () => {
                     placeholder="Doe"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    error={Boolean(errors.lastName)}
-                    helperText={errors.lastName}
                     variant="outlined"
                     sx={{
                       "& .MuiOutlinedInput-root": {
@@ -175,8 +183,6 @@ const Register = () => {
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                error={Boolean(errors.email)}
-                helperText={errors.email}
                 variant="outlined"
                 sx={{
                   "& .MuiOutlinedInput-root": {
@@ -193,8 +199,6 @@ const Register = () => {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                error={Boolean(errors.password)}
-                helperText={errors.password}
                 variant="outlined"
                 sx={{
                   "& .MuiOutlinedInput-root": {
@@ -211,8 +215,6 @@ const Register = () => {
                 placeholder="••••••••"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                error={Boolean(errors.confirmPassword)}
-                helperText={errors.confirmPassword}
                 variant="outlined"
                 sx={{
                   "& .MuiOutlinedInput-root": {
