@@ -17,13 +17,17 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { assets } from "../../assets/assets";
 import { navLinks, userSettings } from "../../utility/constants/nav";
 import { Link } from "react-router-dom";
+import { selectIsAuthenticated } from "../../app/slices/auth.slice";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../app/slices/auth.slice";
 
 function Navbar() {
   const appTheme = useTheme();
   const navigate = useNavigate();
+  const dispatchToRedux = useDispatch();
+  const isAuthenticated = useSelector(selectIsAuthenticated);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [isLogin, setIsLogin] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -49,7 +53,9 @@ function Navbar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={assets.Logo} alt="Trip to heaven Logo" width={100} />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={assets.Logo} alt="Trip to heaven Logo" width={100} />
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -198,7 +204,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              {isLogin ? (
+              {isAuthenticated ? (
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                 </IconButton>
@@ -237,7 +243,12 @@ function Navbar() {
                   key={setting.name}
                   onClick={() => {
                     handleCloseUserMenu();
-                    navigate(setting.path);
+                    if (setting.name.toLowerCase() === "logout") {
+                      dispatchToRedux(logout());
+                      navigate("/");
+                    } else {
+                      navigate(setting.path);
+                    }
                   }}
                   sx={{
                     "&:hover": {
