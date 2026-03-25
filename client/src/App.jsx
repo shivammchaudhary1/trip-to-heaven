@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import AppRoutes from "./appRoutes/AppRoutes";
 import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 import { NotificationDisplay } from "./components/common/NotificationDisplay";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
       <NotificationDisplay />
       <Navbar />
       <AppRoutes />
+      <Footer />
     </div>
   );
 };

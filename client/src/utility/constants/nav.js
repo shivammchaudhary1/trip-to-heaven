@@ -7,12 +7,12 @@ import SailingIcon from "@mui/icons-material/Sailing";
 import ContactsIcon from "@mui/icons-material/Contacts";
 
 export const navLinks = [
+  { name: "Bus", path: "/bus", icon: DirectionsBusIcon },
   { name: "Flights", path: "/flights", icon: AirplanemodeActiveIcon },
   { name: "Hotels", path: "/hotels", icon: BedIcon },
   { name: "Packages", path: "/car-rentals", icon: Inventory2Icon },
   { name: "Cruises", path: "/cruises", icon: SailingIcon },
   { name: "Trains", path: "/trains", icon: DirectionsTransitFilledIcon },
-  { name: "Bus", path: "/bus", icon: DirectionsBusIcon },
   { name: "Contact Us", path: "/contact", icon: ContactsIcon },
 ];
 
