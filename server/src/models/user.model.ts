@@ -95,6 +95,12 @@ const userSchema = new mongoose.Schema<IUserExt>(
         default: true,
       },
     },
+    refreshToken: {
+      type: String,
+      trim: true,
+      select: false,
+      // required: true,
+    },
   },
   {
     timestamps: true,

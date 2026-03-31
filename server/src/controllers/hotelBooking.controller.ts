@@ -5,14 +5,6 @@ import User from "../models/user.model.js";
 import Transaction from "../models/transaction.model.js";
 import { IHotelBooking } from "../interface/booking.types.js";
 
-// ==================== CREATE ====================
-
-/**
- * Create a new hotel booking
- * @route POST /api/hotel-bookings
- * @param {Request} req - Request object with booking details
- * @param {Response} res - Response object
- */
 export const createHotelBooking = async (
   req: Request,
   res: Response,
@@ -926,3 +918,5 @@ export const getDashboardOverview = async (
     });
   }
 };
+
+//check

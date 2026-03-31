@@ -1,7 +1,11 @@
 import { Request, Response } from "express";
 import User from "../models/user.model.js";
 import { hasPassword, comparePassword } from "../config/lib/bcrypt.js";
-import { generateToken } from "../config/lib/jwt.js";
+import {
+  generateToken,
+  verifyRefreshToken,
+  generateAccessToken,
+} from "../config/lib/jwt.js";
 
 const registerUser = async (req: Request, res: Response) => {
   try {
@@ -30,9 +34,19 @@ const registerUser = async (req: Request, res: Response) => {
       role: newUser.role,
     });
 
-    return res
-      .status(201)
-      .json({ message: "User registered successfully", success: true, token });
+    newUser.refreshToken = token.refreshToken;
+    await newUser.save();
+
+    const userWithoutSensitiveData = await User.findById(newUser._id).select(
+      "-refreshToken -password",
+    );
+
+    return res.status(201).json({
+      message: "User registered successfully",
+      success: true,
+      accessToken: token.accessToken,
+      user: userWithoutSensitiveData,
+    });
   } catch (error) {
     return res
       .status(500)
@@ -73,9 +87,19 @@ const loginUser = async (req: Request, res: Response) => {
       role: user.role,
     });
 
-    return res
-      .status(200)
-      .json({ message: "Login successful", success: true, token });
+    user.refreshToken = token.refreshToken;
+    await user.save();
+
+    const userWithoutSensitiveData = await User.findById(user._id).select(
+      "-refreshToken -password",
+    );
+
+    return res.status(200).json({
+      message: "Login successful",
+      success: true,
+      accessToken: token.accessToken,
+      user: userWithoutSensitiveData,
+    });
   } catch (error) {
     return res
       .status(500)
@@ -83,4 +107,43 @@ const loginUser = async (req: Request, res: Response) => {
   }
 };
 
-export { registerUser, loginUser };
+const refreshToken = async (req: Request, res: Response) => {
+  try {
+    const { userId } = req.body;
+    const user = await User.findById(userId).select("+refreshToken");
+
+    if (!user || !user.refreshToken) {
+      return res.status(400).json({
+        message: "User not found or refresh token missing",
+        success: false,
+      });
+    }
+
+    const isRefreshTokenValid = verifyRefreshToken(user.refreshToken);
+
+    if (!isRefreshTokenValid) {
+      return res.status(403).json({
+        message: "Invalid refresh token, or Expired. Please login again.",
+        success: false,
+      });
+    }
+
+    const accessToken = generateAccessToken({
+      userId: user._id.toString(),
+      role: user.role,
+    });
+
+    res.status(200).json({
+      message: "Access token refreshed successfully",
+      success: true,
+      accessToken,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal server error",
+      success: false,
+    });
+  }
+};
+
+export { registerUser, loginUser, refreshToken };

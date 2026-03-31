@@ -15,6 +15,7 @@ export interface IUser {
     newsletter?: boolean;
     notifications?: boolean;
   };
+  refreshToken?: string;
 }
 
 export interface IUserExt extends IUser {
