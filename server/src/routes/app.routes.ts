@@ -4,10 +4,7 @@ import propertyRouter from "./property.routes.js";
 import flightRouter from "./flight.routes.js";
 import busRouter from "./bus.routes.js";
 import userRouter from "./user.routes.js";
-import {
-  authMiddleware,
-  roleMiddleware,
-} from "../middlewares/auth.middleware.js";
+
 
 const appRoutes = (app: Application): void => {
   app.use("/api/auth", authRouter);
