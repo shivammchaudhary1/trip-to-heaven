@@ -12,7 +12,7 @@ const appRoutes = (app: Application): void => {
   app.use("/api/auth", authRouter);
   app.use("/api/property", propertyRouter);
   app.use("/api/flight", flightRouter);
-  app.use("/api/user", authMiddleware, roleMiddleware(["user"]), userRouter);
+  app.use("/api/user", authMiddleware, userRouter);
 };
 
 export default appRoutes;

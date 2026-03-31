@@ -279,18 +279,44 @@ const updateProperty = async (req: Request, res: Response) => {
       propertyId,
       updateData,
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       },
     );
+
+    if (!updatedProperty) {
+      return res.status(404).json({
+        message: "Property not found",
+        success: false,
+      });
+    }
 
     return res.status(200).json({
       message: "Property updated successfully",
       success: true,
       data: updatedProperty,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Update property error:", error);
+
+    if (error.name === "ValidationError") {
+      const messages = Object.values(error.errors)
+        .map((err: any) => err.message)
+        .join(", ");
+
+      return res.status(400).json({
+        message: messages || "Validation failed",
+        success: false,
+      });
+    }
+
+    if (error.name === "CastError") {
+      return res.status(400).json({
+        message: "Invalid value in update payload",
+        success: false,
+      });
+    }
+
     return res.status(500).json({
       message: "Internal server error",
       success: false,

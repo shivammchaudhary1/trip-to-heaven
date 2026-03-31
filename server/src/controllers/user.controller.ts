@@ -5,9 +5,6 @@ import { Request, Response } from "express";
 const getUserProfile = async (req: Request, res: Response) => {
   try {
     const userId = (req as any).userId;
-
-    // console.log("userId from auth middleware:", userId);
-    // console.log("req.userId from auth middleware:", (req as any).userRole);
     if (!userId) {
       return res.status(401).json({ message: "Unauthorized" });
     }
