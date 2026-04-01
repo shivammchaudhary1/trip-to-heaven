@@ -2,6 +2,39 @@ import { Document, Types } from "mongoose";
 import { IHotel } from "./hotel.types.js";
 import { IUserExt } from "./user.types.js";
 import { IFlight } from "./flight.types.js";
+import { IBus } from "./bus.types.js";
+
+export type CurrencyCode = "USD" | "INR" | "EUR" | "GBP";
+export type PaymentMethod =
+  | "credit_card"
+  | "debit_card"
+  | "upi"
+  | "net_banking"
+  | "wallet";
+export type PaymentStatus = "pending" | "completed" | "failed" | "refunded";
+export type TransactionStatus =
+  | "pending"
+  | "completed"
+  | "failed"
+  | "refunded"
+  | "cancelled";
+export type BookingType = "hotel" | "flight" | "bus";
+
+export interface IBookingHistoryEntry {
+  action:
+    | "booked"
+    | "rescheduled"
+    | "cancelled"
+    | "payment_updated"
+    | "status_updated";
+  actor: Types.ObjectId | IUserExt;
+  actorRoles: string[];
+  previousStatus?: string;
+  newStatus?: string;
+  notes?: string;
+  metadata?: Record<string, unknown>;
+  createdAt: Date;
+}
 
 export interface IHotelBooking extends Document {
   hotel: Types.ObjectId | IHotel;
@@ -23,7 +56,7 @@ export interface IHotelBooking extends Document {
     discountAmount?: number;
     discountPercentage?: number;
     totalPrice: number;
-    currency: "USD" | "INR" | "EUR" | "GBP";
+    currency: CurrencyCode;
   };
   bookingStatus:
     | "pending"
@@ -32,13 +65,8 @@ export interface IHotelBooking extends Document {
     | "checked_out"
     | "cancelled"
     | "no_show";
-  paymentStatus: "pending" | "completed" | "failed" | "refunded";
-  paymentMethod?:
-    | "credit_card"
-    | "debit_card"
-    | "upi"
-    | "net_banking"
-    | "wallet";
+  paymentStatus: PaymentStatus;
+  paymentMethod?: PaymentMethod;
   transactionId?: string;
   cancellationReason?: string;
   cancellationRequestedAt?: Date;
@@ -78,7 +106,7 @@ export interface IFlightBooking extends Document {
     discountAmount?: number;
     discountPercentage?: number;
     totalPrice: number;
-    currency: "USD" | "INR" | "EUR" | "GBP";
+    currency: CurrencyCode;
   };
   bookingStatus:
     | "pending"
@@ -88,13 +116,8 @@ export interface IFlightBooking extends Document {
     | "completed"
     | "cancelled"
     | "no_show";
-  paymentStatus: "pending" | "completed" | "failed" | "refunded";
-  paymentMethod?:
-    | "credit_card"
-    | "debit_card"
-    | "upi"
-    | "net_banking"
-    | "wallet";
+  paymentStatus: PaymentStatus;
+  paymentMethod?: PaymentMethod;
   transactionId?: string;
   cancellationReason?: string;
   cancellationRequestedAt?: Date;
@@ -109,25 +132,16 @@ export interface IFlightBooking extends Document {
 export interface ITransaction extends Document {
   transactionId: string;
   user: Types.ObjectId | IUserExt;
-  bookingType?: "hotel" | "flight";
+  bookingType?: BookingType;
   hotelBookingId?: Types.ObjectId;
   flightBookingId?: Types.ObjectId;
+  busBookingId?: Types.ObjectId;
   amount: number;
-  currency: "USD" | "INR" | "EUR" | "GBP";
-  paymentMethod:
-    | "credit_card"
-    | "debit_card"
-    | "upi"
-    | "net_banking"
-    | "wallet";
+  currency: CurrencyCode;
+  paymentMethod: PaymentMethod;
   paymentGateway?: "stripe" | "razorpay" | "paypal" | "manual";
-  transactionStatus:
-    | "pending"
-    | "completed"
-    | "failed"
-    | "refunded"
-    | "cancelled";
-  description: string;
+  transactionStatus: TransactionStatus;
+  description?: string;
   reference?: string;
   gatewayTransactionId?: string;
   gatewayReference?: string;
@@ -142,6 +156,44 @@ export interface ITransaction extends Document {
   refundAmount?: number;
   refundedAt?: Date;
   notes?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface IBusBooking extends Document {
+  busId: Types.ObjectId | IBus;
+  userId: Types.ObjectId | IUserExt;
+  passengerName: string;
+  passengerEmail: string;
+  passengerPhone: string;
+  numberOfSeats: number;
+  seatNumbers?: string[];
+  boardingPoint?: string;
+  droppingPoint?: string;
+  travelDate: Date;
+  specialRequests?: string;
+  pricing: {
+    seatFare: number;
+    subtotal: number;
+    taxes: number;
+    discountAmount?: number;
+    totalPrice: number;
+    currency: CurrencyCode;
+  };
+  finalAmount: number;
+  bookingStatus: "pending" | "confirmed" | "cancelled" | "completed";
+  paymentStatus: PaymentStatus;
+  paymentMethod?: PaymentMethod;
+  transactionId?: string;
+  rescheduledAt?: Date;
+  rescheduleReason?: string;
+  cancellationReason?: string;
+  cancellationRequestedAt?: Date;
+  cancellationApprovedAt?: Date;
+  refundAmount?: number;
+  confirmationCode: string;
+  notes?: string;
+  history: IBookingHistoryEntry[];
   createdAt?: Date;
   updatedAt?: Date;
 }

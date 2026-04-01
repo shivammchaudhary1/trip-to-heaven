@@ -149,8 +149,8 @@ export const getHotelBookingById = async (
     }
 
     const transaction = await Transaction.findOne({
-      booking: id,
-      bookingType: "HotelBooking",
+      hotelBookingId: id,
+      bookingType: "hotel",
     });
 
     res.status(200).json({
