@@ -6,13 +6,13 @@ const busBookingSchema = new mongoose.Schema<IBusBooking>(
     busId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Bus",
-      required: [true, "Bus is required"],
+      required: [true, "Bus ID is required"],
       index: true,
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "User is required"],
+      required: [true, "User ID is required"],
       index: true,
     },
     passengerName: {
@@ -75,6 +75,11 @@ const busBookingSchema = new mongoose.Schema<IBusBooking>(
         required: [true, "Base price is required"],
         min: [0, "Base price cannot be negative"],
       },
+      subtotal: {
+        type: Number,
+        // required: [true, "Subtotal is required"],
+        min: [0, "Subtotal cannot be negative"],
+      },
       discountPercentage: {
         type: Number,
         min: 0,
@@ -131,6 +136,7 @@ const busBookingSchema = new mongoose.Schema<IBusBooking>(
       type: String,
       trim: true,
       index: true,
+      sparse: true,
     },
     rescheduledAt: {
       type: Date,

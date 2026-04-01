@@ -1,81 +1,81 @@
 import mongoose from "mongoose";
 import { IFlightBooking } from "../interface/booking.types.js";
 
-const passengerSchema = new mongoose.Schema(
-  {
-    firstName: {
-      type: String,
-      required: [true, "First name is required"],
-      trim: true,
-      minlength: [2, "First name must be at least 2 characters"],
-      maxlength: [50, "First name cannot exceed 50 characters"],
-    },
-    lastName: {
-      type: String,
-      required: [true, "Last name is required"],
-      trim: true,
-      minlength: [2, "Last name must be at least 2 characters"],
-      maxlength: [50, "Last name cannot exceed 50 characters"],
-    },
-    gender: {
-      type: String,
-      required: [true, "Gender is required"],
-      enum: {
-        values: ["male", "female", "other"],
-        message: "Gender must be male, female, or other",
-      },
-    },
-    dateOfBirth: {
-      type: Date,
-      required: [true, "Date of birth is required"],
-      validate: {
-        validator: function (value: Date) {
-          return value < new Date();
-        },
-        message: "Invalid date of birth",
-      },
-    },
-    passportNumber: {
-      type: String,
-      trim: true,
-      sparse: true,
-    },
-    passportExpiryDate: {
-      type: Date,
-      validate: {
-        validator: function (value: Date) {
-          if (!value) return true;
-          return value > new Date();
-        },
-        message: "Passport expiry date must be in the future",
-      },
-    },
-    seatNumber: {
-      type: String,
-      trim: true,
-      sparse: true,
-    },
-    seatClass: {
-      type: String,
-      required: [true, "Seat class is required"],
-      enum: {
-        values: ["economy", "business", "first"],
-        message: "Seat class must be economy, business, or first",
-      },
-    },
-  },
-  { _id: false },
-);
+// const passengerSchema = new mongoose.Schema(
+//   {
+//     firstName: {
+//       type: String,
+//       required: [true, "First name is required"],
+//       trim: true,
+//       minlength: [2, "First name must be at least 2 characters"],
+//       maxlength: [50, "First name cannot exceed 50 characters"],
+//     },
+//     lastName: {
+//       type: String,
+//       required: [true, "Last name is required"],
+//       trim: true,
+//       minlength: [2, "Last name must be at least 2 characters"],
+//       maxlength: [50, "Last name cannot exceed 50 characters"],
+//     },
+//     gender: {
+//       type: String,
+//       required: [true, "Gender is required"],
+//       enum: {
+//         values: ["male", "female", "other"],
+//         message: "Gender must be male, female, or other",
+//       },
+//     },
+//     dateOfBirth: {
+//       type: Date,
+//       required: [true, "Date of birth is required"],
+//       validate: {
+//         validator: function (value: Date) {
+//           return value < new Date();
+//         },
+//         message: "Invalid date of birth",
+//       },
+//     },
+//     passportNumber: {
+//       type: String,
+//       trim: true,
+//       sparse: true,
+//     },
+//     passportExpiryDate: {
+//       type: Date,
+//       validate: {
+//         validator: function (value: Date) {
+//           if (!value) return true;
+//           return value > new Date();
+//         },
+//         message: "Passport expiry date must be in the future",
+//       },
+//     },
+//     seatNumber: {
+//       type: String,
+//       trim: true,
+//       sparse: true,
+//     },
+//     seatClass: {
+//       type: String,
+//       required: [true, "Seat class is required"],
+//       enum: {
+//         values: ["economy", "business", "first"],
+//         message: "Seat class must be economy, business, or first",
+//       },
+//     },
+//   },
+//   { _id: false },
+// );
 
 const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
   {
-    flight: {
+    flightId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Flight",
       required: [true, "Flight is required"],
       index: true,
     },
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: [true, "User is required"],
@@ -102,21 +102,25 @@ const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
       required: [true, "Passenger phone is required"],
       match: [/^[+1-9]\d{1,14}$/, "Please enter a valid phone number"],
     },
-    passengers: {
-      type: [passengerSchema],
-      required: [true, "At least one passenger is required"],
-      validate: {
-        validator: function (passengers: any[]) {
-          return passengers && passengers.length > 0;
-        },
-        message: "At least one passenger is required",
-      },
-    },
-    numberOfPassengers: {
+    numberOfSeats: {
       type: Number,
-      required: [true, "Number of passengers is required"],
-      min: [1, "At least 1 passenger is required"],
-      max: [9, "Maximum 9 passengers allowed"],
+      required: [true, "Number of seats is required"],
+      min: [1, "At least 1 seat is required"],
+      max: [9, "Maximum 9 seats are allowed"],
+    },
+    seatNumbers: {
+      type: [String],
+      default: [],
+    },
+    tripType: {
+      type: String,
+      required: [true, "Trip type is required"],
+      enum: {
+        values: ["oneway", "roundtrip"],
+        message: "Trip type must be oneway or roundtrip",
+      },
+      default: "oneway",
+      index: true,
     },
     departureDate: {
       type: Date,
@@ -133,16 +137,6 @@ const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
         message: "Return date must be after departure date",
       },
     },
-    tripType: {
-      type: String,
-      required: [true, "Trip type is required"],
-      enum: {
-        values: ["oneway", "roundtrip"],
-        message: "Trip type must be oneway or roundtrip",
-      },
-      default: "oneway",
-      index: true,
-    },
     specialRequests: {
       type: String,
       trim: true,
@@ -154,24 +148,25 @@ const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
         required: [true, "Base price is required"],
         min: [0, "Price cannot be negative"],
       },
+
       subtotal: {
         type: Number,
         required: [true, "Subtotal is required"],
         min: [0, "Subtotal cannot be negative"],
+      },
+      discountPercentage: {
+        type: Number,
+        min: [0, "Discount percentage cannot be negative"],
+        max: [100, "Discount percentage cannot exceed 100"],
       },
       taxes: {
         type: Number,
         required: [true, "Taxes is required"],
         min: [0, "Taxes cannot be negative"],
       },
-      discountAmount: {
+      discountPrice: {
         type: Number,
         min: [0, "Discount cannot be negative"],
-      },
-      discountPercentage: {
-        type: Number,
-        min: [0, "Discount percentage cannot be negative"],
-        max: [100, "Discount percentage cannot exceed 100"],
       },
       totalPrice: {
         type: Number,
@@ -184,6 +179,12 @@ const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
         enum: ["USD", "INR", "EUR", "GBP"],
         default: "INR",
       },
+    },
+    finalAmount: {
+      type: Number,
+      required: [true, "Price is required"],
+      min: [0, "Price cannot be negative"],
+      index: true,
     },
     bookingStatus: {
       type: String,
@@ -246,11 +247,12 @@ const flightBookingSchema = new mongoose.Schema<IFlightBooking>(
     },
     confirmationCode: {
       type: String,
-      required: [true, "Confirmation code is required"],
+      // required: [true, "Confirmation code is required"],
       unique: true,
       trim: true,
       index: true,
     },
+
     notes: {
       type: String,
       trim: true,

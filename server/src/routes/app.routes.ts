@@ -5,14 +5,19 @@ import flightRouter from "./flight.routes.js";
 import busRouter from "./bus.routes.js";
 import busBookingRouter from "./busBooking.routes.js";
 import userRouter from "./user.routes.js";
+import hotelBookingRouter from "./hotelBooking.routes.js";
 
 const appRoutes = (app: Application): void => {
   app.use("/api/auth", authRouter);
   app.use("/api/property", propertyRouter);
   app.use("/api/flight", flightRouter);
   app.use("/api/bus", busRouter);
-  app.use("/api/bus-booking", busBookingRouter);
   app.use("/api/user", userRouter);
+
+  // booking
+
+  app.use("/api/bus-booking", busBookingRouter);
+  app.use("/api/hotel-booking", hotelBookingRouter);
 };
 
 export default appRoutes;

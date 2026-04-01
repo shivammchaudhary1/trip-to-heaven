@@ -92,10 +92,10 @@ const hotelSchema = new mongoose.Schema<IHotel>(
         required: [true, "Base price is required"],
         min: [0, "Price cannot be negative"],
       },
-      currency: {
-        type: String,
-        default: "INR",
-        enum: ["USD", "INR", "EUR", "GBP"],
+      subtotal: {
+        type: Number,
+        // required: [true, "Subtotal is required"],
+        min: [0, "Subtotal cannot be negative"],
       },
       discountPercentage: {
         type: Number,
@@ -103,14 +103,24 @@ const hotelSchema = new mongoose.Schema<IHotel>(
         max: 100,
         default: 0,
       },
-      discountPrice: {
-        type: Number,
-      },
       taxes: {
         type: Number,
+        min: [0, "Taxes cannot be negative"],
+      },
+      discountPrice: {
+        type: Number,
+        min: [0, "Discount cannot be negative"],
       },
       totalPrice: {
         type: Number,
+        required: [true, "Total price is required"],
+        min: [0, "Total price cannot be negative"],
+      },
+      currency: {
+        type: String,
+        required: [true, "Currency is required"],
+        enum: ["USD", "INR", "EUR", "GBP"],
+        default: "INR",
       },
     },
     amenities: {

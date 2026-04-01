@@ -37,8 +37,8 @@ export interface IBookingHistoryEntry {
 }
 
 export interface IHotelBooking extends Document {
-  hotel: Types.ObjectId | IHotel;
-  user: Types.ObjectId | IUserExt;
+  hotelId: Types.ObjectId | IHotel;
+  userId: Types.ObjectId | IUserExt;
   guestName: string;
   guestEmail: string;
   guestPhone: string;
@@ -65,6 +65,7 @@ export interface IHotelBooking extends Document {
     | "checked_out"
     | "cancelled"
     | "no_show";
+  finalAmount: number;
   paymentStatus: PaymentStatus;
   paymentMethod?: PaymentMethod;
   transactionId?: string;
@@ -79,22 +80,13 @@ export interface IHotelBooking extends Document {
 }
 
 export interface IFlightBooking extends Document {
-  flight: Types.ObjectId | IFlight;
-  user: Types.ObjectId | IUserExt;
+  flightId: Types.ObjectId | IFlight;
+  userId: Types.ObjectId | IUserExt;
   passengerName: string;
   passengerEmail: string;
   passengerPhone: string;
-  passengers: {
-    firstName: string;
-    lastName: string;
-    gender: "male" | "female" | "other";
-    dateOfBirth: Date;
-    passportNumber?: string;
-    passportExpiryDate?: Date;
-    seatNumber?: string;
-    seatClass: "economy" | "business" | "first";
-  }[];
-  numberOfPassengers: number;
+  numberOfSeats: number;
+  seatNumbers?: string[];
   departureDate: Date;
   returnDate?: Date;
   tripType: "oneway" | "roundtrip";
@@ -103,11 +95,12 @@ export interface IFlightBooking extends Document {
     basePrice: number;
     subtotal: number;
     taxes: number;
-    discountAmount?: number;
+    discountPrice?: number;
     discountPercentage?: number;
     totalPrice: number;
     currency: CurrencyCode;
   };
+  finalAmount: number;
   bookingStatus:
     | "pending"
     | "confirmed"
@@ -118,12 +111,12 @@ export interface IFlightBooking extends Document {
     | "no_show";
   paymentStatus: PaymentStatus;
   paymentMethod?: PaymentMethod;
-  transactionId?: string;
   cancellationReason?: string;
   cancellationRequestedAt?: Date;
   cancellationApprovedAt?: Date;
   refundAmount?: number;
   confirmationCode: string;
+  transactionId?: string;
   notes?: string;
   createdAt?: Date;
   updatedAt?: Date;
