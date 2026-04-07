@@ -33,6 +33,10 @@ const flightSchema = new mongoose.Schema<IFlight>(
         "Embraer",
       ],
     },
+    vehicleType: {
+      type: String,
+      default: "aircraft",
+    },
     departureAirport: {
       code: {
         type: String,

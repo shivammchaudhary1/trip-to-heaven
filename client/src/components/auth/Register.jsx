@@ -1,268 +1,304 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 import {
-  Container,
   Box,
-  Card,
-  TextField,
   Button,
-  Typography,
-  Link,
-  CircularProgress,
-  Grid,
-  useTheme,
+  Divider,
   Stack,
+  TextField,
+  Typography,
+  useTheme,
 } from "@mui/material";
+import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { notify } from "../../app/slices/notify.slice";
-import { registerUser } from "../../app/slices/auth.slice";
+import {
+  registerUser,
+  selectIsAuthenticated,
+} from "../../app/slices/auth.slice";
 
 const Register = () => {
-  const dispatchToRedux = useDispatch();
   const theme = useTheme();
-  const [isLoading, setIsLoading] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const dispatchToRedux = useDispatch();
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const [registerData, setRegisterData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
 
-  const onSubmit = async (e) => {
+  console.log("selectIsAuthenticated", isAuthenticated);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle registration logic here (e.g., API call)
 
-    // Validation
-    if (password !== confirmPassword) {
+    if (!registerData.firstName || !registerData.lastName) {
       dispatchToRedux(
-        notify({ type: "failure", message: "Passwords do not match" }),
+        notify({
+          type: "warning",
+          message: "Please Enter Your First Name and Last Name",
+        }),
       );
-      return;
+    } else if (!registerData.email) {
+      dispatchToRedux(
+        notify({
+          type: "warning",
+          message: "Please Enter Your Email",
+        }),
+      );
+    } else if (!registerData.password) {
+      dispatchToRedux(
+        notify({
+          type: "warning",
+          message: "Please Enter Your Password",
+        }),
+      );
     }
 
-    if (!firstName || !lastName || !email || !password) {
-      dispatchToRedux(
-        notify({ type: "failure", message: "All fields are required" }),
-      );
-      return;
-    }
-
-    const formData = {
-      name: `${firstName} ${lastName}`,
-      email,
-      password,
+    let userData = {
+      name: `${registerData.firstName} ${registerData.lastName}`,
+      email: registerData.email,
+      password: registerData.password,
     };
 
-    console.log("Register Form Data:", formData);
-    setIsLoading(true);
-
     try {
-      // registerUser returns a promise, so we need to await it
-      const result = await dispatchToRedux(registerUser(formData));
-
-      // Check if registration was successful
-      if (result.payload) {
-        dispatchToRedux(
-          notify({ type: "success", message: "Registration successful!" }),
-        );
-        // Reset form
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        // Redirect can be done here or in a useEffect watching isAuthenticated
-      } else if (result.error) {
-        dispatchToRedux(
-          notify({
-            type: "failure",
-            message: result.error.message || "Registration failed",
-          }),
-        );
-      }
+      dispatchToRedux(registerUser(userData));
+      dispatchToRedux(
+        notify({
+          type: "success",
+          message: "Registration successful!",
+        }),
+      );
+      // Optionally, you can reset the form here
+      setRegisterData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
     } catch (error) {
+      console.error("Registration error:", error);
       dispatchToRedux(
         notify({
           type: "failure",
           message: error?.message || "Registration failed",
         }),
       );
-      console.error("Registration error:", error);
-    } finally {
-      setIsLoading(false);
+
+      setRegisterData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
     }
   };
 
   return (
-    <Container maxWidth="sm">
+    <Box
+      sx={{
+        display: "flex",
+        minHeight: "100vh",
+        width: "100%",
+        bgcolor: "#f3f6fb",
+      }}
+    >
       <Box
         sx={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          py: 4,
+          width: { xs: "0%", md: "50%" },
+          display: { xs: "none", md: "block" },
+          position: "relative",
         }}
       >
-        <Card
+        <Box
           sx={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${assets.backgroundAuthImage})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100vh",
             width: "100%",
-            p: 4,
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
-            borderRadius: 3,
-            background: `linear-gradient(135deg, ${theme.palette.background.paper} 0%, ${theme.palette.primary.main}15 100%)`,
+          }}
+        />
+
+        <Box
+          sx={{
+            position: "absolute",
+            left: 48,
+            right: 48,
+            bottom: 64,
+            color: "#ffffff",
           }}
         >
-          {/* Header */}
-          <Stack spacing={1} sx={{ mb: 4 }}>
-            <Typography
-              variant="h4"
+          <Typography
+            sx={{
+              fontSize: theme.typography.h2.fontSize,
+              fontWeight: theme.typography.h2.fontWeight,
+              lineHeight: 1.2,
+              color: theme.palette.text.default,
+            }}
+          >
+            "Every journey begins with one confident step."
+          </Typography>
+          <Typography
+            sx={{
+              mt: 2,
+              opacity: 0.85,
+              fontSize: theme.typography.body1.fontSize,
+              color: theme.palette.text.default,
+            }}
+          >
+            Create your account and start planning your next unforgettable trip.
+          </Typography>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          width: { xs: "100%", md: "50%" },
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          p: { xs: 3, sm: 5, md: 7 },
+          position: "relative",
+          bgcolor: "#ffffff",
+        }}
+      >
+        <Stack
+          direction="row"
+          spacing={1.5}
+          alignItems="center"
+          sx={{ position: "absolute", top: 28, right: { xs: 24, sm: 32 } }}
+        >
+          <Link to="/">
+            <Box
+              component="img"
+              src={assets.Logo}
+              alt="Trip To Heaven"
               sx={{
-                fontWeight: 700,
-                color: theme.palette.text.primary,
-                mb: 1,
+                width: 100,
+                height: 100,
+                objectFit: "contain",
+                cursor: "pointer",
               }}
-            >
-              Create Account
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-              Already have an account?{" "}
-              <Link
-                href="/login"
-                sx={{
-                  color: theme.palette.primary.main,
-                  textDecoration: "none",
-                  fontWeight: 600,
-                  "&:hover": { textDecoration: "underline" },
-                }}
-              >
-                Sign in
-              </Link>
-            </Typography>
+            />
+          </Link>
+        </Stack>
+
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            width: "100%",
+            maxWidth: 430,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
+          <Typography
+            sx={{ color: "#0f172a", fontSize: "2rem", fontWeight: 700 }}
+          >
+            Get Ready To Fly
+          </Typography>
+          <Typography sx={{ color: "#64748b", mb: 1 }}>
+            Join now and unlock seamless bookings for flights, hotels, and
+            buses.
+          </Typography>
+
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <TextField
+              fullWidth
+              label="First Name"
+              variant="outlined"
+              value={registerData.firstName}
+              onChange={(e) =>
+                setRegisterData({ ...registerData, firstName: e.target.value })
+              }
+            />
+            <TextField
+              fullWidth
+              label="Last Name"
+              variant="outlined"
+              value={registerData.lastName}
+              onChange={(e) =>
+                setRegisterData({ ...registerData, lastName: e.target.value })
+              }
+            />
           </Stack>
 
-          {/* Form */}
-          <form onSubmit={onSubmit}>
-            <Stack spacing={3}>
-              {/* Name fields */}
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="First Name"
-                    placeholder="John"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    variant="outlined"
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: 2,
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Last Name"
-                    placeholder="Doe"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    variant="outlined"
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: 2,
-                      },
-                    }}
-                  />
-                </Grid>
-              </Grid>
+          <TextField
+            fullWidth
+            type="email"
+            label="Email"
+            variant="outlined"
+            value={registerData.email}
+            onChange={(e) =>
+              setRegisterData({ ...registerData, email: e.target.value })
+            }
+          />
+          <TextField
+            fullWidth
+            type="password"
+            label="Password"
+            variant="outlined"
+            value={registerData.password}
+            onChange={(e) =>
+              setRegisterData({ ...registerData, password: e.target.value })
+            }
+          />
 
-              {/* Email */}
-              <TextField
-                fullWidth
-                label="Email Address"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                variant="outlined"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 2,
-                  },
-                }}
-              />
+          <Button
+            type="submit"
+            variant="contained"
+            size="large"
+            sx={{
+              textTransform: "none",
+              fontWeight: 700,
+              py: 1.2,
+              bgcolor: "#0f172a",
+              "&:hover": { bgcolor: "#1e293b" },
+            }}
+          >
+            Register
+          </Button>
 
-              {/* Password */}
-              <TextField
-                fullWidth
-                label="Password"
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                variant="outlined"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 2,
-                  },
-                }}
-              />
-
-              {/* Confirm Password */}
-              <TextField
-                fullWidth
-                label="Confirm Password"
-                type="password"
-                placeholder="••••••••"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                variant="outlined"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 2,
-                  },
-                }}
-              />
-
-              {/* Submit Button */}
-              <Button
-                fullWidth
-                variant="contained"
-                size="large"
-                disabled={isLoading}
-                onClick={onSubmit}
-                sx={{
-                  py: 1.5,
-                  fontSize: "16px",
-                  fontWeight: 600,
-                  textTransform: "none",
-                  borderRadius: 2,
-                  background: `linear-gradient(45deg, ${theme.palette.primary.main}, #0284C7)`,
-                  "&:hover": {
-                    background: `linear-gradient(45deg, #06B6D4, #0284C7)`,
-                  },
-                  "&:disabled": {
-                    background: theme.palette.action.disabledBackground,
-                  },
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+          <Divider sx={{ my: 0.5, color: "#94a3b8", fontSize: 12 }}>or</Divider>
+          <Button
+            variant="outlined"
+            size="large"
+            sx={{
+              mt: 1,
+              textTransform: "none",
+              borderColor: "#d1d5db",
+              color: "#111827",
+              fontWeight: 600,
+              py: 1.2,
+            }}
+          >
+            Register with Google
+          </Button>
+          <Box sx={{ textAlign: "right" }}>
+            <Typography>
+              Already have an account?
+              <Link
+                to="/login"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: "none",
+                  fontWeight: theme.typography.h2.fontWeight,
                 }}
               >
-                {isLoading ? (
-                  <>
-                    <CircularProgress size={20} color="inherit" />
-                    <span style={{ marginLeft: "8px" }}>Creating...</span>
-                  </>
-                ) : (
-                  "Sign Up"
-                )}
-              </Button>
-            </Stack>
-          </form>
-        </Card>
+                Log in
+              </Link>
+            </Typography>
+          </Box>
+        </Box>
       </Box>
-    </Container>
+    </Box>
   );
 };
 

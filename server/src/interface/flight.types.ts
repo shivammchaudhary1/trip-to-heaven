@@ -4,6 +4,7 @@ export interface IFlight {
   flightNumber: string;
   airlineName: string;
   aircraftType: string;
+  vehicleType: string;
   departureAirport: {
     code: string;
     name: string;

@@ -3,13 +3,13 @@ import { IHotelBooking } from "../interface/booking.types.js";
 
 const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
   {
-    hotel: {
+    hotelId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Hotel",
       required: [true, "Hotel is required"],
       index: true,
     },
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: [true, "User is required"],
@@ -63,24 +63,29 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
       maxlength: [1000, "Special requests cannot exceed 1000 characters"],
     },
     pricing: {
-      roomPrice: {
+      basePrice: {
         type: Number,
         required: [true, "Room price is required"],
         min: [0, "Price cannot be negative"],
+      },
+      subtotal: {
+        type: Number,
+        // required: [true, "Subtotal is required"],
+        min: [0, "Subtotal cannot be negative"],
+      },
+      discountPercentage: {
+        type: Number,
+        min: [0, "Discount percentage cannot be negative"],
+        max: [100, "Discount percentage cannot exceed 100"],
       },
       taxes: {
         type: Number,
         required: [true, "Taxes is required"],
         min: [0, "Taxes cannot be negative"],
       },
-      discountAmount: {
+      discountPrice: {
         type: Number,
         min: [0, "Discount cannot be negative"],
-      },
-      discountPercentage: {
-        type: Number,
-        min: [0, "Discount percentage cannot be negative"],
-        max: [100, "Discount percentage cannot exceed 100"],
       },
       totalPrice: {
         type: Number,
@@ -93,11 +98,12 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
         enum: ["USD", "INR", "EUR", "GBP"],
         default: "INR",
       },
-      subtotal: {
-        type: Number,
-        required: [true, "Subtotal is required"],
-        min: [0, "Subtotal cannot be negative"],
-      },
+    },
+    finalAmount: {
+      type: Number,
+      required: [true, "Price is required"],
+      min: [0, "Price cannot be negative"],
+      index: true,
     },
     bookingStatus: {
       type: String,
@@ -130,7 +136,7 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
     },
     transactionId: {
       type: String,
-      trim: true,
+      // trim: true,
       sparse: true,
       index: true,
     },
@@ -147,11 +153,10 @@ const hotelBookingSchema = new mongoose.Schema<IHotelBooking>(
 );
 
 // Indexes for better query performance
-hotelBookingSchema.index({ user: 1, bookingStatus: 1 });
+hotelBookingSchema.index({ userId: 1, bookingStatus: 1 });
 hotelBookingSchema.index({ hotel: 1, checkInDate: 1 });
 hotelBookingSchema.index({ createdAt: -1 });
 hotelBookingSchema.index({ paymentStatus: 1, bookingStatus: 1 });
-hotelBookingSchema.index({ confirmationCode: 1 });
 hotelBookingSchema.index({ checkInDate: 1, checkOutDate: 1 });
 
 const HotelBooking = mongoose.model<IHotelBooking>(

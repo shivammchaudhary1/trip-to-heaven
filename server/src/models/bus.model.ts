@@ -26,6 +26,10 @@ const busSchema = new mongoose.Schema<IBus>(
       default: "seater",
       index: true,
     },
+    vehicleType: {
+      type: String,
+      default: "bus",
+    },
     source: {
       type: String,
       required: [true, "Source is required"],
@@ -85,28 +89,29 @@ const busSchema = new mongoose.Schema<IBus>(
         required: [true, "Base price is required"],
         min: [0, "Price cannot be negative"],
       },
-      currency: {
-        type: String,
-        default: "INR",
-        enum: ["USD", "INR", "EUR", "GBP"],
-      },
       discountPercentage: {
         type: Number,
         min: 0,
         max: 100,
-        default: 0,
-      },
-      discountPrice: {
-        type: Number,
-        min: 0,
+        default: 10,
       },
       taxes: {
+        type: Number,
+        min: 0,
+        default: 18, //percentage
+      },
+      discountPrice: {
         type: Number,
         min: 0,
       },
       totalPrice: {
         type: Number,
         min: 0,
+      },
+      currency: {
+        type: String,
+        default: "INR",
+        enum: ["USD", "INR", "EUR", "GBP"],
       },
     },
     price: {

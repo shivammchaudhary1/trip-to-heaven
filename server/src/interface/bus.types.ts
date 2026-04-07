@@ -4,6 +4,7 @@ export interface IBus {
   name: string;
   busNumber: string;
   busType: "seater" | "sleeper" | "semi_sleeper" | "luxury";
+  vehicleType: string;
   source: string;
   destination: string;
   dateOfJourney: Date;

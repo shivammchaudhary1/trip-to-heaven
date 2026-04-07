@@ -5,41 +5,89 @@ import User from "../models/user.model.js";
 import Transaction from "../models/transaction.model.js";
 import { IHotelBooking } from "../interface/booking.types.js";
 
-export const createHotelBooking = async (
-  req: Request,
-  res: Response,
-): Promise<void> => {
+export const createHotelBooking = async (req: Request, res: Response) => {
   try {
-    const { hotel, user, checkInDate, checkOutDate, numberOfNights } = req.body;
+    const userId = (req as any).userId;
+
+    if (!userId) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const {
+      hotelId,
+      guestName,
+      numberOfGuests,
+      numberOfRooms,
+      checkInDate,
+      checkOutDate,
+      numberOfNights,
+    } = req.body;
 
     // Validate hotel exists
-    const hotelExists = await Hotel.findById(hotel);
+    const hotelExists = await Hotel.findById(hotelId);
+
     if (!hotelExists) {
       res.status(404).json({ success: false, message: "Hotel not found" });
       return;
     }
 
     // Validate user exists
-    const userExists = await User.findById(user);
+    const userExists = await User.findById(userId);
+
     if (!userExists) {
       res.status(404).json({ success: false, message: "User not found" });
       return;
     }
 
-    // Generate unique confirmation code
-    const confirmationCode = `HB-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+    // Pricing rules:
+    // 1) Base = room base price * rooms * nights
+    // 2) Extra guest charge = 700 per guest above room capacity
+    // 3) Extra day charge = 1200 per night beyond first night
+    // 4) Tax = 18% on subtotal
+    const baseRoomPrice = Number(hotelExists.pricing?.basePrice || 0);
+    const rooms = Number(numberOfRooms) || 1;
+    const guests = Number(numberOfGuests) || 1;
+    const nights = Number(numberOfNights) || 1;
+
+    const defaultCapacityPerRoom = 2;
+    const includedGuests = rooms * defaultCapacityPerRoom;
+    const extraGuests = Math.max(0, guests - includedGuests);
+    const extraPersonCharge = extraGuests * 700;
+
+    const extraDays = Math.max(0, nights - 1);
+    const extraDayCharge = extraDays * 1200;
+
+    const baseStayPrice = baseRoomPrice * rooms * nights;
+    const subtotal = baseStayPrice + extraPersonCharge + extraDayCharge;
+    const taxes = subtotal * 0.18;
+    const totalPrice = subtotal + taxes;
+
+    const pricing = {
+      basePrice: baseRoomPrice,
+      subtotal,
+      taxes,
+      discountPrice: 0,
+      discountPercentage: 0,
+      totalPrice,
+      currency: hotelExists.pricing?.currency || "INR",
+    };
+
+    const finalAmount = totalPrice;
 
     const newBooking = new HotelBooking({
       ...req.body,
-      confirmationCode,
+      hotelId,
+      userId,
+      pricing,
+      finalAmount,
       bookingStatus: "pending",
       paymentStatus: "pending",
     });
 
     const savedBooking = await newBooking.save();
     const populatedBooking = await HotelBooking.findById(savedBooking._id)
-      .populate("hotel", "propertyName images location pricing")
-      .populate("user", "name email mobileNumber");
+      .populate("hotelId", "propertyName images location pricing")
+      .populate("userId", "name email mobileNumber");
 
     res.status(201).json({
       success: true,
@@ -97,8 +145,8 @@ export const getAllHotelBookings = async (
     }
 
     const bookings = await HotelBooking.find(filter)
-      .populate("hotel", "propertyName images location")
-      .populate("user", "name email mobileNumber")
+      .populate("hotelId", "propertyName images location")
+      .populate("userId", "name email mobileNumber")
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limitNum);
@@ -149,8 +197,8 @@ export const getHotelBookingById = async (
     }
 
     const transaction = await Transaction.findOne({
-      booking: id,
-      bookingType: "HotelBooking",
+      hotelBookingId: id,
+      bookingType: "hotel",
     });
 
     res.status(200).json({

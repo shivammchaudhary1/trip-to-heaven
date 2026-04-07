@@ -3,14 +3,7 @@ import { ITransaction } from "../interface/booking.types.js";
 
 const transactionSchema = new mongoose.Schema<ITransaction>(
   {
-    transactionId: {
-      type: String,
-      required: [true, "Transaction ID is required"],
-      unique: true,
-      trim: true,
-      index: true,
-    },
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: [true, "User is required"],
@@ -19,8 +12,8 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
     bookingType: {
       type: String,
       enum: {
-        values: ["hotel", "flight"],
-        message: "Booking type must be either HotelBooking or FlightBooking",
+        values: ["hotel", "flight", "bus"],
+        message: "Booking type must be one of: hotel, flight, bus",
       },
       required: [true, "Booking type is required"],
     },
@@ -31,6 +24,10 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
     flightBookingId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "FlightBooking",
+    },
+    busBookingId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "BusBooking",
     },
     amount: {
       type: Number,
@@ -91,6 +88,39 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
       trim: true,
       maxlength: [1000, "Notes cannot exceed 1000 characters"],
     },
+    paymentGateway: {
+      type: String,
+      enum: ["stripe", "razorpay", "paypal", "manual"],
+      default: "manual",
+    },
+    description: {
+      type: String,
+      trim: true,
+      maxlength: [500, "Description cannot exceed 500 characters"],
+    },
+    reference: {
+      type: String,
+      trim: true,
+    },
+    gatewayTransactionId: {
+      type: String,
+      trim: true,
+      index: true,
+    },
+    gatewayReference: {
+      type: String,
+      trim: true,
+    },
+    metadata: {
+      type: mongoose.Schema.Types.Mixed,
+    },
+    successResponse: {
+      type: mongoose.Schema.Types.Mixed,
+    },
+    failureReason: {
+      type: String,
+      trim: true,
+    },
   },
   {
     timestamps: true,
@@ -100,7 +130,10 @@ const transactionSchema = new mongoose.Schema<ITransaction>(
 
 // Indexes for better query performance
 transactionSchema.index({ user: 1, transactionStatus: 1 });
-transactionSchema.index({ booking: 1, transactionStatus: 1 });
+transactionSchema.index({ bookingType: 1, transactionStatus: 1 });
+transactionSchema.index({ hotelBookingId: 1, transactionStatus: 1 });
+transactionSchema.index({ flightBookingId: 1, transactionStatus: 1 });
+transactionSchema.index({ busBookingId: 1, transactionStatus: 1 });
 transactionSchema.index({ createdAt: -1 });
 transactionSchema.index({ transactionStatus: 1, createdAt: -1 });
 transactionSchema.index({ user: 1, createdAt: -1 });
