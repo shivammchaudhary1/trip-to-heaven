@@ -11,7 +11,7 @@ const getInitialState = () => {
     isAuthenticated: !!token,
     user: user ? JSON.parse(user) : null,
     token: token || null,
-    role: role || null,
+    role: role ? JSON.parse(role) : null,
   };
 };
 
@@ -83,51 +83,35 @@ const authSlice = createSlice({
     },
   },
 
-  //   {
-  //     "message": "User registered successfully",
-  //     "success": true,
-  //     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWMxOTYwMDUwYjk0N2E5NDM4ZTMyMGQiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzc0Mjk0NTI4LCJleHAiOjE3NzY4ODY1Mjh9.i_qismXr78AtMeymkbjTDcHykrU2Jq19QRzXC_U0UMw",
-  //     "user": {
-  //         "name": "sss ssss",
-  //         "email": "s@gmail.com",
-  //         "password": "$2b$10$VIyFRE9Mdl7iZ2sjkAIEguUZbCnSRvZK4JvxuyC4qQwHsK/AKj8Ga",
-  //         "role": [
-  //             "user"
-  //         ],
-  //         "isMarried": false,
-  //         "gender": "male",
-  //         "isActive": true,
-  //         "preferences": {
-  //             "newsletter": true,
-  //             "notifications": true
-  //         },
-  //         "_id": "69c1960050b947a9438e320d",
-  //         "createdAt": "2026-03-23T19:35:28.245Z",
-  //         "updatedAt": "2026-03-23T19:35:28.245Z"
-  //     }
-  // }
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
-        console.log("check", action.payload);
+        const authToken = action.payload.accessToken || action.payload.token;
+        const userRole = action.payload.user?.role || null;
         state.isAuthenticated = true;
         state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.role = action.payload.user.role;
-        localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("role", action.payload.user.role);
+        state.token = authToken;
+        state.role = userRole;
+        if (authToken) {
+          localStorage.setItem("token", authToken);
+        }
+        localStorage.setItem("role", JSON.stringify(userRole));
         localStorage.setItem(
           "user",
           JSON.stringify(action.payload.user || action.payload),
         );
       })
       .addCase(loginUser.fulfilled, (state, action) => {
+        const authToken = action.payload.accessToken || action.payload.token;
+        const userRole = action.payload.user?.role || null;
         state.isAuthenticated = true;
         state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.role = action.payload.user.role;
-        localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("role", action.payload.user.role);
+        state.token = authToken;
+        state.role = userRole;
+        if (authToken) {
+          localStorage.setItem("token", authToken);
+        }
+        localStorage.setItem("role", JSON.stringify(userRole));
         localStorage.setItem(
           "user",
           JSON.stringify(action.payload.user || action.payload),

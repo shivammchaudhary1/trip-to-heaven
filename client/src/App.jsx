@@ -1,10 +1,15 @@
 import { Toaster } from "react-hot-toast";
+import { useLocation } from "react-router-dom";
 import AppRoutes from "./appRoutes/AppRoutes";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import { NotificationDisplay } from "./components/common/NotificationDisplay";
+import { shouldHideNavAndFooter } from "./utility/withoutNavAndFooter/notNav";
 
 const App = () => {
+  const { pathname } = useLocation();
+  const hideNavAndFooter = shouldHideNavAndFooter(pathname);
+
   return (
     <div>
       {/* React Hot Toast Provider */}
@@ -30,6 +35,12 @@ const App = () => {
               background: "#ef4444",
             },
           },
+          warning: {
+            duration: 3000,
+            style: {
+              background: "#f59e0b",
+            },
+          },
           loading: {
             color: "#0ea5e9",
           },
@@ -37,9 +48,9 @@ const App = () => {
       />
 
       <NotificationDisplay />
-      <Navbar />
+      {!hideNavAndFooter && <Navbar />}
       <AppRoutes />
-      <Footer />
+      {!hideNavAndFooter && <Footer />}
     </div>
   );
 };

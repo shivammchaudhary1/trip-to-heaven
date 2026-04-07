@@ -3,14 +3,7 @@ import { ITransaction } from "../interface/booking.types.js";
 
 const transactionSchema = new mongoose.Schema<ITransaction>(
   {
-    transactionId: {
-      type: String,
-      required: [true, "Transaction ID is required"],
-      unique: true,
-      trim: true,
-      index: true,
-    },
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: [true, "User is required"],

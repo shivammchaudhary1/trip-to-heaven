@@ -124,7 +124,7 @@ export interface IFlightBooking extends Document {
 
 export interface ITransaction extends Document {
   transactionId: string;
-  user: Types.ObjectId | IUserExt;
+  userId: Types.ObjectId | IUserExt;
   bookingType?: BookingType;
   hotelBookingId?: Types.ObjectId;
   flightBookingId?: Types.ObjectId;

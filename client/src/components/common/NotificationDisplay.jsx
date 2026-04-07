@@ -21,11 +21,27 @@ export function NotificationDisplay() {
         }
 
         // Show the appropriate toast
-        if (typeof toast[toastType] === "function") {
+        if (toastType === "warning") {
+          toast(notification.message, {
+            icon: "⚠️",
+            style: {
+              background: "#f59e0b",
+              color: "#fff",
+            },
+          });
+        } else if (toastType === "info") {
+          toast(notification.message, {
+            icon: "ℹ️",
+            style: {
+              background: "#0ea5e9",
+              color: "#fff",
+            },
+          });
+        } else if (typeof toast[toastType] === "function") {
           toast[toastType](notification.message);
         } else {
           // Fallback to default toast if type is not recognized
-          toast.success(notification.message);
+          toast(notification.message);
         }
 
         // Remove from Redux after 3 seconds
